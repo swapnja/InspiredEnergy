@@ -3,7 +3,7 @@
 <suite name="Budgets" thread-count="4" verbose="1" configfailurepolicy="continue">
     <test name="all-tests">
         <packages>
-          <package name="com.BudgetsSingle"/>
+          <package name="BudgetsSingle"/>
         </packages>
     </test>
 </suite>
