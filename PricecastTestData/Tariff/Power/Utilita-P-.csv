@@ -1,0 +1,167 @@
+FUEL,REGION,TARIFF_NAME,Standing Charge,Unit Rate,Night Rate,Evening/Weekend Rate
+Electricity,East Midlands,Jupiter1 1 Year,24.267,13.365,,
+Electricity,East Midlands,Jupiter1 2 Year,24.267,13.717,,
+Electricity,East Midlands,Jupiter2 1 Year,24.267,15.21,8.333,
+Electricity,East Midlands,Jupiter2 2 Year,24.267,15.631,8.583,
+Electricity,East Midlands,Jupiter3 1 Year,24.267,18.335,8.333,12.545
+Electricity,East Midlands,Jupiter3 2 Year,24.267,18.842,8.583,12.892
+Electricity,East Midlands,Jupiter4 1 Year,24.267,14.58,,11.88
+Electricity,East Midlands,Jupiter4 2 Year,24.267,14.964,,12.193
+Electricity,East Midlands,Jupiter5 1 Year,24.267,14.58,,11.88
+Electricity,East Midlands,Jupiter5 2 Year,24.267,14.964,,12.193
+Electricity,Eastern,Jupiter1 1 Year,24.127,13.128,,
+Electricity,Eastern,Jupiter1 1 Year,24.127,13.48,,
+Electricity,Eastern,Jupiter2 1 Year,24.127,14.911,8.022,
+Electricity,Eastern,Jupiter2 2 Year,24.127,15.332,8.272,
+Electricity,Eastern,Jupiter3 1 Year,24.127,17.982,8.022,12.303
+Electricity,Eastern,Jupiter3 2 Year,24.127,18.488,8.272,12.65
+Electricity,Eastern,Jupiter4 1 Year,24.127,14.321,,11.669
+Electricity,Eastern,Jupiter4 1 Year,24.127,14.705,,11.982
+Electricity,Eastern,Jupiter5 1 Year,24.127,14.321,,11.669
+Electricity,Eastern,Jupiter5 2 Year,24.127,14.705,,11.982
+Electricity,London,Jupiter1 1 Year,23.517,12.534,,
+Electricity,London,Jupiter1 2 Year,23.517,12.886,,
+Electricity,London,Jupiter2 1 Year,23.517,14.237,7.867,
+Electricity,London,Jupiter2 2 Year,23.517,14.658,8.116,
+Electricity,London,Jupiter3 1 Year,23.517,17.159,7.867,11.741
+Electricity,London,Jupiter3 2 Year,23.517,17.666,8.116,12.087
+Electricity,London,Jupiter4 1 Year,23.517,13.673,,11.141
+Electricity,London,Jupiter4 2 Year,23.517,14.057,,11.454
+Electricity,London,Jupiter5 1 Year,23.517,13.673,,11.141
+Electricity,London,Jupiter5 2 Year,23.517,14.057,,11.454
+Electricity,Manweb,Jupiter1 1 Year,24.407,14.649,,
+Electricity,Manweb,Jupiter1 2 Year,24.407,15.001,,
+Electricity,Manweb,Jupiter2 1 Year,24.407,16.736,9.184,
+Electricity,Manweb,Jupiter2 2 Year,24.407,17.157,9.434,
+Electricity,Manweb,Jupiter3 1 Year,24.407,20.174,9.184,13.803
+Electricity,Manweb,Jupiter3 2 Year,24.407,20.681,9.434,14.15
+Electricity,Manweb,Jupiter4 1 Year,24.407,15.981,,13.021
+Electricity,Manweb,Jupiter4 2 Year,24.407,16.365,,13.334
+Electricity,Manweb,Jupiter5 1 Year,24.407,15.981,,13.021
+Electricity,Manweb,Jupiter5 2 Year,24.407,16.365,,13.334
+Electricity,Midlands,Jupiter1 1 Year,25.107,13.553,,
+Electricity,Midlands,Jupiter1 2 Year,25.107,13.906,,
+Electricity,Midlands,Jupiter2 1 Year,25.107,15.426,8.445,
+Electricity,Midlands,Jupiter2 2 Year,25.107,15.848,8.694,
+Electricity,Midlands,Jupiter3 1 Year,25.107,18.596,8.445,12.724
+Electricity,Midlands,Jupiter3 2 Year,25.107,19.104,8.694,13.071
+Electricity,Midlands,Jupiter4 1 Year,25.107,14.785,,12.047
+Electricity,Midlands,Jupiter4 2 Year,25.107,15.17,,12.361
+Electricity,Midlands,Jupiter5 1 Year,25.107,14.785,,12.047
+Electricity,Midlands,Jupiter5 2 Year,25.107,15.17,,12.361
+Electricity,Northern,Jupiter1 1 Year,24.097,13.808,,
+Electricity,Northern,Jupiter1 2 Year,24.097,14.161,,
+Electricity,Northern,Jupiter2 1 Year,24.097,15.746,8.698,
+Electricity,Northern,Jupiter2 2 Year,24.097,16.168,8.947,
+Electricity,Northern,Jupiter3 1 Year,24.097,18.978,8.698,12.985
+Electricity,Northern,Jupiter3 2 Year,24.097,19.486,8.947,13.333
+Electricity,Northern,Jupiter4 1 Year,24.097,15.063,,12.274
+Electricity,Northern,Jupiter4 2 Year,24.097,15.448,,12.588
+Electricity,Northern,Jupiter5 1 Year,24.097,15.063,,12.274
+Electricity,Northern,Jupiter5 2 Year,24.097,15.448,,12.588
+Electricity,Norweb,Jupiter1 1 Year,22.417,13.668,,
+Electricity,Norweb,Jupiter1 2 Year,22.417,14.021,,
+Electricity,Norweb,Jupiter2 1 Year,22.417,15.59,8.595,
+Electricity,Norweb,Jupiter2 2 Year,22.417,16.011,8.844,
+Electricity,Norweb,Jupiter3 1 Year,22.417,18.791,8.595,12.857
+Electricity,Norweb,Jupiter3 2 Year,22.417,19.298,8.844,13.204
+Electricity,Norweb,Jupiter4 1 Year,22.417,14.911,,12.149
+Electricity,Norweb,Jupiter4 2 Year,22.417,15.296,,12.463
+Electricity,Norweb,Jupiter5 1 Year,22.417,14.911,,12.149
+Electricity,Norweb,Jupiter5 2 Year,22.417,15.296,,12.463
+Electricity,Scottish Hydro,Jupiter1 1 Year,30.527,14.541,,
+Electricity,Scottish Hydro,Jupiter1 2 Year,30.527,14.893,,
+Electricity,Scottish Hydro,Jupiter2 1 Year,30.527,16.618,9.554,
+Electricity,Scottish Hydro,Jupiter2 2 Year,30.527,17.039,9.804,
+Electricity,Scottish Hydro,Jupiter3 1 Year,30.527,20.012,9.554,13.692
+Electricity,Scottish Hydro,Jupiter3 2 Year,30.527,20.519,9.804,14.039
+Electricity,Scottish Hydro,Jupiter4 1 Year,30.527,15.863,,12.925
+Electricity,Scottish Hydro,Jupiter4 2 Year,30.527,16.247,,13.238
+Electricity,Scottish Hydro,Jupiter5 1 Year,30.527,15.863,,12.925
+Electricity,Scottish Hydro,Jupiter5 2 Year,30.527,16.247,,13.238
+Electricity,Scottish Power,Jupiter1 1 Year,25.547,13.887,,
+Electricity,Scottish Power,Jupiter1 2 Year,25.547,14.239,,
+Electricity,Scottish Power,Jupiter2 1 Year,25.547,15.827,8.72,
+Electricity,Scottish Power,Jupiter2 2 Year,25.547,16.248,8.969,
+Electricity,Scottish Power,Jupiter3 1 Year,25.547,19.077,8.72,13.053
+Electricity,Scottish Power,Jupiter3 2 Year,25.547,19.584,8.969,13.399
+Electricity,Scottish Power,Jupiter4 1 Year,25.547,15.149,,12.344
+Electricity,Scottish Power,Jupiter4 2 Year,25.547,15.533,,12.657
+Electricity,Scottish Power,Jupiter5 1 Year,25.547,15.149,,12.344
+Electricity,Scottish Power,Jupiter5 2 Year,25.547,15.533,,12.657
+Electricity,Seeboard,Jupiter1 1 Year,23.927,13.105,,
+Electricity,Seeboard,Jupiter1 2 Year,23.927,13.457,,
+Electricity,Seeboard,Jupiter2 1 Year,23.927,14.877,7.94,
+Electricity,Seeboard,Jupiter2 2 Year,23.927,15.298,8.19,
+Electricity,Seeboard,Jupiter3 1 Year,23.927,17.944,7.94,12.277
+Electricity,Seeboard,Jupiter3 2 Year,23.927,18.45,8.19,12.624
+Electricity,Seeboard,Jupiter4 1 Year,23.927,14.296,,11.649
+Electricity,Seeboard,Jupiter4 2 Year,23.927,14.68,,11.962
+Electricity,Seeboard,Jupiter5 1 Year,23.927,14.296,,11.649
+Electricity,Seeboard,Jupiter5 2 Year,23.927,14.68,,11.962
+Electricity,Southern,Jupiter1 1 Year,23.817,13.281,,
+Electricity,Southern,Jupiter1 2 Year,23.817,13.633,,
+Electricity,Southern,Jupiter2 1 Year,23.817,15.096,8.136,
+Electricity,Southern,Jupiter2 2 Year,23.817,15.517,8.385,
+Electricity,Southern,Jupiter3 1 Year,23.817,18.204,8.136,12.455
+Electricity,Southern,Jupiter3 2 Year,23.817,18.711,8.385,12.802
+Electricity,Southern,Jupiter4 1 Year,23.817,14.488,,11.805
+Electricity,Southern,Jupiter4 2 Year,23.817,14.872,,12.118
+Electricity,Southern,Jupiter5 1 Year,23.817,14.488,,11.805
+Electricity,Southern,Jupiter5 2 Year,23.817,14.872,,12.118
+Electricity,Swalec,Jupiter1 1 Year,26.197,13.56,,
+Electricity,Swalec,Jupiter1 2 Year,26.197,13.912,,
+Electricity,Swalec,Jupiter2 1 Year,26.197,15.441,8.568,
+Electricity,Swalec,Jupiter2 2 Year,26.197,15.862,8.818,
+Electricity,Swalec,Jupiter3 1 Year,26.197,18.609,8.568,12.732
+Electricity,Swalec,Jupiter3 2 Year,26.197,19.115,8.818,13.079
+Electricity,Swalec,Jupiter4 1 Year,26.197,14.793,,12.053
+Electricity,Swalec,Jupiter4 2 Year,26.197,15.177,,12.366
+Electricity,Swalec,Jupiter5 1 Year,26.197,14.793,,12.053
+Electricity,Swalec,Jupiter5 2 Year,26.197,15.177,,12.366
+Electricity,Sweb,Jupiter1 1 Year,26.587,14.316,,
+Electricity,Sweb,Jupiter1 2 Year,26.587,14.669,,
+Electricity,Sweb,Jupiter2 1 Year,26.587,16.309,8.823,
+Electricity,Sweb,Jupiter2 2 Year,26.587,16.73,9.073,
+Electricity,Sweb,Jupiter3 1 Year,26.587,19.665,8.823,13.455
+Electricity,Sweb,Jupiter3 2 Year,26.587,20.172,9.073,13.802
+Electricity,Sweb,Jupiter4 1 Year,26.587,15.617,,12.725
+Electricity,Sweb,Jupiter4 2 Year,26.587,16.003,,13.039
+Electricity,Sweb,Jupiter5 1 Year,26.587,15.617,,12.725
+Electricity,Sweb,Jupiter5 2 Year,26.587,16.003,,13.039
+Electricity,Yorkshire,Jupiter1 1 Year,24.057,13.546,,
+Electricity,Yorkshire,Jupiter1 2 Year,24.057,13.899,,
+Electricity,Yorkshire,Jupiter2 1 Year,24.057,15.433,8.506,
+Electricity,Yorkshire,Jupiter2 2 Year,24.057,15.854,8.755,
+Electricity,Yorkshire,Jupiter3 1 Year,24.057,18.602,8.506,12.728
+Electricity,Yorkshire,Jupiter3 2 Year,24.057,19.109,8.755,13.074
+Electricity,Yorkshire,Jupiter4 1 Year,24.057,14.777,,12.041
+Electricity,Yorkshire,Jupiter4 2 Year,24.057,15.163,,12.355
+Electricity,Yorkshire,Jupiter5 1 Year,24.057,14.777,,12.041
+Electricity,Yorkshire,Jupiter5 2 Year,24.057,15.163,,12.355
+Gas,East Midlands,Jupiter Gas 1 Year,19.197,2.909,,
+Gas,East Midlands,Jupiter Gas 2 Year,19.197,2.909,,
+Gas,Eastern,Jupiter Gas 1 Year,19.197,2.951,,
+Gas,Eastern,Jupiter Gas 2 Year,19.197,2.951,,
+Gas,London,Jupiter Gas 1 Year,19.197,3.174,,
+Gas,London,Jupiter Gas 2 Year,19.197,3.174,,
+Gas,Manweb,Jupiter Gas 1 Year,19.197,3.035,,
+Gas,Manweb,Jupiter Gas 2 Year,19.197,3.035,,
+Gas,Midlands,Jupiter Gas 1 Year,19.197,3.001,,
+Gas,Midlands,Jupiter Gas 2 Year,19.197,3.001,,
+Gas,Northern,Jupiter Gas 1 Year,19.197,3.009,,
+Gas,Northern,Jupiter Gas 2 Year,19.197,3.009,,
+Gas,Norweb,Jupiter Gas 1 Year,19.197,3.049,,
+Gas,Norweb,Jupiter Gas 2 Year,19.197,3.049,,
+Gas,Scotland,Jupiter Gas 1 Year,19.197,3.072,,
+Gas,Scotland,Jupiter Gas 2 Year,19.197,3.072,,
+Gas,Seeboard,Jupiter Gas 1 Year,19.197,3.149,,
+Gas,Seeboard,Jupiter Gas 2 Year,19.197,3.149,,
+Gas,Southern,Jupiter Gas 1 Year,19.197,3.137,,
+Gas,Southern,Jupiter Gas 2 Year,19.197,3.137,,
+Gas,Swalec,Jupiter Gas 1 Year,19.197,3.048,,
+Gas,Swalec,Jupiter Gas 2 Year,19.197,3.048,,
+Gas,Sweb,Jupiter Gas 1 Year,19.197,3.136,,
+Gas,Sweb,Jupiter Gas 2 Year,19.197,3.136,,
+Gas,Yorkshire,Jupiter Gas 1 Year,19.197,3.043,,
+Gas,Yorkshire,Jupiter Gas 2 Year,19.197,3.043,,

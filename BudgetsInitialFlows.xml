@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Budgets Initial Flows" thread-count="2" verbose="1" configfailurepolicy="continue" parallel="tests">
+  <test name="Budgets.InitialFlows">
+    <packages>
+      <package name="com.Budgets.InitialFlows"/>
+    </packages>
+  </test> <!-- Sprint 1 Tests -->
+</suite> <!-- Sprint 1 Suite -->

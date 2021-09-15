@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="com.Pricecast.Quotes.Power" thread-count="4" verbose="1" configfailurepolicy="continue" parallel="tests">
+	<test name="com.Pricecast.Quotes.Power">
+		<packages>
+			<package name="com.Pricecast.Quotes.Power" />
+		</packages>
+	</test>
+</suite>

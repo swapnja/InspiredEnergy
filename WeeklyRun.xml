@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Weekly Suit" verbose="10" parallel ="classes">
+<suite-files>
+    <suite-file path="Budgets.xml"></suite-file>
+    <suite-file path="BudgetsInitialFlows.xml"></suite-file>
+    <suite-file path="Gas.xml"></suite-file>
+    <suite-file path="Electricity.xml"></suite-file>
+    <suite-file path="ClientPortal.xml"></suite-file>
+</suite-files>
+</suite>
