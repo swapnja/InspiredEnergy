@@ -23,7 +23,8 @@ public class excelUtilities {
         Object data[][] = new Object[rowCount][colCount];
         for (int i = 0; i < rowCount; i++) {
             for (int j = 0; j < colCount; j++) {
-               data[i][j] = sheet.getRow(i+1).getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+            //   data[i][j] = sheet.getRow(i+1).getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+            	   data[i][j] = sheet.getRow(i+1).getCell(j, Row.CREATE_NULL_AS_BLANK).getStringCellValue();
             }
         }
         return data;
@@ -36,8 +37,9 @@ public class excelUtilities {
         int rowCount = sheet.getLastRowNum();
         Object data[][] = new Object[rowCount][2];
         for (int i = 0; i < rowCount; i++) {
-                data[i][0] = sheet.getRow(i + 1).getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
-                data[i][1] = i+1;
+              //  data[i][0] = sheet.getRow(i + 1).getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).getStringCellValue();
+        	  data[i][0] = sheet.getRow(i + 1).getCell(0, Row.CREATE_NULL_AS_BLANK).getStringCellValue();    
+        	data[i][1] = i+1;
         }
         fs.close();
         return data;
