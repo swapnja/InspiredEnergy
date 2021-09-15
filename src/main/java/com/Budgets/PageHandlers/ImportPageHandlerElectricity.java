@@ -53,10 +53,12 @@ public class ImportPageHandlerElectricity {
 	// Electricity
 	// Meter
 	public void ImportMeterGreenFile() throws InterruptedException, IOException {
+		System.out.println("In ImportMeterGreenFile");
 		_webDriverHandler.byXpath(_prop.getProperty("ElectricityMeters")).waitClickable(15,100).leftPanelclick();
 		String filePath = Paths.get(
 				"BudgetTestData/Electricity/Meters/PR008_Budget_V3_TC001_Utility_Electricity_Meters_ValidInput_GreenValidation.xlsx")
 				.toAbsolutePath().toString();
+		System.out.println("Out of ImportMeterGreenFile");
 		ElectricityMetersHashTables mht = new ElectricityMetersHashTables();
 		Hashtable<String, String> ht = mht.getGreenHash();
 		genericImport(filePath);
