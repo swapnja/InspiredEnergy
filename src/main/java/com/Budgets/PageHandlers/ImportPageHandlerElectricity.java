@@ -736,10 +736,13 @@ public class ImportPageHandlerElectricity {
 	}
 
 	public void genericImport(String filePath) throws InterruptedException {
-		waitLoad();
+		//waitLoad();
+		wait(15,100);
 		_webDriverHandler.byXpath(_prop.getProperty("ImportBtn")).waitClickable(10,100).click();
 		_webDriverHandler.byXpath(_prop.getProperty("ImportReferenceTxtBox")).waitVisible(15,100).sendKeys("Automation Import File " + appendDate);
 		_webDriverHandler.byXpath(_prop.getProperty("importNotes")).sendKeys("Automation Import File " + appendDate);
+		
+		System.out.println("In genericImport ImportMeterGreenFile");
 		_webDriverHandler.byXpath(_prop.getProperty("ChooseFile")).sendKeys(filePath);
 		_webDriverHandler.byXpath(_prop.getProperty("SaveForm")).waitClickable(15,100).click();
 		waitLoad();

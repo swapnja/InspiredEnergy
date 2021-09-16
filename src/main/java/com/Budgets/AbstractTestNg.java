@@ -9,14 +9,21 @@ import com.Base.TimeStampPageHandler;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractTestNg {
-
+	
+	
 	public Properties prop;
 	public com.Base.TimeStampPageHandler ts;
 	public WebDriver driver;
@@ -34,16 +41,19 @@ public abstract class AbstractTestNg {
 	}
 
 	@BeforeClass
-	public void LoadUrl() throws InterruptedException {
+	public void LoadUrl() throws InterruptedException, MalformedURLException {
 		/*ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setHeadless(true);
 		chromeOptions.addArguments("--window-size=1920,1080");
 		driver = new ChromeDriver(chromeOptions);
 		*/
 		driver = new ChromeDriver();
-		webDriverHandler = new WebDriverHandler(driver);
-		driver.manage().window().maximize();
-		driver.get(prop.getProperty("url"));
+		((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   		webDriverHandler = new WebDriverHandler(driver);
+   		driver.manage().window().maximize();
+   		driver.get(prop.getProperty("url"));		
 		loginBud = new LoginPageHandler(webDriverHandler, prop);
 		loginBud.Login();
 	}
