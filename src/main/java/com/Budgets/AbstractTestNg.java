@@ -48,7 +48,7 @@ public abstract class AbstractTestNg {
 		driver = new ChromeDriver(chromeOptions);
 		*/
 		driver = new ChromeDriver();
-		((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+		((ChromeDriver) driver).setFileDetector(new LocalFileDetector());
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
    		webDriverHandler = new WebDriverHandler(driver);
