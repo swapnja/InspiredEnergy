@@ -41,14 +41,14 @@ public abstract class AbstractTestNg {
 	}
 
 	@BeforeClass
-	public void LoadUrl() throws InterruptedException, MalformedURLException {
+	public void LoadUrl() throws InterruptedException {
 		/*ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setHeadless(true);
 		chromeOptions.addArguments("--window-size=1920,1080");
 		driver = new ChromeDriver(chromeOptions);
 		*/
 		driver = new ChromeDriver();
-		((ChromeDriver) driver).setFileDetector(new LocalFileDetector());
+	//	((ChromeDriver) driver).setFileDetector(new LocalFileDetector());
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
    		webDriverHandler = new WebDriverHandler(driver);
