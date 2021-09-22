@@ -1,6 +1,6 @@
-test-output/
 TestReport/
 target/
 /bin/
 .classpath
 .settings/org.eclipse.jdt.core.prefs
+.png
