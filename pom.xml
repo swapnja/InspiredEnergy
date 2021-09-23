@@ -94,7 +94,7 @@
     <version>3.0.0-M1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
+            <suiteXmlFile>PricecastSettings.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
