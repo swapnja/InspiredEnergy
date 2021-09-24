@@ -96,6 +96,7 @@
           <suiteXmlFiles>
             <suiteXmlFile>ClientPortal.xml</suiteXmlFile>
             <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
+            <suiteXmlFile>AutoII.xml</suiteXmlFile>            
           </suiteXmlFiles>
         </configuration>
       </plugin>
