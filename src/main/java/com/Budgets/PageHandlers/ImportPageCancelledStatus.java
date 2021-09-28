@@ -21,7 +21,7 @@ public class ImportPageCancelledStatus {
 	}
 
 	public void ImportFileCancel(String section, String path) throws InterruptedException, IOException {
-		_webDriverHandler.byXpath(_prop.getProperty(section)).waitClickable().leftPanelclick();
+		_webDriverHandler.byXpath(_prop.getProperty(section)).waitClickable(10,100).leftPanelclick();
 		String filePath = Paths.get(path).toAbsolutePath().toString();
 		genericImport(filePath);
 		importCancel();
