@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" thread-count="4" parallel="tests" name="Failed suite [Carbon Intensity Test Cases]" verbose="0">
+  <test parallel="tests" name="all-tests(failed)">
+    <classes>
+      <class name="com.CarbonIntensity.PR173_TC01_CarbonIntensity">
+        <methods>
+          <include name="accessCIR"/>
+          <include name="VerifyRegionalData"/>
+          <include name="handleFailure"/>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.CarbonIntensity.PR173_TC01_CarbonIntensity -->
+    </classes>
+  </test> <!-- all-tests(failed) -->
+</suite> <!-- Failed suite [Carbon Intensity Test Cases] -->
