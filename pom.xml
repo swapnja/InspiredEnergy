@@ -94,8 +94,10 @@
     <version>3.0.0-M5</version>
         <configuration>
           <suiteXmlFiles>
+            <!--
             <suiteXmlFile>Gas.xml</suiteXmlFile>
             <suiteXmlFile>Electricity.xml</suiteXmlFile>
+              -->
             <suiteXmlFile>ClientPortal.xml</suiteXmlFile>
             <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
             <suiteXmlFile>AutoII.xml</suiteXmlFile>            
