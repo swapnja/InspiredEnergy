@@ -37,7 +37,7 @@ public class ElementHandler {
 	}
 
 	public ElementHandler waitVisible() {
-		waitPresence(15,100);
+		waitPresence();
 		_webDriverWait.until(ExpectedConditions.visibilityOf(_webElement));
 		return this;
 	}
