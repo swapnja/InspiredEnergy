@@ -11,3 +11,4 @@ target/
 .settings/org.eclipse.jdt.core.prefs
 .png
 .xml
+/AutoII.xml
