@@ -1,6 +1,6 @@
 // Electricity   Meters   Validation: Valid Green   Status:Passed
 
-package com.Budgets.Utility.Electricity;
+package com.Budgets.Utility.Electricity.Electricity3;
 
 import com.Budgets.AbstractTestNg;
 import com.Budgets.PageHandlers.CommonPageHandler;

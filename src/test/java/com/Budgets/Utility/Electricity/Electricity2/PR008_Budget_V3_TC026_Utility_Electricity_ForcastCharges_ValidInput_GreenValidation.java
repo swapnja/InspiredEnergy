@@ -1,6 +1,6 @@
 //Electricity_Forcast Charges_ Validation:Green       Status:Passed
 
-package com.Budgets.Utility.Electricity;
+package com.Budgets.Utility.Electricity.Electricity2;
 
 import com.Budgets.AbstractTestNg;
 import com.Budgets.PageHandlers.CommonPageHandler;

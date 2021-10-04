@@ -1,5 +1,5 @@
 // Electricity    KVArh     Validation:AAR    status:Passed
-package com.Budgets.Utility.Electricity;
+package com.Budgets.Utility.Electricity.Electricity1;
 
 import com.Budgets.AbstractTestNg;
 import com.Budgets.PageHandlers.CommonPageHandler;
