@@ -1,6 +1,6 @@
 //Meters_Red Validation_21Oct 2019_Completed
 
-package com.Budgets.Utility.Electricity;
+package com.Budgets.Utility.Electricity.Electricity1;
 
 import com.Budgets.AbstractTestNg;
 import com.Budgets.PageHandlers.CommonPageHandler;

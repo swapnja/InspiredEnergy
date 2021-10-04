@@ -104,10 +104,9 @@
                <suiteXmlFile>testng-failed.xml</suiteXmlFile>
                -->
             <suiteXmlFile>AutoII.xml</suiteXmlFile>       
-            <suiteXmlFile>testng-failed.xml</suiteXmlFile>              
+                    
             <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
-            <suiteXmlFile>testng-failed.xml</suiteXmlFile>
-           
+                     
           </suiteXmlFiles>
         </configuration>
       </plugin>
