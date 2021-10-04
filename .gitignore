@@ -5,6 +5,7 @@ test-output/AutoII
 test-output/Carbon Intensity Test Cases
 test-output/old/AutoII
 test-output/old/Carbon Intensity Test Cases
+FailureOutput/Screenshots/PriceCast
 target/
 /bin/
 .classpath
@@ -12,3 +13,4 @@ target/
 .png
 .xml
 /AutoII.xml
+test-output
