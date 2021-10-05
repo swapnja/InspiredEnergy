@@ -5,6 +5,8 @@
 		<packages>
 			<package name="com.Budgets.Utility.Electricity.Electricity1" />
 			<package name="com.Budgets.Utility.Electricity.Electricity2" />
+			<package name="com.Budgets.Utility.Electricity.Electricity3" />
+			<package name="com.Budgets.Utility.Electricity.Electricity4" />
 		</packages>
 	</test>
 </suite>
