@@ -3,7 +3,8 @@
 <suite name="com.Budgets.Utility.Electricity" thread-count="4" verbose="1" configfailurepolicy="continue" parallel="tests">
 	<test name="Budgets Utility Electricity">
 		<packages>
-			<package name="com.Budgets.Utility.Electricity" />
+			<package name="com.Budgets.Utility.Electricity.Electricity1" />
+			<package name="com.Budgets.Utility.Electricity.Electricity2" />
 		</packages>
 	</test>
 </suite>
