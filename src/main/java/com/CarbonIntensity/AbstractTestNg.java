@@ -8,6 +8,7 @@ import com.Budgets.FailureUtils;
 import com.Budgets.TimeStampPageHandler;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -39,6 +40,7 @@ public class AbstractTestNg {
         webDriverHandler = new WebDriverHandler(driver);
        // webDriverHandler = new WebDriverHandler(ChromeDriverOptions.getHeadlessBrowser());
         driver.manage().window().maximize();
+        DesiredCapabilities caps = new DesiredCapabilities(); caps.setCapability("resolution", "1920x1080");
         driver.get(prop.getProperty("url"));
         logCIR = new LoginPageHandler(webDriverHandler, prop);
         logCIR.Login();
@@ -60,6 +62,6 @@ public class AbstractTestNg {
 
     @AfterClass
     public void terminateBrowser() {
-        driver.quit();
+      //  driver.quit();
     }
 }
