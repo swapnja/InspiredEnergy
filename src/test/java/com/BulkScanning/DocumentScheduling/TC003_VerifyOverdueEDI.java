@@ -13,7 +13,7 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
   public TC003_VerifyOverdueEDI() throws IOException {
   }
 
-  @Test
+  //@Test
     public void OverdueEDIsTable() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
@@ -21,7 +21,7 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
         overdueEDI.loadOverdueEDIs();
     }
 
-    @Test
+    //@Test
     public void OverdueEDIFilterApply() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
@@ -31,7 +31,7 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
         overdueEDI.filterOverdueEDI("Status", "Scheduled", "EDI Received");
     }
 
-    @Test
+    //@Test
     public void OverdueEDIFilterReset() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
@@ -40,21 +40,21 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
         overdueEDI.filterReset();
     }
 
-    @Test
+    //@Test
     public void OverdueEDISearch() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
         overdueEDI.searchSchedules("SCHEDULE 4");
     }
 
-    @Test
+    //@Test
     public void OverdueEDIExportExcel() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
         overdueEDI.exportExcel("55", "93", "104");
     }
 
-    @Test
+    //@Test
     public void OverdueEDIBulkAction() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
@@ -63,7 +63,7 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
         overdueEDI.setBulkAssignee("IP Dev 2");
     }
 
-    @Test
+    //@Test
     public void OverdueEDIErrorValidations() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();
@@ -72,7 +72,7 @@ public class TC003_VerifyOverdueEDI extends AbstractTestNg {
         Assert.fail();
     }
 
-    @Test
+    //@Test
     public void OverdueEDIEditSchedule() {
         OverdueEDI overdueEDI = new OverdueEDI(webDriverHandler);
         overdueEDI.accessOverdueEDIs();

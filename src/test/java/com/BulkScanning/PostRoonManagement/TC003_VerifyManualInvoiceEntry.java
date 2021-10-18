@@ -52,7 +52,7 @@ public class TC003_VerifyManualInvoiceEntry extends AbstractTestNg {
     public void ManualInvoiceEntryErrorValidations() {
         ManualInvoiceEntry manualInvoiceEntry = new ManualInvoiceEntry(webDriverHandler);
         manualInvoiceEntry.accessManualInvoiceEntry();
-        manualInvoiceEntry.editSchedule("B&M Retail", "333");
+        manualInvoiceEntry.editSchedule("B&M Retail", "383");
         manualInvoiceEntry.errorValidations();
     }
 
@@ -60,7 +60,7 @@ public class TC003_VerifyManualInvoiceEntry extends AbstractTestNg {
     public void ManualInvoiceEntryVerifyEdit() {
         ManualInvoiceEntry manualInvoiceEntry = new ManualInvoiceEntry(webDriverHandler);
         manualInvoiceEntry.accessManualInvoiceEntry();
-        manualInvoiceEntry.editSchedule("B&M Retail", "333");
+        manualInvoiceEntry.editSchedule("B&M Retail", "383");
         manualInvoiceEntry.verifyEdit();
     }
 
@@ -68,7 +68,7 @@ public class TC003_VerifyManualInvoiceEntry extends AbstractTestNg {
     public void ManualInvoiceEntryEdit() {
         ManualInvoiceEntry manualInvoiceEntry = new ManualInvoiceEntry(webDriverHandler);
         manualInvoiceEntry.accessManualInvoiceEntry();
-        manualInvoiceEntry.editSchedule("B&M Retail", "333");
+        manualInvoiceEntry.editSchedule("B&M Retail", "383");
         manualInvoiceEntry.changeAssignment("Ankit Jain");
         manualInvoiceEntry.addComment("Comment for Manual Entry");
         manualInvoiceEntry.downloadScanned();
@@ -81,9 +81,9 @@ public class TC003_VerifyManualInvoiceEntry extends AbstractTestNg {
     public void ManualInvoiceMeta() {
         ManualInvoiceEntry manualInvoiceEntry = new ManualInvoiceEntry(webDriverHandler);
         manualInvoiceEntry.accessManualInvoiceEntry();
-        manualInvoiceEntry.editSchedule("B&M Retail", "333");
+        manualInvoiceEntry.editSchedule("B&M Retail", "383");
         manualInvoiceEntry.verifyMetaData();
-        manualInvoiceEntry.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        manualInvoiceEntry.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

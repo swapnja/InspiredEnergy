@@ -55,14 +55,24 @@ public class TC001_VerifyEmailProcessing extends AbstractTestNg {
     }
 
     @Test
+    public void EmailProcessingVerifyToggle() {
+        EmailProcessing emailProcessing = new EmailProcessing(webDriverHandler);
+        emailProcessing.accessEmailProcessing();
+        emailProcessing.editSchedule("74");
+        emailProcessing.verifyEdit();
+        emailProcessing.setAction("Edit By Page");
+        emailProcessing.setAction("Edit By Range");
+    }
+
+    @Test
     public void EmailProcessingEdit() {
         EmailProcessing emailProcessing = new EmailProcessing(webDriverHandler);
         emailProcessing.accessEmailProcessing();
         emailProcessing.editSchedule("74");
         emailProcessing.verifyEdit();
         //emailProcessing.setAction("to@inspiredenergy.com", "cc@inspiredenergy.com", "Subject to be typed.", "Message to Type.");
-        //emailProcessing.changeAssignment("Me");
-        //emailProcessing.addComment("Comment for Email Processing");
+        emailProcessing.changeAssignment("Me");
+        emailProcessing.addComment("Comment for Email Processing");
         emailProcessing.view("Merged 10-05.pdf");
         emailProcessing.send("Merged 10-10.pdf");
         //emailProcessing.setAction("Mark As Chased", "Chased Message");

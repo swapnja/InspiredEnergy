@@ -84,7 +84,7 @@ public class TC004_VerifyOtherDocumentEntry extends AbstractTestNg {
         otherDocumentEntry.accessOtherDocumentEntry();
         otherDocumentEntry.editSchedule("B&M Retail", "356");
         otherDocumentEntry.verifyMetaData();
-        otherDocumentEntry.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        otherDocumentEntry.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

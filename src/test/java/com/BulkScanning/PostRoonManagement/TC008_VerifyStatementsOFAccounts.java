@@ -23,6 +23,7 @@ public class TC008_VerifyStatementsOFAccounts extends AbstractTestNg {
     public void StatementsOfAccountsFilterApply() {
         StatementsOfAccounts statementsOfAccounts = new StatementsOfAccounts(webDriverHandler);
         statementsOfAccounts.accessStatementsOfAccounts();
+        statementsOfAccounts.filterStatementsOfAccounts("Parent", "Not Applicable");
         statementsOfAccounts.filterStatementsOfAccounts("Customer", "Ability Tec Ltd", "Airtricity");
         statementsOfAccounts.filterStatementsOfAccounts("Supplier", "BES", "CNG");
     }
@@ -31,6 +32,7 @@ public class TC008_VerifyStatementsOFAccounts extends AbstractTestNg {
     public void StatementsOfAccountsFilterReset() {
         StatementsOfAccounts statementsOfAccounts = new StatementsOfAccounts(webDriverHandler);
         statementsOfAccounts.accessStatementsOfAccounts();
+        statementsOfAccounts.filterStatementsOfAccounts("Parent", "Not Applicable");
         statementsOfAccounts.filterStatementsOfAccounts("Customer", "Ability Tec Ltd", "Airtricity");
         statementsOfAccounts.filterStatementsOfAccounts("Supplier", "BES", "CNG");
         statementsOfAccounts.filterReset();
@@ -74,9 +76,9 @@ public class TC008_VerifyStatementsOFAccounts extends AbstractTestNg {
     public void StatementsOfAccountsMeta() {
         StatementsOfAccounts statementsOfAccounts = new StatementsOfAccounts(webDriverHandler);
         statementsOfAccounts.accessStatementsOfAccounts();
-        statementsOfAccounts.editSchedule("Mersey Care", "912");
+        statementsOfAccounts.editSchedule("Mersey Care", "51");
         statementsOfAccounts.verifyMetaData();
-        statementsOfAccounts.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        statementsOfAccounts.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

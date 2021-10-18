@@ -74,9 +74,9 @@ public class TC010_VerifyReferredToDataAnalyst extends AbstractTestNg {
     public void ReferredToDataAnalystMeta() {
         ReferredToDataAnalyst referredToDataAnalyst = new ReferredToDataAnalyst(webDriverHandler);
         referredToDataAnalyst.accessReferredToDataAnalyst();
-        referredToDataAnalyst.editSchedule("B&M Retail", "1011");
+        referredToDataAnalyst.editSchedule("B&M Retail", "69");
         referredToDataAnalyst.verifyMetaData();
-        referredToDataAnalyst.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        referredToDataAnalyst.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

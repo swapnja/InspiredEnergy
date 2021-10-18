@@ -86,7 +86,7 @@ public class TC006_VerifyDuplicateDocuments extends AbstractTestNg {
         duplicateDocuments.accessDuplicateDocuments();
         duplicateDocuments.editSchedule("B&M Retail", "290");
         duplicateDocuments.verifyMetaData();
-        duplicateDocuments.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        duplicateDocuments.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

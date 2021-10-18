@@ -11,21 +11,21 @@ public class TC001_VerifyScheduleManagement extends AbstractTestNg {
     public TC001_VerifyScheduleManagement() throws IOException {
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementTable() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
         scheduleManagement.columnVerification();
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementDelete() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
         scheduleManagement.deleteSchedules("Automation");
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementFilter() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
@@ -35,21 +35,21 @@ public class TC001_VerifyScheduleManagement extends AbstractTestNg {
         scheduleManagement.resetDocFilter();
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementSearch() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
         scheduleManagement.searchSchedules("Automation");
     }
 
-    @Test
+   // @Test
     public void ScheduleManagementEdit() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
         scheduleManagement.editSchedules("For the Edit");
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementEditScheduleTab() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
@@ -59,7 +59,7 @@ public class TC001_VerifyScheduleManagement extends AbstractTestNg {
         scheduleManagement.deleteSchedules("Edited");
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementEditAssignmentTab() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
@@ -69,7 +69,7 @@ public class TC001_VerifyScheduleManagement extends AbstractTestNg {
         scheduleManagement.deleteSchedules("Edited");
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementAddNewSchedule() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();
@@ -81,7 +81,7 @@ public class TC001_VerifyScheduleManagement extends AbstractTestNg {
         scheduleManagement.addScheduleEnd("Notes", "Email", "rahul.dash@cloudenergysoftware.com");
     }
 
-    @Test
+    //@Test
     public void ScheduleManagementErrorValidation() {
         ScheduleManagement scheduleManagement = new ScheduleManagement(webDriverHandler);
         scheduleManagement.accessScheduleManagement();

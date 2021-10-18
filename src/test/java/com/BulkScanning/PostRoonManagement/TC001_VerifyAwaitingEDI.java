@@ -53,7 +53,7 @@ public class TC001_VerifyAwaitingEDI extends AbstractTestNg {
     public void AwaitingEDIErrorValidations() {
         AwaitingEDI awaitingEDI = new AwaitingEDI(webDriverHandler);
         awaitingEDI.accessAwaitingEDI();
-        awaitingEDI.editSchedule("131");
+        awaitingEDI.editSchedule("11");
         awaitingEDI.errorValidations();
     }
 
@@ -61,7 +61,7 @@ public class TC001_VerifyAwaitingEDI extends AbstractTestNg {
     public void AwaitingEDIVerifyEdit() {
         AwaitingEDI awaitingEDI = new AwaitingEDI(webDriverHandler);
         awaitingEDI.accessAwaitingEDI();
-        awaitingEDI.editSchedule("131");
+        awaitingEDI.editSchedule("11");
         awaitingEDI.verifyEdit();
     }
 
@@ -80,12 +80,41 @@ public class TC001_VerifyAwaitingEDI extends AbstractTestNg {
     }
 
     @Test
+    public void AwaitingEDIMoveTOmanual() {
+        AwaitingEDI awaitingEDI = new AwaitingEDI(webDriverHandler);
+        awaitingEDI.accessAwaitingEDI();
+        awaitingEDI.editSchedule("259");
+        awaitingEDI.downloadScanned();
+        awaitingEDI.setAction("to@inspiredenergy.com", "cc@inspiredenergy.com", "Subject to be typed.", "Message to Type.");
+        awaitingEDI.changeAssignment("Me");
+        awaitingEDI.addComment("Comment for Awaiting EDI");
+        awaitingEDI.setAction("Mark As Chased", "Chased Message");
+        awaitingEDI.checkChaseHistory("Comment");
+        awaitingEDI.checkChaseHistory("01/08/2021 16:15", "IP Dev 2", "Email");
+    }
+
+    @Test
+    public void AwaitingEDIRetryMatch() {
+        AwaitingEDI awaitingEDI = new AwaitingEDI(webDriverHandler);
+        awaitingEDI.accessAwaitingEDI();
+        awaitingEDI.editSchedule("259");
+        awaitingEDI.downloadScanned();
+        awaitingEDI.setAction("to@inspiredenergy.com", "cc@inspiredenergy.com", "Subject to be typed.", "Message to Type.");
+        awaitingEDI.changeAssignment("Me");
+        awaitingEDI.addComment("Comment for Awaiting EDI");
+        awaitingEDI.setAction("Mark As Chased", "Chased Message");
+        awaitingEDI.checkChaseHistory("Comment");
+        awaitingEDI.checkChaseHistory("01/08/2021 16:15", "IP Dev 2", "Email");
+    }
+
+
+    @Test
     public void AwaitingEDIMeta() {
         AwaitingEDI awaitingEDI = new AwaitingEDI(webDriverHandler);
         awaitingEDI.accessAwaitingEDI();
         awaitingEDI.editSchedule("259");
         awaitingEDI.verifyMetaData();
-        awaitingEDI.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        awaitingEDI.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

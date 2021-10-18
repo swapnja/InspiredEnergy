@@ -44,10 +44,10 @@ public class TC007_VerifyDuplicateInvestigation extends AbstractTestNg {
     }
 
     @Test
-    public void DuplicateInvestigationErrorValidations() {
+    public void DuplicateInvestigationErrorValidations() throws InterruptedException {
         DuplicateInvestigation duplicateInvestigation = new DuplicateInvestigation(webDriverHandler);
         duplicateInvestigation.accessDuplicateInvestigation();
-        duplicateInvestigation.editSchedule("Boardlink Ltd.", "974");
+        duplicateInvestigation.editSchedule("Boardlink Ltd.");
         duplicateInvestigation.errorValidations();
     }
 
@@ -55,7 +55,7 @@ public class TC007_VerifyDuplicateInvestigation extends AbstractTestNg {
     public void DuplicateInvestigationVerifyEdit() {
         DuplicateInvestigation duplicateInvestigation = new DuplicateInvestigation(webDriverHandler);
         duplicateInvestigation.accessDuplicateInvestigation();
-        duplicateInvestigation.editSchedule("B&M Retail", "154");
+        duplicateInvestigation.editSchedule("B&M Retail");
         duplicateInvestigation.verifyEdit();
     }
 
@@ -63,7 +63,7 @@ public class TC007_VerifyDuplicateInvestigation extends AbstractTestNg {
     public void DuplicateInvestigationEdit() {
         DuplicateInvestigation duplicateInvestigation = new DuplicateInvestigation(webDriverHandler);
         duplicateInvestigation.accessDuplicateInvestigation();
-        duplicateInvestigation.editSchedule("Boardlink Ltd.", "974");
+        duplicateInvestigation.editSchedule("Boardlink Ltd.");
         duplicateInvestigation.changeAssignment("Me");
         duplicateInvestigation.addComment("Comment for Duplicate Documents");
         duplicateInvestigation.downloadScanned();
@@ -74,9 +74,9 @@ public class TC007_VerifyDuplicateInvestigation extends AbstractTestNg {
     public void DuplicateInvestigationMeta() {
         DuplicateInvestigation duplicateInvestigation = new DuplicateInvestigation(webDriverHandler);
         duplicateInvestigation.accessDuplicateInvestigation();
-        duplicateInvestigation.editSchedule("Boardlink Ltd.", "974");
+        duplicateInvestigation.editSchedule("B&M Retail");
         duplicateInvestigation.verifyMetaData();
-        duplicateInvestigation.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        duplicateInvestigation.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

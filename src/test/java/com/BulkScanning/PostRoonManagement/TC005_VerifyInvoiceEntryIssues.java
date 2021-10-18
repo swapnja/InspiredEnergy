@@ -81,9 +81,9 @@ public class TC005_VerifyInvoiceEntryIssues extends AbstractTestNg {
     public void InvoiceEntryIssuesMeta() {
         InvoiceEntryIssues invoiceEntryIssues = new InvoiceEntryIssues(webDriverHandler);
         invoiceEntryIssues.accessInvoiceEntryIssues();
-        invoiceEntryIssues.editSchedule("B&M Retail", "152");
+        invoiceEntryIssues.editSchedule("B&M Retail", "151");
         invoiceEntryIssues.verifyMetaData();
-        invoiceEntryIssues.editMetaData("INVOICE", "", "", "", "", "", "Water");
+        invoiceEntryIssues.editMetaData("INVOICE", "", "", "", "", "", "", "Water");
     }
 
     @Test

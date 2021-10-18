@@ -12,7 +12,7 @@ public class TC002_VerifyDocumentSchedule extends AbstractTestNg {
     public TC002_VerifyDocumentSchedule() throws IOException {
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleTable() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
@@ -20,7 +20,7 @@ public class TC002_VerifyDocumentSchedule extends AbstractTestNg {
         documentScheduling.loadDocumentSchedule();
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleManagementFilterApply() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
@@ -28,7 +28,7 @@ public class TC002_VerifyDocumentSchedule extends AbstractTestNg {
         documentScheduling.filterDocumentSchedule("Supplier", "BES", "CNG");
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleManagementFilterReset() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
@@ -37,21 +37,21 @@ public class TC002_VerifyDocumentSchedule extends AbstractTestNg {
         documentScheduling.filterReset();
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleManagementSearch() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
         documentScheduling.searchSchedules("Test Delete Schedule");
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleExportExcel() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
         documentScheduling.exportExcel("16", "31", "91");
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleErrorValidations() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();
@@ -59,7 +59,7 @@ public class TC002_VerifyDocumentSchedule extends AbstractTestNg {
         documentScheduling.errorValidations();
     }
 
-    @Test
+    //@Test
     public void DocumentScheduleEditSchedule() {
         DocumentSchedule documentScheduling = new DocumentSchedule(webDriverHandler);
         documentScheduling.accessDocumentSchedule();

@@ -23,6 +23,7 @@ public class TC009_VerifyDocumentHistory extends AbstractTestNg {
     public void DocumentHistoryFilterApply() {
         DocumentHistory documentHistory = new DocumentHistory(webDriverHandler);
         documentHistory.accessDocumentHistory();
+        documentHistory.filterDocumentHistory("Parent", "Not Applicable");
         documentHistory.filterDocumentHistory("Customer", "Ability Tec Ltd", "Airtricity");
         documentHistory.filterDocumentHistory("Supplier", "BES", "CNG");
     }
@@ -31,8 +32,9 @@ public class TC009_VerifyDocumentHistory extends AbstractTestNg {
     public void DocumentHistoryFilterReset() {
         DocumentHistory documentHistory = new DocumentHistory(webDriverHandler);
         documentHistory.accessDocumentHistory();
+        documentHistory.filterDocumentHistory("Parent", "Not Applicable");
         documentHistory.filterDocumentHistory("Customer", "Ability Tec Ltd", "Airtricity");
-        documentHistory.filterDocumentHistory("Supplier", "BES", "CNG");
+        documentHistory.filterDocumentHistory("Supplier", "BES", "CNG   ");
         documentHistory.filterReset();
     }
 
@@ -47,8 +49,8 @@ public class TC009_VerifyDocumentHistory extends AbstractTestNg {
     public void DocumentHistoryEdit() {
         DocumentHistory documentHistory = new DocumentHistory(webDriverHandler);
         documentHistory.accessDocumentHistory();
-        documentHistory.editSchedule("B&M Retail", "1011");
+        documentHistory.editSchedule("BPG Energy", "1390");
         documentHistory.downloadScanned();
+        documentHistory.verifyEditPage();
     }
-
 }
