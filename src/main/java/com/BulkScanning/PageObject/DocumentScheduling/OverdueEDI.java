@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 import java.nio.file.Paths;
 
+@Deprecated
 public class OverdueEDI {
 
     //SCE - Send Chase Email

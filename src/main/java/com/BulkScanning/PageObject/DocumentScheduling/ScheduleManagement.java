@@ -4,6 +4,7 @@ import com.Base.SeleniumHandlers.ElementHandler;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import org.testng.Assert;
 
+@Deprecated
 public class ScheduleManagement {
     WebDriverHandler _webDriverHandler;
     ElementHandler tabScheduleManagement;

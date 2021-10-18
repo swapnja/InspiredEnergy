@@ -2,7 +2,6 @@ package com.BulkScanning.PageObject.EmailProcessing;
 
 import com.Base.SeleniumHandlers.ElementHandler;
 import com.Base.SeleniumHandlers.WebDriverHandler;
-import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
@@ -46,7 +45,6 @@ public class EmailProcessing {
     //Edit By Page
     ElementHandler ddEditByPageAction;
     ElementHandler ddOutputMode;
-    ElementHandler ddDocumentType;
     ElementHandler btnEditByPage;
     ElementHandler btnEditByRange;
     ElementHandler btnCreateOutput;
@@ -92,7 +90,6 @@ public class EmailProcessing {
 
         ddEditByPageAction = _webDriverHandler.byXpath("//*[@id='documentStatus']");
         ddOutputMode = _webDriverHandler.byXpath("//*[@id='outputMode']");
-        ddDocumentType = _webDriverHandler.byXpath("//*[@id='documentType']");
         btnEditByPage = _webDriverHandler.byXpath("//button[contains(@class, 'edit-by-page')]");
         btnEditByRange = _webDriverHandler.byXpath("//button[contains(@class, 'edit-by-range')]");
         btnCreateOutput = _webDriverHandler.byXpath("//button[contains(@class, 'createOutput')]");
@@ -101,11 +98,14 @@ public class EmailProcessing {
         btnReturnCancel = _webDriverHandler.byXpath("//button[contains(@class, 'btn-danger')]");
     }
 
-    public String[] tblOverdueEDIs = new String[]{"", "", "Id", "From", "Subject", "Attachments", "Received Date", "Status", "Assigned", ""};
-    public String[] arrOverdueEDIs = new String[10];
+    public String[] tblEmailProcessing = new String[]{"", "", "Id", "From", "Subject", "Attachments", "Received Date", "Status", "Assigned", ""};
+    public String[] arrEmailProcessing = new String[10];
 
     String strErrorGeneric = "Message cannot be blank";
 
+    /**
+     * Used to select Email Processing Tab under Email Processing.
+     */
     public void accessEmailProcessing() {
         do {
             tabEmailProcessing.waitClickable().click();
@@ -117,16 +117,23 @@ public class EmailProcessing {
         while (search.notPresent());
     }
 
+    /**
+     * This method verifies the column header for the table present on the email processing page in a sequential order and matches the
+     column names with the data array {@link EmailProcessing#tblEmailProcessing}.
+     */
     public void columnVerification() {
-        for (int i = 0; i < arrOverdueEDIs.length; i++) {
-            arrOverdueEDIs[i] = _webDriverHandler.byXpath("//table[contains(@id, 'DataTables_Table')]/thead/tr/th[" + (i + 1) + "]").getText();
-            if (!(tblOverdueEDIs[i].equals(arrOverdueEDIs[i]))) {
+        for (int i = 0; i < arrEmailProcessing.length; i++) {
+            arrEmailProcessing[i] = _webDriverHandler.byXpath("//table[contains(@id, 'DataTables_Table')]/thead/tr/th[" + (i + 1) + "]").getText();
+            if (!(tblEmailProcessing[i].equals(arrEmailProcessing[i]))) {
                 Assert.fail("\nColumn names do not match.");
             }
         }
         System.out.println("\nColumn names match.");
     }
 
+    /**
+     * Verifies the presence of all the essential fields and buttons for the page, in turn verifying if the page has loaded properly or not.
+     */
     public void loadEmailProcessing() {
         if (btnDdFrom.isDisplayed() && btnDdPriority.isDisplayed() && btnDdStatus.isDisplayed() && dateFrom.isDisplayed() &&
                 btnDdAssigned.isDisplayed() && dateTo.isDisplayed() && search.isDisplayed() && btnApply.isDisplayed() && btnReset.isDisplayed() &&
@@ -138,11 +145,20 @@ public class EmailProcessing {
         }
     }
 
+    /**
+     * Used to search an entry from the table and the search term is passed as parameter. Verifying the search functionality.
+     * @param term The term we need to input in the search field for filtering.
+     */
     public void searchSchedules(String term) {
         search.waitClickable().sendKeys(term);
         waitLoad();
     }
 
+    /**
+     * Used to select multiple entries from the awaiting EDI table and then export them to an Excel file, verifying the export functionality, multiselect is possible.
+     *
+     * @param selection An array of string containing id of the entries we are trying to select.
+     */
     public void exportExcel(String[] selection) {
         for (String t : selection) {
             _webDriverHandler.byXpath("//tr[td[contains(text(), '" + t + "')]]//input").click();
@@ -150,6 +166,13 @@ public class EmailProcessing {
         btnExportExcel.waitClickable().click();
     }
 
+    /**
+     * Used to filter out the entries based on the various filter categories available, multiselect is possible.
+     * Verifying the filtering functionality for the application.
+     *
+     * @param filterType Select what category of filter we need to use.
+     * @param text       A Vararg array of Strings, containing value of the selections we are trying to filter.
+     */
     public void filterEmailProcessing(String filterType, String... text) {
         switch (filterType) {
             case "From":
@@ -184,6 +207,13 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Filtering the contents of Awaiting EDI table by the date of their creation in the DB.
+     * Provide a date range and all the creation within that range should be returned, verifying the date filter for the application.
+     *
+     * @param fromDate Start for the date range.
+     * @param toDate   End of the date range.
+     */
     public void filterByDate(String toDate, String fromDate) {
         dateTo.waitClickable().sendKeys(toDate);
         dateFrom.waitClickable().sendKeys(fromDate);
@@ -191,13 +221,24 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Resets the applied filter, verifying the reset filter functionality.
+     */
     public void filterReset() {
         btnReset.waitClickable().click();
         waitLoad();
     }
 
+    /**
+     * Used to verify the functionality of Bulk actions:
+     * <ul>
+     *     <li>Bulk Assign</li>
+     * </ul>
+     * <p>
+     * Note: Need to filter out all required entries, because selectAll is used.
+     * @param user   User on whom you want to assign the selected entries.
+     */
     public void setBulkAssignee(String user) {
-        // Use filter function to filter out all required entries.
         selectAll.waitClickable().click();
         ddBulkAction.waitClickable().selectByText("Bulk Assign");
         ddUsers.waitClickable().selectByText(user);
@@ -205,6 +246,13 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Used to verify the functionality of Bulk actions:
+     * <ul>
+     *     <li>Bulk Assign</li>
+     * </ul>
+     * @param bulkData A String Vararg, of which the first value will be used to search for a term, the second value should be id for selecting the entry. Do not provide more than 2 values.
+     */
     public void setBulkAssignee(String... bulkData) {
         searchSchedules(bulkData[0]);
         _webDriverHandler.byXpath("//tr[@id='" + bulkData[1] + "']//td//input").waitClickable().click();
@@ -214,12 +262,19 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Used to select and edit a particular entry from the table. Verifying the search and edit functionality.
+     * @param id The id of the entry we want to edit.
+     */
     public void editSchedule(String id) {
         searchSchedules(id);
         _webDriverHandler.byXpath("//tr[td[contains(text(), '" + id + "')]]//button").click();
         waitLoad();
     }
 
+    /**
+     * Verifies the presence of all the essential fields and buttons for the page after clicking on the edit button, in turn verifying if the page has loaded properly or not.
+     */
     public void verifyEdit() {
         if (tbFrom.isDisplayed() && tbFrom.getAttribute("readonly").equalsIgnoreCase("true") && tbSubject.isDisplayed() && tbSubject.getAttribute("readonly")
                 .equalsIgnoreCase("true") && tbMessage.isDisplayed() && tbMessage.getAttribute("readonly").equalsIgnoreCase("true") && tbStatus.isDisplayed()
@@ -231,6 +286,10 @@ public class EmailProcessing {
         }
     }
 
+    /**
+     * Change the assignment of the current document to a new assignee.
+     * @param user Provide the name of the user you want this document to be assigned to.
+     */
     public void changeAssignment(String user) {
         if (user.equals("Me")) {
             linkAssignToMe.waitClickable().click();
@@ -240,11 +299,19 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Select a file from the available file for the entry and click on the view button for it. Verifying the view document functionality.
+     * @param fileName Exact name of the file you intend to view.
+     */
     public void view(String fileName) {
         _webDriverHandler.byXpath("//button[contains(@data-path, '" + fileName + "')]").waitClickable().click();
         btnViewCancel.waitClickable().click();
     }
 
+    /**
+     * After clicking on the view button for a file, use this to verify the send functionality for the file.
+     * @param fileName Exact name of the file you intend to view and send.
+     */
     public void send(String fileName) {
         _webDriverHandler.byXpath("//button[contains(@data-path, '" + fileName + "')]").scrollDown().waitClickable().click();
         btnViewSend.waitClickable().click();
@@ -252,13 +319,21 @@ public class EmailProcessing {
                 "View button is not hidden.");
     }
 
+    /**
+     * Used to verify the functionality of the following action dropdowns once we are on the edit page of an entry:
+     * <ul>
+     *      <li>Edit By Page</li>
+     *      <li>Edit By Range</li>
+     * </ul>
+     * @param action Specify the action that you want to test from the actions dropdown.
+     */
     public void setAction(String action){
         ddAction.waitClickable().selectByText(action);
         if (action.equalsIgnoreCase("Edit By Page")) {
-            Assert.assertTrue(btnEditByRange.isDisplayed());
+            Assert.assertTrue(btnEditByRange.isDisplayed(), "Edit Toggle button is not present.");
         }
         else if (action.equalsIgnoreCase("Edit By Range")) {
-            Assert.assertTrue(btnEditByPage.isDisplayed());
+            Assert.assertTrue(btnEditByPage.isDisplayed(), "Edit Toggle button is not present.");
         }
         else if (action.equalsIgnoreCase("Mark as Done")) {
             //btnYes.waitClickable().click();
@@ -266,6 +341,18 @@ public class EmailProcessing {
         }
     }
 
+    /**
+     * Used to manipulate the pages within the Edit by modal, and verify the following actions:
+     * <ul>
+     *     <li>View - Click on the view icon for a page.</li>
+     *     <li>Add - Click on the add icon for a page and add it to splits.</li>
+     *     <li>Delete - Delete a certain page from the splits created.</li>
+     *     <li>Page Up - Move a page up by one page in the splits.</li>
+     *     <li>Page Down -  Move a page down by one page in the splits.</li>
+     * </ul>
+     * @param action To set the action we want to perform in the Edit By modal;
+     * @param pageNo The page on which you want the action to be performed.
+     */
     public void editBy(String action, int pageNo) {
         switch (action) {
             case "View":
@@ -286,7 +373,19 @@ public class EmailProcessing {
         }
     }
 
-    public void editByActions(String action, String outputMode, String documentType, String message) {
+    /**
+     * To verify the actions that are present in the Edit by Modal.
+     * <ul>
+     *     <li>Select All - Selects all pages for split.</li>
+     *     <li>Deselect All - Deselects all selected pages, and clears the splits.</li>
+     *     <li>Postroom - Selects the option Send document to Postroom.</li>
+     *     <li>Return - Selects the option Return To Sender.</li>
+     * </ul>
+     * @param action provide the action you want to test.
+     * @param outputMode Provide the output mode while sending to postroom.
+     * @param message Provide the message explaining why it is being returned to sender.
+     */
+    public void editByActions(String action, String outputMode, String message) {
         switch (action) {
             case "Select All":
                 _webDriverHandler.byXpath("//button[contains(@class, 'select-all')]").waitClickable().click();
@@ -297,7 +396,6 @@ public class EmailProcessing {
             case "Postroom":
                 ddEditByPageAction.waitClickable().selectByText("Send Document to Postroom");
                 ddOutputMode.waitClickable().selectByText(outputMode);
-                ddDocumentType.waitClickable().selectByText(documentType);
                 btnCreateOutput.waitClickable().click();
                 break;
             case "Return":
@@ -309,13 +407,10 @@ public class EmailProcessing {
         }
     }
 
-    public void markAsDone(String fileName) {
-        _webDriverHandler.byXpath("//button[contains(@data-path, '" + fileName + "')]").scrollDown().waitClickable().click();
-        btnViewSend.waitClickable().click();
-        Assert.assertFalse(_webDriverHandler.byXpath("//button[contains(@data-path, '" + fileName + "')]").isDisplayed(),
-                "View button is not hidden.");
-    }
-
+    /**
+     * Used to add a comment in the comment section, verifying the comment sections.
+     * @param comment The text we want to put as comment.
+     */
     public void addComment(String comment) {
         do{btnAddComment.sendKeys(Keys.ARROW_DOWN);}
         while (btnAddComment.notPresent());
@@ -325,6 +420,9 @@ public class EmailProcessing {
         waitLoad();
     }
 
+    /**
+     * Used to generate the error messages on the page and verifying them against the know data.
+     */
     public void errorValidations() {
         do{btnAddComment.sendKeys(Keys.ARROW_DOWN);}
         while (btnAddComment.notPresent());
@@ -334,6 +432,9 @@ public class EmailProcessing {
         btnCancelComment.waitClickable().click();
     }
 
+    /**
+     * A common waitload function used for handling the loaders throughout the project.
+     */
     public void waitLoad() {
         _webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
     }
