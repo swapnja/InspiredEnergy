@@ -43,7 +43,7 @@ public class PR008_Budget_V3_TC108_BudgetConsole_Electricity_InformationTab_Calc
 		iigh.InformationImportFileUpload("ElectricityContractCharges", xlPathContractCharges);
 		iigh.InformationImportFileUpload("ElectricityReferencePrices", xlPathReference);
 		iigh.InformationImportFileUpload("ElectricityPublishedView", xlPathPublishedView);
-		iigh.InformationImportFileUpload("ElectricityInspiredEnergyView", xlPathInspiredEnergyView);
+		iigh.InformationImportFileUpload("ElectricitySoftwareSolutionView", xlPathInspiredEnergyView);
 		iigh.InformationImportFileUpload("ElectricityTransmissionLossFactors", xlPathTLF);
 		iigh.InformationImportFileUpload("ElectricityDNOFactors", xlPathDNOFactors);
 		iigh.InformationImportFileUpload("ElectricityDNORAGTimes", xlPathDNORAGTimes);

@@ -24,7 +24,7 @@ public class PR008_Budget_V3_TC111_BudgetConsole_Electricity_InformationTab_Vali
 		String xlPathContractCharges= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/ContractCharges_Green.xlsx").toAbsolutePath().toString();
 		String xlPathReference= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/ReferencePrices_Green.xlsx").toAbsolutePath().toString();
 		String xlPathPublishedView= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/PublishedView_Green.xlsx").toAbsolutePath().toString(); 
-		String xlPathInspiredEnergyView= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/InspiredEnergyView_Green.xlsx").toAbsolutePath().toString();
+		String xlPathSoftwareSolutionView= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/InspiredEnergyView_Green.xlsx").toAbsolutePath().toString();
 		String xlPathTLF= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/TLF_Green.xlsx").toAbsolutePath().toString();
 		String xlPathDNOFactors= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/DNOFactors_Green.xlsx").toAbsolutePath().toString();
 		String xlPathDNORAGTimes= Paths.get("BudgetTestData/Electricity/Information/InformationTab_Green/DNORAGTimes_Green.xlsx").toAbsolutePath().toString();
@@ -45,7 +45,7 @@ public class PR008_Budget_V3_TC111_BudgetConsole_Electricity_InformationTab_Vali
 		iigh.InformationImportFileUpload("ElectricityContractCharges", xlPathContractCharges);
 		iigh.InformationImportFileUpload("ElectricityReferencePrices", xlPathReference);
 		iigh.InformationImportFileUpload("ElectricityPublishedView", xlPathPublishedView);
-		iigh.InformationImportFileUpload("ElectricityInspiredEnergyView", xlPathInspiredEnergyView);
+		iigh.InformationImportFileUpload("ElectricitySoftwareSolutionView", xlPathSoftwareSolutionView);
 		iigh.InformationImportFileUpload("ElectricityTransmissionLossFactors", xlPathTLF);
 		iigh.InformationImportFileUpload("ElectricityDNOFactors", xlPathDNOFactors);
 		iigh.InformationImportFileUpload("ElectricityDNORAGTimes", xlPathDNORAGTimes);

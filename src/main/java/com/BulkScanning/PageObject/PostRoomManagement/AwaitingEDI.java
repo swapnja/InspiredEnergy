@@ -259,13 +259,14 @@ public class AwaitingEDI {
                     _webDriverHandler.byXpath("//span[select[@id='SupplierId']]//label[contains(text(), ' " + t + "')]").click();
                 }
                 break;
-            case "Parent":
-                btnDdParentCustomers.waitClickable().click();
-                for (String t : text) {
-                    _webDriverHandler.byXpath("//span[select[@id='ParentCustomerId']]//label[contains(text(), ' " + t + "')]").click();
-                    waitLoad();
-                }
-                break;
+				/*
+				 * case "Parent": btnDdParentCustomers.waitClickable().click(); for (String t :
+				 * text) { _webDriverHandler.
+				 * byXpath("//span[select[@id='ParentCustomerId']]//label[contains(text(), ' " +
+				 * t + "')]").click(); waitLoad(); }
+				
+                break; 
+                */
             case "Status":
                 btnDdStatuses.waitClickable().click();
                 for (String t : text) {

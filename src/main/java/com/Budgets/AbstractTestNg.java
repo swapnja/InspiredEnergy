@@ -74,6 +74,6 @@ public abstract class AbstractTestNg {
 
 	@AfterClass
 	public void terminateBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 }

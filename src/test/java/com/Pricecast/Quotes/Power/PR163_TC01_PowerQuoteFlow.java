@@ -13,12 +13,11 @@ public class PR163_TC01_PowerQuoteFlow extends AbstractTestNg {
     @Test
     public void AddNewPowerQuote_Success() throws InterruptedException {
         PowerQuote powerQuote = new PowerQuote(webDriverHandler);
-        powerQuote.AddNewPowerQuote("1610027670402", 3, 123, "456", 15000, "British Gas");
+        powerQuote.AddNewPowerQuote("1610027670402", 3, 123, "456", 15000, "Axis");
         powerQuote.quoteSelection();
         powerQuote.excelFileDownload();
         powerQuote.pdfFileDownload();
     }
-
     @Test
     public void AddNewPowerQuote_MandatoryValidation() {
         PowerQuote powerQuote = new PowerQuote(webDriverHandler);

@@ -737,7 +737,7 @@ public class ImportPageHandlerElectricity {
 
 	public void genericImport(String filePath) throws InterruptedException {
 		waitLoad();
-		_webDriverHandler.byXpath(_prop.getProperty("ImportBtn")).waitClickable(10,100).click();
+		_webDriverHandler.byXpath(_prop.getProperty("ImportBtn")).waitClickable(15,100).click();
 		_webDriverHandler.byXpath(_prop.getProperty("ImportReferenceTxtBox")).waitVisible(15,100).sendKeys("Automation Import File " + appendDate);
 		_webDriverHandler.byXpath(_prop.getProperty("importNotes")).sendKeys("Automation Import File " + appendDate);
 		
