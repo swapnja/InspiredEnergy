@@ -11,7 +11,7 @@ public class PR173_TC01_CarbonIntensity extends AbstractTestNg{
     public PR173_TC01_CarbonIntensity() throws IOException {
     }
 
-  /*  @Test
+    @Test
     public void VerifyPage() {
         CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
         carbonIntensity.loadGM();
@@ -22,21 +22,20 @@ public class PR173_TC01_CarbonIntensity extends AbstractTestNg{
         carbonIntensity.loadPage();
     }
 
-	/*
-	 * @Test public void VerifyCIModal() throws InterruptedException {
-	 * CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
-	 * carbonIntensity.verifyModalCI(); }
-	 */
+	
+	 @Test public void VerifyCIModal() throws InterruptedException {
+	 CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
+	 carbonIntensity.verifyModalCI(); }
+	 
 
 
 	  @Test public void VerifyRegionalData() throws InterruptedException {
 	  CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
 	  carbonIntensity.accessRegionalChart("Regional Data", "London"); }
-	 
-/*
+	
     @Test
     public void VerifyGetInTouch() {
         CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
         carbonIntensity.accessGetInTouch();
-    } */
+    } 
 }
