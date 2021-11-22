@@ -20,7 +20,7 @@ public class LoginPageHandler {
         _webDriverHandler.byXpath(_prop.getProperty("HomeSignIn")).waitClickable(5,100).click();
         _webDriverHandler.byId(_prop.getProperty("password")).staleElementHandler().sendKeys(_prop.getProperty("AdminPassword"));
         _webDriverHandler.byXpath(_prop.getProperty("HomeSignIn")).waitClickable(15,100).click();	
-        //_webDriverHandler.byXpath(_prop.getProperty("HomeStaySignedIn")).waitVisible(15,100).waitClickable(15,100).click();
+     //   //_webDriverHandler.byXpath(_prop.getProperty("HomeStaySignedIn")).waitVisible(15,100).waitClickable(15,100).click();
         _webDriverHandler.byXpath(_prop.getProperty("HomeStaySignedIn")).waitClickable(15,100).click();
     }
 
