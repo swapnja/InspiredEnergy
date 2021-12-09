@@ -109,7 +109,7 @@
           <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
           <suiteXmlFile>Electricity.xml</suiteXmlFile>
           -->
-         <suiteXmlFile>Gas.xml</suiteXmlFile>
+         <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
