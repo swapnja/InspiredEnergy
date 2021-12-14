@@ -95,11 +95,11 @@
         <configuration>
           <suiteXmlFiles>
            <suiteXmlFile>AutoII.xml</suiteXmlFile>  
-           <!-- <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
+           <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
             <suiteXmlFile>Gas.xml</suiteXmlFile>
             <suiteXmlFile>Electricity.xml</suiteXmlFile>              
             <suiteXmlFile>ClientPortal.xml</suiteXmlFile>          
-          -->
+          
           </suiteXmlFiles>
         </configuration>
       </plugin>
