@@ -100,6 +100,7 @@
             <suiteXmlFile>Electricity.xml</suiteXmlFile>              
             <suiteXmlFile>ClientPortal.xml</suiteXmlFile>          
            -->
+           
            <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
