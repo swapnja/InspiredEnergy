@@ -1,4 +1,3 @@
-TestReport/
 test-output/old/Default suite
 test-output/junitreports	
 test-output/AutoII
@@ -6,10 +5,10 @@ test-output/Carbon Intensity Test Cases
 test-output/old/AutoII
 test-output/old/Carbon Intensity Test Cases
 FailureOutput/Screenshots/PriceCast
-target/
 /bin/
 .classpath
 .settings/org.eclipse.jdt.core.prefs
 .png
 .xml
-test-output
+
+/target/
