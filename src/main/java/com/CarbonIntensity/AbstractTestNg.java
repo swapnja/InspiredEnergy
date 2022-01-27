@@ -6,6 +6,8 @@ import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import com.Budgets.FailureUtils;
 import com.Budgets.TimeStampPageHandler;
+import com.aventstack.extentreports.model.Log;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -36,6 +38,7 @@ public class AbstractTestNg {
 
     @BeforeClass
     public void launchBrowser() {
+    
         driver = new ChromeDriver();
         webDriverHandler = new WebDriverHandler(driver);
        // webDriverHandler = new WebDriverHandler(ChromeDriverOptions.getHeadlessBrowser());

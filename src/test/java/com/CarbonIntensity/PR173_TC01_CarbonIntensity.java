@@ -1,18 +1,21 @@
 package com.CarbonIntensity;
 
-import org.testng.annotations.Test;
-
-import com.Base.ChromeDriverOptions;
-
 import java.io.IOException;
 
-public class PR173_TC01_CarbonIntensity extends AbstractTestNg{
+import org.testng.annotations.Test;
 
+import com.Base.ExtentTestManager;
+
+
+public class PR173_TC01_CarbonIntensity extends AbstractTestNg{
+//ExtentTestManager etm = new ExtentTestManager();
     public PR173_TC01_CarbonIntensity() throws IOException {
     }
 
     @Test
     public void VerifyPage() {
+    	ExtentTestManager.startTest("Crabon","CarbonTestFor SAmple");
+    	//etm.startTest("VerifyPage", "CarbonIntensity test1");
         CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
         carbonIntensity.loadGM();
         carbonIntensity.loadCI();
