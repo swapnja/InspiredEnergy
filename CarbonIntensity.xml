@@ -8,7 +8,6 @@
     <test name="Carbon Intensity">
         <packages>
           <package name="com.CarbonIntensity"/>
-          <package name="com.AutoII"/>
-        </packages>
+           </packages>
     </test>
 </suite>
