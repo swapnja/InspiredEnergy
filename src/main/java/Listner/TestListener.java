@@ -23,7 +23,8 @@ public class TestListener extends AbstractTestNg implements ITestListener {
 	}
 
 	//Extent Report Declarations
-    private static ExtentReports extent = ExtentManager.createInstance();
+    //private static ExtentReports extent = ExtentManager.createInstance();
+    private static ExtentReports extent = ExtentManager.createExtentReports();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     @Override
