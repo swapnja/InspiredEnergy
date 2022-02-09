@@ -32,8 +32,8 @@ public class ExtentReportBase {
   {
       if(result.getStatus() == ITestResult.FAILURE)
       {
-          test.log(Status.FAIL, MarkupHelper.createLabel(result.getName(),ExtentColor.RED)+" Test case FAILED due to below issues:");
-          test.fail(result.getThrowable());
+          test.log(Status.FAIL, MarkupHelper.createLabel(result.getTestClass().getName()+"-" + result.getName(),ExtentColor.RED));
+          
       }
       else if(result.getStatus() == ITestResult.SUCCESS)
       {
@@ -41,8 +41,8 @@ public class ExtentReportBase {
       }
       else
       {
-          test.log(Status.SKIP, MarkupHelper.createLabel(result.getName(), ExtentColor.ORANGE) +" Test Case SKIPPED");
-          test.skip(result.getThrowable());
+          test.log(Status.SKIP, MarkupHelper.createLabel(result.getTestClass().getName()+"-" + result.getName(), ExtentColor.ORANGE));
+  
       }
   }
 
