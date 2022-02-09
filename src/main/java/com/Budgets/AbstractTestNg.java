@@ -2,6 +2,7 @@
 
 package com.Budgets;
 
+import com.Base.ExtentReportBase;
 import com.Base.LoginPageHandler;
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
@@ -21,7 +22,7 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public abstract class AbstractTestNg {
+public abstract class AbstractTestNg extends ExtentReportBase{
 	
 	
 	public Properties prop;
