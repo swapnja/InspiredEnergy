@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Regression Testing Suite" thread-count="4"
+	verbose="1" configfailurepolicy="continue" parallel="tests">
+
+	<test name="Weekly Tes Execution">
+		<packages>
+			<package name="com.AutoII" />
+			<package name="com.CarbonIntensity" />
+			<package name ="com.ClientPortal" />
+
+		</packages>
+	</test>
+</suite>

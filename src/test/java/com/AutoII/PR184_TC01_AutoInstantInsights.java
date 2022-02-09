@@ -41,6 +41,10 @@ public class PR184_TC01_AutoInstantInsights extends AbstractTestNg{
         AutoInstantInsights autoInstantInsights = new AutoInstantInsights(webDriverHandler);
         autoInstantInsights.errorValidations();
     }
+    
+    //[TestResult name=errorValidation status=SUCCESS method=PR184_TC01_AutoInstantInsights.errorValidation
+    	//	[pri:0, instance:com.AutoII.PR184_TC01_AutoInstantInsights@1984b1f] output={null}]  (0 s)
+    
 
 //    @Test
 //    public void imageCheck() throws IOException {

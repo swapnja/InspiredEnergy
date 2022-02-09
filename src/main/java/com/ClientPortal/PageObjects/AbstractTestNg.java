@@ -2,6 +2,7 @@
 
 package com.ClientPortal.PageObjects;
 
+import com.Base.ExtentReportBase;
 import com.Base.LoginPageHandler;
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
@@ -19,7 +20,7 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 import java.util.Properties;
 
-public abstract class AbstractTestNg {
+public abstract class AbstractTestNg extends ExtentReportBase{
 
 	public Properties prop;
 	public TimeStampPageHandler ts;
@@ -64,6 +65,6 @@ public abstract class AbstractTestNg {
 
 	@AfterClass
 	public void terminateBrowser() {
-		//driver.quit();
+		driver.quit();
 	}
 }

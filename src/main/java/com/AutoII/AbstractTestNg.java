@@ -11,13 +11,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+
+import com.Base.ExtentReportBase;
 import com.Base.LoginPageHandler;
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import com.Budgets.FailureUtils;
 import com.Budgets.TimeStampPageHandler;
 
-public class AbstractTestNg {
+public class AbstractTestNg extends ExtentReportBase {
 
     public Properties prop;
     public TimeStampPageHandler ts;
