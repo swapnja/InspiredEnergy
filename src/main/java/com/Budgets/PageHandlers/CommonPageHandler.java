@@ -109,6 +109,8 @@ public class CommonPageHandler {
 	}
 
 	public void selectFirstBudgetGas() {
+		_webDriverHandler.byXpath(_prop.getProperty("sortByGas")).click().click();
+		
 		_webDriverHandler.byXpath(_prop.getProperty("CreateBudgetGas")).waitClickable(15, 100).click();
 	}
 

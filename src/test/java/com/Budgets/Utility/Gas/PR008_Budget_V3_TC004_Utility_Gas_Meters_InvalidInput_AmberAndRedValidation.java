@@ -23,7 +23,8 @@ public class PR008_Budget_V3_TC004_Utility_Gas_Meters_InvalidInput_AmberAndRedVa
 		customersPageHandler.filterCustomers("Automation");
 		customersPageHandler.selectFirstCustomer();
 		CommonPageHandler budgetPageHandler = new CommonPageHandler(webDriverHandler, prop);
-		budgetPageHandler.selectFirstBudgetGas();
+		
+		budgetPageHandler.createBudgetCustomGas();
 		ImportPageHandlerGas importPageHandler = new ImportPageHandlerGas(webDriverHandler, prop);
 		importPageHandler.ImportMeterAARFile();
 		importPageHandler.verifyImport();

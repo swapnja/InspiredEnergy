@@ -75,6 +75,6 @@ public abstract class AbstractTestNg extends ExtentReportBase{
 
 	@AfterClass
 	public void terminateBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 }

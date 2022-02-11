@@ -20,6 +20,7 @@ public class PR008_Budget_V3_TC071_BudgetConsole_Gas_BudgetComparison_InvalidInp
 	customersPageHandler.waitLoad();
 	customersPageHandler.filterCustomers("Automation");
 	customersPageHandler.selectFirstCustomer();
+	webDriverHandler.byXpath(prop.getProperty("sortByGas")).click().click();
 	webDriverHandler.byXpath(prop.getProperty("FirstGasSummaryCompleted")).click();
 	webDriverHandler.byXpath(prop.getProperty("BudgetComparisonTab")).leftPanelclick();
 	ElectricitySummaryComparison summaryComp = new ElectricitySummaryComparison(webDriverHandler, prop);

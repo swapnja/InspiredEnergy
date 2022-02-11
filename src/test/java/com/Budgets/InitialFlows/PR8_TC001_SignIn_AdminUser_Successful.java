@@ -1,5 +1,6 @@
 package com.Budgets.InitialFlows;
 
+import com.Base.ExtentReportBase;
 import com.Base.LoginPageHandler;
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class PR8_TC001_SignIn_AdminUser_Successful {
+public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{
 
 		
 	Properties prop = ReadPropertyFile.getProperties();

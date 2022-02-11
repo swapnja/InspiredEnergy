@@ -23,7 +23,7 @@ public class PR008_Budget_V3_TC003_Utility_Gas_Meters_ValidInput_AmberValidation
 		customersPageHandler.filterCustomers("Automation");
 		customersPageHandler.selectFirstCustomer();
 		CommonPageHandler budgetPageHandler = new CommonPageHandler(webDriverHandler, prop);
-		budgetPageHandler.selectFirstBudgetGas();
+		budgetPageHandler.createBudgetCustomGas();
 		ImportPageHandlerGas importPageHandler = new ImportPageHandlerGas(webDriverHandler, prop);
 		importPageHandler.ImportMeterAmberFile();
 		WebElement completedImage = importPageHandler.getGreenIcon("MeterLocations");

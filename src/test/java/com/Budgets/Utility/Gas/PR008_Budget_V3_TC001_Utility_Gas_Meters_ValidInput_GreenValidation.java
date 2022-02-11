@@ -24,7 +24,7 @@ public class PR008_Budget_V3_TC001_Utility_Gas_Meters_ValidInput_GreenValidation
 		customersPageHandler.selectFirstCustomer();
 		CommonPageHandler budgetPageHandler = new CommonPageHandler(webDriverHandler, prop);
 		// budgetPageHandler.waitLoad();
-		budgetPageHandler.selectFirstBudgetGas();
+		budgetPageHandler.createBudgetMonthlyGas();
 		ImportPageHandlerGas importPageHandler = new ImportPageHandlerGas(webDriverHandler, prop);
 		importPageHandler.ImportMeterGreenFile();
 		WebElement completedImage = importPageHandler.getGreenIcon("MeterLocations");

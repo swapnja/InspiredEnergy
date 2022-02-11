@@ -22,6 +22,7 @@ public class PR008_Budget_V3_TC072_BudgetConsole_Gas_BudgetComparison_InvalidHea
         customersPageHandler.waitLoad();
         customersPageHandler.filterCustomers("Automation");
         customersPageHandler.selectFirstCustomer();
+    	webDriverHandler.byXpath(prop.getProperty("sortByGas")).click().click();
         webDriverHandler.byXpath(prop.getProperty("FirstGasSummaryCompleted")).click();
         webDriverHandler.byXpath(prop.getProperty("BudgetComparisonTab")).leftPanelclick();
         String xlPathMeter = Paths.get(
@@ -30,9 +31,12 @@ public class PR008_Budget_V3_TC072_BudgetConsole_Gas_BudgetComparison_InvalidHea
         webDriverHandler.byXpath(prop.getProperty("ImportBtn")).click();
         customersPageHandler.waitLoad();
         FIleImportUpload fim = new FIleImportUpload(driver, xlPathMeter);
-        System.out.println("*************************************");
+        
         System.out.println("Error message for Invalid header validation is:");
-        String strErrortext = webDriverHandler.byId("swal2-content").waitClickable().waitVisible().getText();
+        //String strErrortext = webDriverHandler.byXpath("ErrorMsg").waitClickable().waitVisible().getText();
+        String strErrortext = webDriverHandler.byId("swal2-content").getText();
+       // String strErrortext = webDriverHandler.byXpath(prop.getProperty("ErrorMsg")).waitClickable().getText();
+        System.out.println(strErrortext);
         Assert.assertEquals(strErrortext, "Upload template is not valid");
         webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable().click();
         System.out.println(strErrortext);
