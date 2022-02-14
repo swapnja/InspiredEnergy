@@ -30,6 +30,7 @@ public class PR008_Budget_V3_TC062_BudgetSummary_Gas extends ReadExcelFileGas {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(prop.getProperty("FirstCustomer"))).click();
 		Thread.sleep(1000);
+		webDriverHandler.byXpath(prop.getProperty("sortByGas")).click().click();
 		driver.findElement(By.xpath(prop.getProperty("SummaryGasBudgetCompleteIcon"))).click();
 		System.out.println("");
 		System.out.println("************************************************************");
