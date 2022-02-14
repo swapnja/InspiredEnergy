@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -63,8 +64,9 @@ public class AbstractTestNg extends ExtentReportBase  {
 */
     @BeforeClass
     public void launchBrowser() {
-    
-        driver = new ChromeDriver();
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
         webDriverHandler = new WebDriverHandler(driver);
        // webDriverHandler = new WebDriverHandler(ChromeDriverOptions.getHeadlessBrowser());
         driver.manage().window().maximize();

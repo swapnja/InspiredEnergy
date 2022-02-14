@@ -48,7 +48,9 @@ public abstract class AbstractTestNg extends ExtentReportBase{
 		chromeOptions.addArguments("--window-size=1920,1080");
 		driver = new ChromeDriver(chromeOptions);
 		*/
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
 	//	((ChromeDriver) driver).setFileDetector(new LocalFileDetector());
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
