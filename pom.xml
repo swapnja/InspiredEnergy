@@ -108,13 +108,13 @@
            
             <suiteXmlFile>AutoII.xml</suiteXmlFile>     
            
-        < suiteXmlFile>ClientPortal.xml</suiteXmlFile>
+        
               <suiteXmlFile>Electricity.xml</suiteXmlFile>
           <suiteXmlFile>Gas.xml</suiteXmlFile>
             -->    
             <suiteXmlFile>AutoII.xml</suiteXmlFile>
-                   
-            <suiteXmlFile>CarbonIntensity.xml</suiteXmlFile>
+               <suiteXmlFile>ClientPortal.xml</suiteXmlFile>    
+          
              
           </suiteXmlFiles>
         </configuration>
