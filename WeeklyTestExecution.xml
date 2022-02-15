@@ -4,15 +4,8 @@
 	verbose="1" configfailurepolicy="continue" parallel="tests">
 
 	<test name="Weekly Test Execution">
-		<packages>
-			<package name="com.AutoII" />
+		<packages>			
 			<package name="com.CarbonIntensity" />
-			<package name = "com.Budgets.Utility.Electricity.Electricity1"/>
-		 	<package name = "com.Budgets.Utility.Electricity.Electricity2"/>
-			<package name = "com.Budgets.Utility.Electricity.Electricity3"/>
-			<package name = "com.Budgets.Utility.Electricity.Electricity4"/>   
-			<package name = "com.Budgets.Utility.Gas"/>
-			<package name = "com.ClientPortal"/>
 			
 		</packages>
 	</test>
