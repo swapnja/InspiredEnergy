@@ -67,7 +67,7 @@ public class InformationImportHandler {
 	public void InformationFailedCalculate() {
 		waitLoad();
 		_webDriverHandler.byXpath(_prop.getProperty("Information")).waitClickable(15,100).click();
-		_webDriverHandler.byXpath(_prop.getProperty("SaveInformation")).waitClickable(15,100).click();
+		_webDriverHandler.byXpath(_prop.getProperty("SaveInformation")).waitClickable(20,100).click();
 		_webDriverHandler.byXpath(_prop.getProperty("OkInformation")).waitClickable(20, 100).click();
 		String ExpCalBtn = "Calculate";
 		String ActualCalBtn = _webDriverHandler.byXpath(_prop.getProperty("Calculate")).getText();
