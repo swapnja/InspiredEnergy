@@ -24,7 +24,7 @@ public class NotesHandler {
     }
 
     public void clearNotes(String type) {
-        _webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible().click().clear();
+        _webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible(15,100).click().clear();
     }
 
     public void searchNotes(String searchtype, String search) {

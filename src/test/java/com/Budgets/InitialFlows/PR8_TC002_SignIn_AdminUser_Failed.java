@@ -49,7 +49,7 @@ public class PR8_TC002_SignIn_AdminUser_Failed {
 	@Test
 	public void test() throws InterruptedException, IOException {
 		WebDriverHandler webDriverHandler = new WebDriverHandler(driver);
-		webDriverHandler.byXpath(prop.getProperty("HomeLogin")).waitClickable().click();
+		webDriverHandler.byXpath(prop.getProperty("HomeLogin")).waitClickable(15,100).click();
 		webDriverHandler.byId(prop.getProperty("key.userName")).sendKeys(prop.getProperty("value.AdminUser"));
 		webDriverHandler.byXpath(prop.getProperty("HomeSignIn")).waitClickable().click();
 		webDriverHandler.byId(prop.getProperty("key.password")).sendKeys(prop.getProperty("wrongvalue.password"));
