@@ -105,6 +105,7 @@
         <configuration>
           <suiteXmlFiles>
          WeeklyTestExecution.xml
+         Unify/test-output/testng-failed.xml
           </suiteXmlFiles>
         </configuration>
       </plugin>
