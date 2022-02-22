@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="AutoII Test Cases" thread-count="4" verbose="1" configfailurepolicy="continue">
-    <test name="Auto II">
+<suite name="Failed Test Cases" thread-count="4" verbose="1" configfailurepolicy="continue">
+    <test name="Rerun suite">
         <packages>
-          <package name="D:\InspiredEnergy\test-output\testng-failed.xml"/>
+          <package name="D:\Jenkins\home\workspace\Unify\test-output\testng-failed.xml"/>
         </packages>
     </test>
 </suite>
