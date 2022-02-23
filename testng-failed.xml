@@ -3,7 +3,8 @@
 <suite name="Failed Test Cases" thread-count="4" verbose="1" configfailurepolicy="continue">
     <test name="Rerun suite">
         <packages>
-          <package name="D:\Jenkins\home\workspace\Unify\test-output\testng-failed.xml"/>
+          <!-- <package name="D:\Jenkins\home\workspace\Unify\test-output\testng-failed.xml"/> -->
+          <package name="D:/Jenkins/home/workspace/Unify/test-output/testng-failed.xml"/>
         </packages>
     </test>
 </suite>

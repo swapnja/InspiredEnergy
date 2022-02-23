@@ -3,7 +3,7 @@
 <suite name="AutoII" thread-count="4" verbose="1" configfailurepolicy="continue">
     <test name="Auto II">
         <packages>
-          <package name="com.AutoII"/>
+          <package name="com.CarbonIntensity"/>
         </packages>
     </test>
 </suite>

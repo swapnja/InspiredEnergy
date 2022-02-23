@@ -15,7 +15,7 @@ public class PR173_TC01_CarbonIntensity extends AbstractTestNg{
     	
     }
 
-    @Test(description="Verify if the SAmpleeeeeeeeeeeeeeeeeeeeeeeeeeee")
+    @Test(description="Verify if the Sample")
     public void VerifyPage() {
     	//ExtentTestManager.startTest("Carbon Intensity Tests-VerifyPage Scenarios");
     	//etm.startTest("VerifyPage", "CarbonIntensity test1");

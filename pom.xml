@@ -88,7 +88,11 @@
   <!--  <version>5.0.8</version> 3.1.5 --> 
  
 </dependency>
-
+<dependency>
+ <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.16</version>
+</dependency>
 <dependency>
     <groupId>org.dom4j</groupId>
     <artifactId>dom4j</artifactId>
@@ -103,21 +107,29 @@
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.0.0-M5</version>
         <configuration>
-          <suiteXmlFiles>
-         WeeklyTestExecution.xml
-         Unify/test-output/testng-failed.xml
-          </suiteXmlFiles>
+                        <suiteXmlFiles>
+        
+          <suiteXmlFile>
+        WeeklyTestExecution.xml
+          </suiteXmlFile>
+           <suiteXmlFile>
+test-output/Regression Testing Suite/testng-failed.xml</suiteXmlFile>
+                </suiteXmlFiles>
+
         </configuration>
       </plugin>
       <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.9.0</version>
+    <version>3.8.1</version>
     <configuration>
-        <source>1.7</source>
-        <target>1.7</target>
+        <source>8</source>
+        <target>8</target>
+        <fork>true</fork>
+       
+        
     </configuration>
-</plugin>      
+</plugin>
       
     </plugins>
 </build>

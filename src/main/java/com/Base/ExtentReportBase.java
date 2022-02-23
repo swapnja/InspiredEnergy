@@ -1,5 +1,6 @@
 package com.Base;
 
+import org.testng.ITestContext;
 //D:\Jenkins\home\workspace\Unify\src\main\java\
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -55,12 +56,13 @@ public class ExtentReportBase {
   }
 
   @BeforeSuite 
-  public void setUp()
+  public void setUp(ITestContext c)
   {
-      spark = new ExtentSparkReporter(System.getProperty("user.dir") +"/test-output/extentReport.html");
-      extent = new ExtentReports();
-     
+	  String suiteName = c.getCurrentXmlTest().getSuite().getName()+"-Test Report";
+      spark = new ExtentSparkReporter(System.getProperty("user.dir") +"/test-output/"+suiteName+"/extentReport.html");
+      extent = new ExtentReports();     
       extent.attachReporter(spark);
+      
 
       extent.setSystemInfo("OS", "Windows");
       extent.setSystemInfo("Host Name", "Test");

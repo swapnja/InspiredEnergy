@@ -2,7 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Regression Testing Suite" thread-count="4"
 	verbose="1" configfailurepolicy="continue" parallel="tests">
-
+<listeners>
+    <listener class-name="com.Base.SeleniumHandlers.RetryListenerClass"/>
+   </listeners>
 	<test name="Weekly Test Execution">
 		<packages>			
 			<package name="com.CarbonIntensity" />
@@ -13,7 +15,7 @@
 			<package name = "com.Budgets.Utility.Electricity.Electricity3"/>
 			<package name = "com.Budgets.Utility.Electricity.Electricity4"/>   
 			<package name = "com.Budgets.Utility.Gas"/>
-			<package name = "com.ClientPortal"/>
+			<package name = "com.ClientPortal"/> 
 			
 			
 		</packages>
