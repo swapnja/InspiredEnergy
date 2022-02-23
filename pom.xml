@@ -111,9 +111,7 @@
                   <suiteXmlFile>
         WeeklyTestExecution.xml
           </suiteXmlFile>
-           <suiteXmlFile>
-test-output/testng-failed.xml</suiteXmlFile>
-
+           
                 </suiteXmlFiles> 
         </configuration>
       </plugin>
