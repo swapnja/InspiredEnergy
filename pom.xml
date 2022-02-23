@@ -108,13 +108,13 @@
     <version>3.0.0-M5</version>
         <configuration>
                         <suiteXmlFiles>
-        
-          <suiteXmlFile>
+                  <suiteXmlFile>
         WeeklyTestExecution.xml
           </suiteXmlFile>
            <suiteXmlFile>
-test-output/Regression Testing Suite/testng-failed.xml</suiteXmlFile>
-                </suiteXmlFiles>
+test-output/testng-failed.xml</suiteXmlFile>
+
+                </suiteXmlFiles> 
         </configuration>
       </plugin>
       <plugin>
