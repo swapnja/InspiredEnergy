@@ -114,6 +114,7 @@
           </suiteXmlFile>
            <suiteXmlFile>
 test-output/Regression Testing Suite/testng-failed.xml</suiteXmlFile>
+
                 </suiteXmlFiles>
 
         </configuration>
