@@ -31,7 +31,7 @@ public class AbstractTestNg {
     }
 
     @BeforeClass
-    public void launchBrowser() throws IOException{
+    public void launchBrowser() throws IOException, InterruptedException{
         driver = new ChromeDriver();
         webDriverHandler = new WebDriverHandler(driver);
         driver.manage().window().maximize();

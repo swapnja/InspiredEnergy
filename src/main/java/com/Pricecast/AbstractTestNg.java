@@ -35,7 +35,7 @@ public abstract class AbstractTestNg {
 
 
 	@BeforeClass
-	public void launchBrowser() throws IOException{
+	public void launchBrowser() throws IOException, InterruptedException{
 		//ChromeOptions chromeOptions = new ChromeOptions();
 		//chromeOptions.setHeadless(true);
 		//chromeOptions.addArguments("--window-size=1920,1080");
