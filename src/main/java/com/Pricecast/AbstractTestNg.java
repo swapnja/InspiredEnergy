@@ -47,6 +47,7 @@ public abstract class AbstractTestNg {
 		logPriceCast = new LoginPageHandler(webDriverHandler, prop);
 		logPriceCast.Login();
 	}
+	
 
 	@BeforeMethod
 	public void accessAutoII() {
