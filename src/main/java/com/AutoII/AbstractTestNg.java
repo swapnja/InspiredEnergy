@@ -68,6 +68,6 @@ public class AbstractTestNg extends ExtentReportBase {
     public void terminateBrowser() throws IOException {
     	String systype = System.getProperty("os.name").toLowerCase();
 		driver.quit();
-		Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
+		Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
     }
 }
