@@ -36,7 +36,7 @@ public abstract class AbstractTestNg extends ExtentReportBase{
 
 
 	@BeforeClass
-	public void launchBrowser() throws IOException{
+	public void launchBrowser() throws IOException, InterruptedException{
 		//ChromeOptions chromeOptions = new ChromeOptions();
 		//chromeOptions.setHeadless(true);
 		//chromeOptions.addArguments("--window-size=1920,1080");
@@ -59,13 +59,14 @@ public abstract class AbstractTestNg extends ExtentReportBase{
 	public void handleFailure(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			String name = this.getClass().getSimpleName();
-			FailureUtils.screenshot(driver, "FailureOutput\\Screenshots\\ClientPortal\\"+name);
+//			FailureUtils.screenshot(driver, "FailureOutput\\Screenshots\\ClientPortal\\"+name);
 		}
 	}
 
 	@AfterClass
 	public void terminateBrowser() throws IOException {
-		String systype = System.getProperty("os.name").toLowerCase();
+	//String systype = System.getProperty("os.name").toLowerCase();
 		driver.quit();
-		Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");	}
+		//Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");	
+		}
 }

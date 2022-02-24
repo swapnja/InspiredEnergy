@@ -77,7 +77,9 @@ public class ElementHandler {
 
 	public ElementHandler click() {
 		waitPresence();
-		_webElement.click();
+		JavascriptExecutor js =(JavascriptExecutor)_driver;
+		js.executeScript("arguments[0].click()", _webElement);
+		//_webElement.click();
 		return this;
 	}
 	/*
@@ -168,10 +170,11 @@ public class ElementHandler {
 		return strStatus;
 	}
 
-	public ElementHandler leftPanelclick() {
+	public ElementHandler leftPanelclick() throws InterruptedException {
 		waitPresence();
 		do {
-			_webElement.click();
+			JavascriptExecutor js =(JavascriptExecutor)_driver;
+			js.executeScript("arguments[0].click()", _webElement);
 		}
 		while (!(_driver.findElement(By.xpath("//*[@id=\"btnImport\"]")).isDisplayed()));
 		return this;
@@ -199,7 +202,7 @@ public class ElementHandler {
 	return this;
 	}
 	
-	public ElementHandler staleElementHandler() {
+	public ElementHandler staleElementHandler() throws InterruptedException {
 		_webDriverWait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(_driver.findElement(_by))));
 		return this;
 	}

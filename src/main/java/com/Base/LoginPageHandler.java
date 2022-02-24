@@ -14,7 +14,7 @@ public class LoginPageHandler {
         _prop = prop;
     }
 
-    public void Login() {
+    public void Login() throws InterruptedException {
         _webDriverHandler.byXpath(_prop.getProperty("HomeLogin")).waitClickable(15,100).click();
         _webDriverHandler.byId(_prop.getProperty("userName")).sendKeys(_prop.getProperty("AdminUser"));
         _webDriverHandler.byXpath(_prop.getProperty("HomeSignIn")).waitClickable(5,100).click();

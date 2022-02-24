@@ -63,7 +63,7 @@ public class AbstractTestNg extends ExtentReportBase  {
     }
 */
     @BeforeClass
-    public void launchBrowser() {
+    public void launchBrowser() throws InterruptedException {
     	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
@@ -104,9 +104,9 @@ public class AbstractTestNg extends ExtentReportBase  {
 
     @AfterClass
     public void terminateBrowser() throws IOException {
-    	String systype = System.getProperty("os.name").toLowerCase();
+  //  	String systype = System.getProperty("os.name").toLowerCase();
 		driver.quit();
-		Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
+	//	Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
       
     }
     /* @AfterSuite

@@ -13,7 +13,7 @@ public class PR8_TC021_Enable_VAT_InformationPage extends AbstractTestNg {
     }
 
     @Test
-    public void VerifyVATEnabled () {
+    public void VerifyVATEnabled () throws InterruptedException {
         CustomersPageHandler customersPageHandler = new CustomersPageHandler(webDriverHandler, prop);
         customersPageHandler.filterCustomers("Automation");
         customersPageHandler.selectFirstCustomer();
@@ -45,7 +45,7 @@ public class PR8_TC021_Enable_VAT_InformationPage extends AbstractTestNg {
         System.out.println("\nVAT Toggle is now enabled for this Gas budget from Information page.");
     }
 
-    public void waitToggle() {
+    public void waitToggle() throws InterruptedException {
         String stringRef = webDriverHandler.byXpath(prop.getProperty("Reference")).getText();
         String stringSD = webDriverHandler.byXpath(prop.getProperty("StartDate")).getText();
         String stringED = webDriverHandler.byXpath(prop.getProperty("EndDate")).getText();
