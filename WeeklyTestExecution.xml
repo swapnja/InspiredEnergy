@@ -15,7 +15,8 @@
 			<package name = "com.Budgets.Utility.Electricity.Electricity3"/>
 			<package name = "com.Budgets.Utility.Electricity.Electricity4"/>   
 			<package name = "com.Budgets.Utility.Gas"/>
-			<package name = "com.ClientPortal"/> 
+			
+		<!-- <package name = "com.ClientPortal"/>  -->	 
 			
 		</packages>
 	</test>
