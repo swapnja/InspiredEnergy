@@ -72,7 +72,7 @@ public class PendingSheets {
         System.out.println("\nColumn names match.");
     }
 
-    public void checkpendingSheets(String Utility, String Filename){
+    public void checkpendingSheets(String Utility, String Filename) throws InterruptedException{
         Tariff tariff = new Tariff(_webDriverHandler);
         tariff.TariffAccess();
         tariff.reprocessTariff(Utility, Filename);

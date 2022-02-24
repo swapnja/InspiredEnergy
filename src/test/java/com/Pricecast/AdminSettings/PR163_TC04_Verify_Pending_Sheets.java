@@ -20,7 +20,7 @@ public class PR163_TC04_Verify_Pending_Sheets extends AbstractTestNg {
     }
 
     @Test
-    public void checkPendingSheets() {
+    public void checkPendingSheets() throws InterruptedException {
         PendingSheets pendingSheets = new PendingSheets(webDriverHandler);
         pendingSheets.checkpendingSheets("Power", "To_Be_Deleted.xlsx");
     }
