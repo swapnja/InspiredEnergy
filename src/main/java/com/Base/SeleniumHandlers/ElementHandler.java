@@ -82,6 +82,7 @@ public class ElementHandler {
 		//_webElement.click();
 		return this;
 	}
+	
 	/*
 	 * public ElementHandler javaScriptclick() { waitPresence(); JavascriptExecutor e = (JavascriptExecutor)_driver; e.executeScript("arguments[0].click();", _webElement); return this; }
 	 */
