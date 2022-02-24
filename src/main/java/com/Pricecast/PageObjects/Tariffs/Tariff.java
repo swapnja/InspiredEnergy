@@ -96,7 +96,7 @@ public Tariff (WebDriverHandler webDriverHandler) {
 		return statusCheck;
 	}
 
-	public void reprocessTariff(String Utility, String Filename){
+	public void reprocessTariff(String Utility, String Filename) throws InterruptedException{
 		waitLoad();
 		search(Filename);
 		if(Utility=="Gas"){

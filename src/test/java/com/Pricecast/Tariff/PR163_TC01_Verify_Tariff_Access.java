@@ -35,7 +35,7 @@ public class PR163_TC01_Verify_Tariff_Access extends AbstractTestNg {
 		}
 
 	@Test ()
-	public void reprocessTariff() {
+	public void reprocessTariff() throws InterruptedException {
 		Tariff tariff = new Tariff(webDriverHandler);
 		tariff.TariffAccess();
 		tariff.reprocessTariff("Power", "Ovo Energy-P-.xlsx");
