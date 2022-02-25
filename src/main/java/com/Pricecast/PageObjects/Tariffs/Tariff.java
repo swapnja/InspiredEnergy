@@ -64,7 +64,6 @@ public Tariff (WebDriverHandler webDriverHandler) {
 		waitLoad();
 		linkTariff.waitClickable().click();
 	}
-
 	public void TariffColumnVerification() {
 		for(int i = 0 ; i < arrTariff.length ; i++) {
 			arrTariff[i] = _webDriverHandler.byXpath("//table[@id='tblTariffs']/thead/tr/th[" + (i + 1) + "]").getText();

@@ -51,9 +51,9 @@ public class InformationImportHandler {
 	}
 
 	public void InformationTotalCalculate() throws InterruptedException {
-		_webDriverHandler.byXpath(_prop.getProperty("Calculate")).waitClickable(8, 100).click();
-		_webDriverHandler.byXpath(_prop.getProperty("TotalCalculate")).waitClickable(6, 100).click();
-		_webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable().click();
+		_webDriverHandler.byXpath(_prop.getProperty("Calculate")).waitClickable(15, 100).click();
+		_webDriverHandler.byXpath(_prop.getProperty("TotalCalculate")).waitClickable(15, 100).click();
+		_webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable(15,100).click();
 	}
 
 	public void InformationCancelFileUpload(String section, String path) throws InterruptedException {
