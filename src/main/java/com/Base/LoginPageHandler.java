@@ -26,7 +26,7 @@ public class LoginPageHandler {
     }
     
     public void LoginStandardUser() throws InterruptedException {
-        
+        //for standard User method 
         _webDriverHandler.byXpath(_prop.getProperty("HomeLogin")).waitClickable(15,100).click();
         _webDriverHandler.byId(_prop.getProperty("userName")).sendKeys(_prop.getProperty("StandardUser"));
         _webDriverHandler.byXpath(_prop.getProperty("HomeSignIn")).waitClickable(5,100).click();
