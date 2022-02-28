@@ -35,7 +35,7 @@ public class PR8_TC006_SignOut_StandardUser_Successful {
 	}
 	@AfterMethod
 	public void terminateBrowser() {
-	//	driver.quit();
+		driver.quit();
 	}
 
 	@Test
