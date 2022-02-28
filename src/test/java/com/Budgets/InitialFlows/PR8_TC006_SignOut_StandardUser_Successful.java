@@ -33,8 +33,6 @@ public class PR8_TC006_SignOut_StandardUser_Successful {
 		login.LoginStandardUser();
 		login.accessBudgets();
 	}
-
-
 	@AfterMethod
 	public void terminateBrowser() {
 	//	driver.quit();
