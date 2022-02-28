@@ -1,5 +1,6 @@
 package com.Budgets.InitialFlows;
 
+import com.Base.LoginPageHandler;
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import org.openqa.selenium.By;
@@ -13,25 +14,15 @@ import java.util.concurrent.TimeUnit;
 
 
 public class PR8_TC002_SignIn_AdminUser_Failed {
-
 	Properties prop = ReadPropertyFile.getProperties();
 	WebDriver driver;
+	WebDriverHandler webDriverHandler;
+	
 
 	public PR8_TC002_SignIn_AdminUser_Failed() throws IOException {
 		System.setProperty(prop.getProperty("chrome.driver.propName"), prop.getProperty("chrome.driver.path"));
 
 	}
-
-	@BeforeTest
-	public void launchBrowser() throws IOException {
-
-	}
-
-	@BeforeClass
-	public void deleteCookie() {
-
-	}
-
 	@BeforeMethod
 	public void login() throws InterruptedException, IOException
 	{
@@ -39,30 +30,28 @@ public class PR8_TC002_SignIn_AdminUser_Failed {
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}
+		webDriverHandler = new WebDriverHandler(driver);
+		LoginPageHandler login = new LoginPageHandler(webDriverHandler, prop);
+		login.LoginWrongPwd();
+		//login.accessBudgets();
+		}
 
 	@AfterMethod
 	public void terminateBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 
 	@Test
 	public void test() throws InterruptedException, IOException {
-		WebDriverHandler webDriverHandler = new WebDriverHandler(driver);
-		webDriverHandler.byXpath(prop.getProperty("HomeLogin")).waitClickable(15,100).click();
-		webDriverHandler.byId(prop.getProperty("key.userName")).sendKeys(prop.getProperty("value.AdminUser"));
-		webDriverHandler.byXpath(prop.getProperty("HomeSignIn")).waitClickable().click();
-		webDriverHandler.byId(prop.getProperty("key.password")).sendKeys(prop.getProperty("wrongvalue.password"));
-		webDriverHandler.byXpath(prop.getProperty("HomeSignIn")).staleElementHandler().staleElementHandler().waitClickable().click();
-        String act_errorMsg=driver.findElement(By.id("passwordError")).getText();
-		String exp_errorMsg="Your account or password is incorrect. If you don't remember your password, reset it now.";
-		if(exp_errorMsg.equalsIgnoreCase(act_errorMsg)) 
-		{
-		System.out.println("Error message is Correct :- \n"+ act_errorMsg);
+		
+		String act_title = "Your account or password is incorrect. If you don't remember your password, reset it now.";
+		String expected_msg = prop.getProperty("expectedTitleLogin");
+		if (act_title.equalsIgnoreCase(expected_msg)) {
+			System.out.println("Error message is matched");
+		} else {
+			System.out.println("Error message is Incorrect");
 		}
-		else
-		{
-		System.out.println("Error message is in-correct");
-		}
-    }
+		
+		
+	    }
 }

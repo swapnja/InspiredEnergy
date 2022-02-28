@@ -44,7 +44,7 @@ public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{
 	}
 
 	@Test
-	public void test1() throws InterruptedException, IOException {
+	public void adminSuccessfulTest() throws InterruptedException, IOException {
 		String act_title = driver.getTitle();
 		String expected_title = prop.getProperty("expectedTitleLogin");
 		if (act_title.equalsIgnoreCase(expected_title)) {
