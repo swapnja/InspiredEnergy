@@ -25,14 +25,6 @@ public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{
 
 	}
 
-	@BeforeTest
-	public void launchBrowser() throws IOException {
-	}
-
-	@BeforeClass
-	public void deleteCookie() {
-	}
-	
 	@BeforeMethod
 	public void login() throws InterruptedException, IOException
 	{
