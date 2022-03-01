@@ -68,7 +68,7 @@ public class CarbonIntensity {
     }
 
     public void loadGM() {
-        if (!cardHeaderGM.isDisplayed() && pieChartGM.isDisplayed() && pieLegendGM.isDisplayed()) {
+        if (cardHeaderGM.isDisplayed() && pieChartGM.isDisplayed() && pieLegendGM.isDisplayed()) {
             System.out.println("GB Generation Mix card is loaded properly.");
         } else {
             Assert.fail("GB Generation Mix card is not present.");
