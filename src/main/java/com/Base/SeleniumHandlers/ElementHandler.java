@@ -45,6 +45,8 @@ public class ElementHandler {
 	public ElementHandler waitVisible(long timeOutInSeconds, long sleepInMillis) {
 		waitPresence();
 		WebDriverWait webDriverWait = new WebDriverWait(_driver, timeOutInSeconds, sleepInMillis);
+		JavascriptExecutor js =(JavascriptExecutor)_driver;
+ js.executeScript("arguments[0].click()", _webElement);
 		webDriverWait.until(ExpectedConditions.visibilityOf(_webElement));
 		return this;
 	}
@@ -71,6 +73,12 @@ public class ElementHandler {
 	public ElementHandler waitClickable(long timeOutInSeconds, long sleepInMillis) {
 		waitPresence(timeOutInSeconds, sleepInMillis);
 		WebDriverWait webDriverWait = new WebDriverWait(_driver, timeOutInSeconds, sleepInMillis);
+		
+		/*
+		 * JavascriptExecutor js =(JavascriptExecutor)_driver;
+		 * js.executeScript("arguments[0].click()", _webElement);
+		 */
+		
 		_webElement = webDriverWait.until(ExpectedConditions.elementToBeClickable(_webElement));
 		return this;
 	}

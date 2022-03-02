@@ -52,14 +52,14 @@ public class PR8_TC004_SignIn_StandardUser_Failed {
 		driver.manage().window().maximize();
 		driver.findElement(By.linkText("Sign in with your Microsoft Account")).click();
 
-		WaitWebElement.customWait(By.id(prop.getProperty("key.userName")), driver);
+		WaitWebElement.customWait(By.id(prop.getProperty("userName")), driver);
 
-		driver.findElement(By.id(prop.getProperty("key.userName"))).sendKeys(prop.getProperty("value.StandardUser"));
+		driver.findElement(By.id(prop.getProperty("userName"))).sendKeys(prop.getProperty("StandardUser"));
 		WaitWebElement.customWait(By.id("idSIButton9"), driver);
 		driver.findElement(By.id("idSIButton9")).click();
 
-		WaitWebElement.customWait(By.id(prop.getProperty("key.password")), driver);
-		driver.findElement(By.id(prop.getProperty("key.password"))).sendKeys(prop.getProperty("wrongvalue.password"));
+		WaitWebElement.customWait(By.id(prop.getProperty("password")), driver);
+		driver.findElement(By.id(prop.getProperty("password"))).sendKeys(prop.getProperty("wrongvalue.password"));
 		try{
 			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));
 			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));

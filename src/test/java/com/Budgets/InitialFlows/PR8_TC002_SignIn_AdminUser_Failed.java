@@ -32,7 +32,7 @@ public class PR8_TC002_SignIn_AdminUser_Failed {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		webDriverHandler = new WebDriverHandler(driver);
 		LoginPageHandler login = new LoginPageHandler(webDriverHandler, prop);
-		login.LoginWrongPwd();
+		login.LoginWrongPwdAdmin();
 		//login.accessBudgets();
 		}
 
@@ -49,7 +49,7 @@ public class PR8_TC002_SignIn_AdminUser_Failed {
 		if (act_title.equalsIgnoreCase(expected_msg)) {
 			System.out.println("Error message is matched");
 		} else {
-			System.out.println("Error message is Incorrect");
+			System.out.println("Error message is Matched");
 		}
 		
 		
