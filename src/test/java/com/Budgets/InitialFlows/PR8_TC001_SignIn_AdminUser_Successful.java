@@ -13,18 +13,14 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{
-
-		
+public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{		
 	Properties prop = ReadPropertyFile.getProperties();
 	WebDriver driver;
 	WebDriverHandler webDriverHandler;
 
 	public PR8_TC001_SignIn_AdminUser_Successful() throws IOException {
 		System.setProperty(prop.getProperty("chrome.driver.propName"), prop.getProperty("chrome.driver.path"));
-
 	}
-
 	@BeforeMethod
 	public void login() throws InterruptedException, IOException
 	{
@@ -37,12 +33,10 @@ public class PR8_TC001_SignIn_AdminUser_Successful extends ExtentReportBase{
 		login.Login();
 		login.accessBudgets();
 	}
-
 	@AfterMethod
 	public void terminateBrowser() {
 		driver.quit();
 	}
-
 	@Test
 	public void adminSuccessfulTest() throws InterruptedException, IOException {
 		String act_title = driver.getTitle();
