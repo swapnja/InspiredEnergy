@@ -40,7 +40,7 @@ public class PR8_TC010_CustomerGrid_BudgetSummary {
 
 	@AfterMethod
 	public void terminateBrowser() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	@Test
