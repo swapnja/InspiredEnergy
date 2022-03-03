@@ -1,10 +1,13 @@
 package com.Budgets.InitialFlows;
 
 import com.Base.ReadPropertyFile;
+import com.Base.WaitWebElement;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -14,37 +17,18 @@ import java.util.concurrent.TimeUnit;
 public class PR8_TC003_SignIn_StandardUser_Successful {
 	public PR8_TC003_SignIn_StandardUser_Successful() throws IOException {
 		System.setProperty(prop.getProperty("chrome.driver.propName"), prop.getProperty("chrome.driver.path"));
-
 	}
-
 	Properties prop = ReadPropertyFile.getProperties();
-
 	WebDriver driver;
 
-	@BeforeTest
-	public void launchBrowser() throws IOException {
-
-	}
-
-	@BeforeClass
-	public void deleteCookie() {
-
-	}
-
 	@BeforeMethod
-	public void login() throws InterruptedException, IOException {
+	public void launchBrowser() throws IOException {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebDriverHandler webDriverHandler = new WebDriverHandler(driver);
-		webDriverHandler.byXpath(prop.getProperty("HomeLogin")).waitClickable().click();
-		webDriverHandler.byId(prop.getProperty("key.userName")).sendKeys(prop.getProperty("value.StandardUser"));
-		webDriverHandler.byXpath(prop.getProperty("HomeSignIn")).waitClickable().click();
-		webDriverHandler.byId(prop.getProperty("key.password")).sendKeys(prop.getProperty("value.StandardPassword"));
-		webDriverHandler.byXpath(prop.getProperty("HomeSignIn")).staleElementHandler().staleElementHandler().waitClickable().click();
-		webDriverHandler.byXpath(prop.getProperty("HomeStaySignedIn")).waitVisible(15,100).waitClickable(10,100).click();
 	}
+
 
 	@AfterMethod
 	public void terminateBrowser() {
@@ -52,27 +36,38 @@ public class PR8_TC003_SignIn_StandardUser_Successful {
 	}
 
 	@Test
-	public void test3() {
+	public void test3() throws InterruptedException {
 
-		String act_title = driver.getTitle();
-		String expected_title = prop.getProperty("expectedTitleLogin");
-		if (act_title.equalsIgnoreCase(expected_title)) {
-			System.out.println("Title is matched");
-		} else {
-			System.out.println("Title is Incorrect");
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		driver.get(prop.getProperty("url"));
+		driver.manage().window().maximize();
+		driver.findElement(By.linkText("Sign in with your Microsoft Account")).click();
+
+		WaitWebElement.customWait(By.id(prop.getProperty("userName")), driver);
+
+		driver.findElement(By.id(prop.getProperty("userName"))).sendKeys(prop.getProperty("StandardUser"));
+		WaitWebElement.customWait(By.id("idSIButton9"), driver);
+		driver.findElement(By.id("idSIButton9")).click();
+
+		WaitWebElement.customWait(By.id(prop.getProperty("password")), driver);
+		driver.findElement(By.id(prop.getProperty("password"))).sendKeys(prop.getProperty("StandardPassword"));
+		try{
+			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));
+			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));
 		}
-		driver.findElement(By.xpath("//a[@href='/Core/Users/Profile']")).click();
-		String act_UserContent = driver.findElement(By.id("basicContent")).getText();
-		String ext_UserContent = "Hi IP Dev TP 1";
-
-		if (act_UserContent.equalsIgnoreCase(ext_UserContent)) {
-			System.out.println("This is Standard User");
-		} else {
-			System.out.println("This is Non Standard User");
+		catch (Exception e){
+			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));
+			wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.xpath("//*[@id='idSIButton9']"))));
 		}
-
-		System.out.println("Login is Successful with Standard User ");
+		/*
+		 * WaitWebElement.waitTillClickable(By.xpath("//*[@id=\"idSIButton9\"]"),
+		 * driver); String act_errorMsg =
+		 * driver.findElement(By.id("passwordError")).getText(); String exp_errorMsg =
+		 * "Your account or password is incorrect. If you don't remember your password, reset it now."
+		 * ; if (exp_errorMsg.equalsIgnoreCase(act_errorMsg)) {
+		 * System.out.println("Error message is Correct :- \n" + act_errorMsg); } else {
+		 * System.out.println("Error message is in-correct"); }
+		 */
 		driver.quit();
-
 	}
 }
