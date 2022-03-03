@@ -26,16 +26,6 @@ public class PR8_TC010_CustomerGrid_BudgetSummary {
 
 	WebDriver driver;
 
-	@BeforeTest
-	public void launchBrowser() throws IOException {
-
-	}
-
-	@BeforeClass
-	public void deleteCookie() {
-
-	}
-
 	@BeforeMethod
 	public void login() throws InterruptedException, IOException {
 		driver = new ChromeDriver();
@@ -50,7 +40,7 @@ public class PR8_TC010_CustomerGrid_BudgetSummary {
 
 	@AfterMethod
 	public void terminateBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 
 	@Test
@@ -62,7 +52,8 @@ public class PR8_TC010_CustomerGrid_BudgetSummary {
 		if (driver.findElement(By.id("budgetTable")).isDisplayed()) {
 		System.out.println("You are on Budget console screen");
 		}
-		WaitWebElement.waitTillClickable(By.xpath(prop.getProperty("FirstElectricitySummaryIcon")), driver);
+		//WaitWebElement.waitTillClickable(By.xpath(prop.getProperty("FirstElectricitySummaryIcon")), driver);
+		WaitWebElement.waitTillClickable(By.xpath(prop.getProperty("SummaryEleBudgetCompleteIcon")), driver);
 		System.out.println("You are on Budget Summary screen");
 	}
 }
