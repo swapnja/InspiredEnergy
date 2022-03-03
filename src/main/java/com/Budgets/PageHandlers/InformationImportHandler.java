@@ -2,9 +2,10 @@
 package com.Budgets.PageHandlers;
 
 import com.Base.SeleniumHandlers.WebDriverHandler;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.nio.file.Paths;
 import java.util.Properties;
 
@@ -51,9 +52,10 @@ public class InformationImportHandler {
 	}
 
 	public void InformationTotalCalculate() throws InterruptedException {
-		_webDriverHandler.byXpath(_prop.getProperty("Calculate")).waitClickable(15, 100).click();
+		_webDriverHandler.byXpath(_prop.getProperty("SaveInformation")).click();
+		_webDriverHandler.byXpath(_prop.getProperty("Calculate")).waitClickableCalculateBudget(15, 100).click();
 		_webDriverHandler.byXpath(_prop.getProperty("TotalCalculate")).waitClickable(15, 100).click();
-		_webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable(15,100).click();
+		_webDriverHandler.byXpath("//button[contains(text(),'OK')]").staleElementHandler().waitClickable(15,100).click();
 	}
 
 	public void InformationCancelFileUpload(String section, String path) throws InterruptedException {

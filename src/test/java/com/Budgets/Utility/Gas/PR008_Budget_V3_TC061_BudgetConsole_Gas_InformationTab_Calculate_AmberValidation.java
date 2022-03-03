@@ -38,6 +38,7 @@ public class PR008_Budget_V3_TC061_BudgetConsole_Gas_InformationTab_Calculate_Am
 		iigh.InformationImportFileUpload("GasReferencePrices", xlPathReference);
 		iigh.InformationImportFileUpload("GasConsumptionAdjustment", xlPathConsumptionAdjustment);
 		InformationImportHandler infoHand = new InformationImportHandler(webDriverHandler, prop);
+		//added save button for tc 061
 		infoHand.InformationVerifyCalculate();
 		infoHand.InformationTotalCalculate();
 	}
