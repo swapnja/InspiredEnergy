@@ -39,7 +39,7 @@ public class PR8_TC007_CustomerGrid_RegisteredUsers_StandardUser {
 }
 	@AfterMethod
 	public void terminateBrowser() {
-		//driver.quit();
+		driver.quit();
 }
 	@Test
 	public void test7() throws InterruptedException, IOException {
