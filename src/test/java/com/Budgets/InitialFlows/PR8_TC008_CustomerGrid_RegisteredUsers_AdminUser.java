@@ -42,14 +42,14 @@ import java.util.concurrent.TimeUnit;
 	
 	@AfterMethod
 	public void terminateBrowser() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	@Test
 	public void customerTableVerification() throws InterruptedException{
 		
 	//	WaitWebElement.waitTillClickable(By.xpath(prop.getProperty("BudgetIcon")), driver);
-		if (driver.findElement(By.id(prop.getProperty("customerTable"))).isDisplayed())
+		if (driver.findElement(By.xpath("//table[@id='customerTable']")).isDisplayed())
 		{
 			System.out.println("Customer grid is showing registered customers for Logged in User");
 		} else {
