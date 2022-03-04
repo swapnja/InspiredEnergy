@@ -17,11 +17,9 @@ import java.util.concurrent.TimeUnit;
 public class PR8_TC009_CustomerGrid_BudgetConsole {
 	public PR8_TC009_CustomerGrid_BudgetConsole() throws IOException {
 		System.setProperty(prop.getProperty("chrome.driver.propName"), prop.getProperty("chrome.driver.path"));
-
 	}
 
 	Properties prop = ReadPropertyFile.getProperties();
-
 	WebDriver driver;
 
 	@BeforeTest
@@ -35,7 +33,7 @@ public class PR8_TC009_CustomerGrid_BudgetConsole {
 	}
 
 	@BeforeMethod
-	public void login() throws InterruptedException, IOException {
+		public void login() throws InterruptedException, IOException {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
