@@ -52,7 +52,7 @@ public abstract class AbstractTestNg extends ExtentReportBase{
 	@BeforeMethod
 	public void accessAutoII() {
 		driver.get(prop.getProperty("url"));
-		logClientPortal.accessPriceCast();
+		logClientPortal.accessCP();
 	}
 
 	@AfterMethod
