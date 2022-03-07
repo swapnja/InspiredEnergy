@@ -1,6 +1,6 @@
 
 // home= pinnedApps
-//All Application -AppTrayList
+//All Application -AppTrayList changed from pinedApp to AppTrayList
 package com.ClientPortal;
 
 import com.ClientPortal.PageObjects.AbstractTestNg;
