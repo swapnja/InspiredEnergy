@@ -16,7 +16,7 @@ public class PR147_04_ApplicationsTheme extends AbstractTestNg {
     @Test
     public void ApplicationTheme() throws IOException {
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
-        webDriverHandler.byXpath("//*[@title='Home']").waitClickable().click();
+        webDriverHandler.byXpath("//*[@title='Home']").waitClickable(15,100).click();
         webDriverHandler.byXpath("//li[@class='nav-item']/a[@title='Administration']").click();
         webDriverHandler.byXpath("//div[@class='card tiles-max ']/a[@href='/Core/ApplicationAdministration/Applications']").click();
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
