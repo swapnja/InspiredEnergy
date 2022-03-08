@@ -12,8 +12,8 @@ public class PR147_06_CompanyActivityFeed extends AbstractTestNg {
 
     @Test
     public void CompActivityFeed() throws IOException {
-        webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
-        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[5]").click();
+       // webDriverHandler.byXpath("//*[@id='overlay']").waitVisible(15,100).waitInvisible(15,100);
+        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[2]").click();
         webDriverHandler.byXpath("//*[@href='#activityContent']").click();
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
         webDriverHandler.byXpath("//*[@id='btnAddActivity']").click();

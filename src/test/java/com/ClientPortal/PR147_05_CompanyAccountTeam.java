@@ -13,7 +13,7 @@ public class PR147_05_CompanyAccountTeam extends AbstractTestNg {
     @Test
     public void ComAccTem() throws InterruptedException, IOException {
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
-        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[5]").click();
+        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[5]").waitClickable(15,100).click();
         webDriverHandler.byXpath("//*[@href='#accountTeamContent']").click();
         Thread.sleep(1000);
         webDriverHandler.byXpath("//*[@id='btnAddManager']").click();
