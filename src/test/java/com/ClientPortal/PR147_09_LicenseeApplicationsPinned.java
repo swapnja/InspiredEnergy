@@ -25,6 +25,7 @@ public class PR147_09_LicenseeApplicationsPinned extends AbstractTestNg {
         Thread.sleep(1000);
         ElementHandler w4;
         w4 = webDriverHandler.byXpath("//div[@class='table-responsive']//table//tbody//tr[4]//td[4]//label//span");
+        
         Thread.sleep(1000);
         if (!w4.isSelected()) {
             w4.waitClickable().click();
@@ -34,7 +35,7 @@ public class PR147_09_LicenseeApplicationsPinned extends AbstractTestNg {
             System.out.println("ELSE");
         }
         ElementHandler w5;
-        w5 = webDriverHandler.byXpath("//div[@class='table-responsive']//table//tbody//tr[18]//td[4]//label//span");
+        w5 = webDriverHandler.byXpath("//div[@class='table-responsive']//table//tbody//tr[2]//td[4]//label//span");
         Thread.sleep(1000);
         if (!w5.isSelected()) {
             w5.waitClickable(15,100).click();

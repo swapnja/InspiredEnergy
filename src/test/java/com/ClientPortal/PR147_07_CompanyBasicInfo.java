@@ -16,7 +16,7 @@ public class PR147_07_CompanyBasicInfo extends AbstractTestNg {
     @Test
     public void CompBasicInfo() throws InterruptedException, IOException {
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
-        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[5]").click();
+        webDriverHandler.byXpath("//*[@id='partnerTable']//tr[2]").click();
         webDriverHandler.byXpath("(//label[@class='switch'])[1]").click();
 //        Thread.sleep(1000);
 //        webDriverHandler.byXpath("(//label[@class='switch'])[2]").click();
