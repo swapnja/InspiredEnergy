@@ -28,14 +28,14 @@ public class PR147_13_MI_ReportCompanyLoginsFilterReports extends AbstractTestNg
         Thread.sleep(1000);
         Select dropdown = new Select(mySelectElement);
         Thread.sleep(1000);
-        dropdown.selectByValue("Adam Ford");
+        dropdown.selectByValue("Swapnja Gudle");
         Thread.sleep(1000);
-        dropdown.selectByValue("anisha.mulik");
+        dropdown.selectByValue("SH");
         Thread.sleep(1000);
-        dropdown.selectByValue("Andrew Jackman");
+        dropdown.selectByValue("ip-dev-tp2");
         Thread.sleep(1000);
-        dropdown.selectByValue("Paul Oliver");
-        Thread.sleep(1000);
+       // dropdown.selectByValue("Paul Oliver");
+        //Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id='btnLoginApplyFilter']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='btnLoginResetFilter']")).click();
@@ -48,10 +48,10 @@ public class PR147_13_MI_ReportCompanyLoginsFilterReports extends AbstractTestNg
         WebElement dropdown1 = driver.findElement(By.id("ddlRoles"));
         Select select = new Select(dropdown1);
         Thread.sleep(1000);
-        select.selectByIndex(1);
-        select.selectByIndex(2);
-        select.selectByIndex(3);
-        select.selectByIndex(4);
+     //   select.selectByIndex(2);
+		/*
+		 * select.selectByIndex(2); select.selectByIndex(3); select.selectByIndex(4);
+		 */
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id='btnLoginApplyFilter']")).click();
         Thread.sleep(1000);
