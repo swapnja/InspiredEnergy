@@ -28,11 +28,11 @@ public class PR147_12_MI_ReportActivityFeedsFilterReports extends AbstractTestNg
         Thread.sleep(2000);
         Select dropdown = new Select(mySelectElement);
         Thread.sleep(2000);
-        dropdown.selectByValue("saha-customer");
-        dropdown.selectByValue("TEST_CLOUDENERGY");
-        dropdown.selectByValue("Test32");
-        dropdown.selectByValue("BUd164");
-        dropdown.selectByValue("Test");
+        dropdown.selectByValue("Automation2");
+     //   dropdown.selectByValue("Customer");
+     //   dropdown.selectByValue("Test32");
+     //   dropdown.selectByValue("BUd164");
+     //   dropdown.selectByValue("Test");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='btnActivityApplyFilter']")).click();
         Thread.sleep(2000);
