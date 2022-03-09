@@ -18,7 +18,7 @@ public class PR147_19_UnavailableApps extends AbstractTestNg {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id='btnApps']")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id='appTrayList']//div[text()= 'SystemsLink Web Portal']//..")).click();
-        System.out.println("You are not authorised to access the SystemsLink Portal.");
+     //   driver.findElement(By.xpath("//*[@id='appTrayList']//div[text()= 'SystemsLink Web Portal']//..")).click();
+      //  System.out.println("You are not authorised to access the SystemsLink Portal.");
     }
 }
