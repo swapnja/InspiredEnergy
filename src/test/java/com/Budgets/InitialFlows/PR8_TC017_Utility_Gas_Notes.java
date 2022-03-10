@@ -14,15 +14,15 @@ public class PR8_TC017_Utility_Gas_Notes extends AbstractTestNg {
     String appendDate = TimeStampPageHandler.AppendTimeStamp();
 
     public PR8_TC017_Utility_Gas_Notes() throws IOException {
-    }
-
+    }   
     @Test
     public void GasNotes() throws IOException, InterruptedException {
-        String Modify = "Modified the note " + appendDate;
+    	//electricity test for verification
+    	String Modify = "Modified the note " + appendDate;
         CustomersPageHandler customersPageHandler = new CustomersPageHandler(webDriverHandler, prop);
         customersPageHandler.selectFirstCustomer();
         CommonPageHandler budgetPageHandler = new CommonPageHandler(webDriverHandler, prop);
-        budgetPageHandler.createBudgetMonthlyGas();
+        budgetPageHandler.createBudgetMonthlyElectricity();
         NotesHandler notesHandler = new NotesHandler(webDriverHandler, prop);
         notesHandler.waitLoad();
         notesHandler.clearNotes("InformationNotesTB");
@@ -41,13 +41,13 @@ public class PR8_TC017_Utility_Gas_Notes extends AbstractTestNg {
         notesHandler.addNotes("Adding note import " + appendDate, "importNotes");
         notesHandler.testCharlimitImport("importNotes");
         webDriverHandler.byXpath(prop.getProperty("ImportModalCancel")).click();
-        webDriverHandler.byXpath(prop.getProperty("Back")).click();
+        webDriverHandler.byXpath(prop.getProperty("Back")).waitClickable(10, 100).click();
         notesHandler.waitLoad();
         notesHandler.openNotes("BudgetNotesIcon");
         notesHandler.searchNotes("BudgetModalNotesSearch", Modify);
         notesHandler.printSearch();
         notesHandler.addBlankNotes("BudgetConsoleNotesTB");
-        webDriverHandler.byXpath(prop.getProperty("BudgetConsoleSave")).waitClickable().click();
+        webDriverHandler.byXpath(prop.getProperty("BudgetConsoleSave")).waitClickable(10, 100).click();
         String strErrortext = webDriverHandler.byId("swal2-content").waitVisible().getText();
         System.out.println("*************************");
         System.out.println("Error message for Invalid header validation is: " + strErrortext);
