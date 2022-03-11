@@ -24,14 +24,14 @@ public class PR147_02_Advertisments extends AbstractTestNg {
 		webDriverHandler.byXpath("//*[@id='Title']").waitClickable().sendKeys("Automation Test");
 		webDriverHandler.byXpath("//*[@id='Url']").waitClickable().sendKeys("https://stestcumulus.inspiredenergy.co.uk/Core/Home/Loginsso").sendKeys(Keys.TAB);
 		//Thread.sleep(1000);
-		
 		webDriverHandler.byXpath("//*[@id='DisplayFromDate']").waitClickable(15,100).click().sendKeys(Keys.TAB);
 		Thread.sleep(1000);
 		webDriverHandler.byXpath("//div[starts-with(@class,'xdsoft_datetimepicker')][starts-with(@style,'display: block')]//div[@data-hour='18']").waitClickable(15,100).click();
 		Thread.sleep(1000);		
-		webDriverHandler.byXpath("//*[@id='DisplayToDate']").waitClickable(15,100).click();
+		webDriverHandler.byXpath("//*[@id='DisplayToDate']").waitClickable(15,100).click().sendKeys(Keys.TAB);
 		Thread.sleep(1000);
-		webDriverHandler.byXpath("//div[starts-with(@class,'xdsoft_datetimepicker')][starts-with(@style,'display: block')]//div[@data-hour='21']").waitClickable().click();
+		webDriverHandler.byXpath("//div[starts-with(@class,'xdsoft_datetimepicker')][starts-with(@style,'display: block')]//div[@data-hour='21']").waitClickable(15,100).click();
+		Thread.sleep(1000);
 		webDriverHandler.byXpath("//label[@class='switch']/span[@class='slider round']").click();
 		String path = Paths.get("BudgetTestData\\Customer_Logo\\FF-logo_1.jpg").toAbsolutePath().toString();
 		webDriverHandler.byXpath("//input[@type='file']").sendKeys(path);

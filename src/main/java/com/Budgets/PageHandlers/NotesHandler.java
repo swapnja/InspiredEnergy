@@ -20,11 +20,13 @@ public class NotesHandler {
     }
 
     public void addNotes(String Note, String type) {
-        _webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible().click().sendKeys(Note);
+        //_webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible(15,100).click().sendKeys(Note);
+    	_webDriverHandler.byXpath(_prop.getProperty(type)).click().sendKeys(Note);
     }
 
     public void clearNotes(String type) {
-        _webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible(15,100).click().clear();
+        //_webDriverHandler.byXpath(_prop.getProperty(type)).waitVisible(15,100).click().clear();
+    	_webDriverHandler.byXpath(_prop.getProperty(type));
     }
 
     public void searchNotes(String searchtype, String search) {
@@ -84,13 +86,15 @@ public class NotesHandler {
                         "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores. More",
                 type);
        _webDriverHandler.byXpath("//*[@class=\"modal-content\"]//*[@for=\"ImportNotes\"]").waitClickable(10,100).click();
-        String a = _webDriverHandler.byId("ImportNotes-error").waitVisible().getText();
+        //String a = _webDriverHandler.byId("ImportNotes-error").waitVisible().getText();
+       String a = _webDriverHandler.byId("ImportNotes-error").getText();
         System.out.println("-------------------------- \n"+a + " - Import");
        // waitLoad();
     }
 
     public void waitLoad() {
-    	_webDriverHandler.byXpath(_prop.getProperty("Overlay")).waitVisible(10,100).waitInvisible(10,100);
+    	//_webDriverHandler.byXpath(_prop.getProperty("Overlay")).waitVisible(15,100).waitInvisible(15,100);
+    	_webDriverHandler.byXpath(_prop.getProperty("Overlay"));
     }
 
     public void waitInformation() {
