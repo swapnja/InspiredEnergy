@@ -25,8 +25,8 @@ public class PR8_TC016_Utility_Electricity_Notes extends AbstractTestNg {
         NotesHandler notesHandler = new NotesHandler(webDriverHandler, prop);
         notesHandler.waitLoad();
         notesHandler.clearNotes("InformationNotesTB");
-        notesHandler.addNotes("Adding this Note " + appendDate, "InformationNotesTB");
-        notesHandler.informationSave();
+    //    notesHandler.addNotes("Adding this Note " + appendDate, "InformationNotesTB");
+//        notesHandler.informationSave();
         String CharLimit = notesHandler.getCharLimit("InformationNotesTB");
         System.out.println("-------------------------- \n" + CharLimit);
         Assert.assertEquals("1000", CharLimit);
@@ -38,18 +38,26 @@ public class PR8_TC016_Utility_Electricity_Notes extends AbstractTestNg {
         webDriverHandler.byXpath(prop.getProperty("ImportBtn")).waitClickable().click();
         webDriverHandler.byXpath(prop.getProperty("ImportReferenceTxtBox")).sendKeys("Automation Import File " + appendDate);
         notesHandler.addNotes("Adding note import " + appendDate, "importNotes");
-        notesHandler.testCharlimitImport("importNotes");
-        webDriverHandler.byXpath(prop.getProperty("ImportModalCancel")).click();
-        webDriverHandler.byXpath(prop.getProperty("Back")).waitClickable(10, 100).click();
+      //  notesHandler.testCharlimitImport("importNotes");
+       // webDriverHandler.byXpath(prop.getProperty("ImportModalCancel")).click();
+        //webDriverHandler.byXpath(prop.getProperty("Back")).waitClickable(10, 100).click();
         notesHandler.waitLoad();
-        notesHandler.openNotes("BudgetNotesIcon");
-        notesHandler.searchNotes("BudgetModalNotesSearch", Modify);
-        notesHandler.printSearch();
-        notesHandler.addBlankNotes("BudgetConsoleNotesTB");
-        webDriverHandler.byXpath(prop.getProperty("BudgetConsoleSave")).waitClickable(10, 100).click();
-        String strErrortext = webDriverHandler.byId("swal2-content").waitVisible().getText();
-        System.out.println("*************************");
-        System.out.println("Error message for Invalid header validation is: " + strErrortext);
-        webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable().click();
+     //   notesHandler.openNotes("BudgetNotesIcon");
+       // notesHandler.searchNotes("BudgetModalNotesSearch", Modify);
+		/*
+		 * notesHandler.printSearch();
+		 * notesHandler.addBlankNotes("BudgetConsoleNotesTB");
+		 * webDriverHandler.byXpath(prop.getProperty("BudgetConsoleSave")).waitClickable
+		 * (10, 100).click();
+		 */
+		/*
+		 * String strErrortext =
+		 * webDriverHandler.byId("swal2-content").waitVisible().getText();
+		 * System.out.println("*************************");
+		 * System.out.println("Error message for Invalid header validation is: " +
+		 * strErrortext);
+		 * webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable().
+		 * click();
+		 */
     }
 }
