@@ -20,7 +20,7 @@ public class PR8_TC018_My_Budgets extends AbstractTestNg {
             webDriverHandler.byXpath(prop.getProperty("Overlay")).waitVisible().waitInvisible();
             webDriverHandler.byXpath(prop.getProperty("MyBudgets")).click();
             String CreatedBy = webDriverHandler.byXpath(prop.getProperty("BudgetCreatedBy")).getText();
-            if (CreatedBy.equalsIgnoreCase(prop.getProperty("value.AdminUser"))){
+            if (CreatedBy.equalsIgnoreCase(prop.getProperty("value.StandardUser"))){
                 System.out.println("\nThe data of the page is correct");
             }
             else
