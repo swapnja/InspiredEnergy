@@ -50,14 +50,14 @@ public class PR8_TC014_CustomerGrid_SearchFunctionality {
 
 	@AfterMethod
 	public void terminateBrowser() {
-		driver.quit();
+	//	driver.quit();
 	}
 
 	@Test
 	public void test14() throws InterruptedException, IOException {
 		WebElement input = driver.findElement(By.cssSelector("input[type='search']"));
-		input.sendKeys("Swapnja");
-		WebElement CustTable = driver.findElement(By.id(prop.getProperty("customerTable")));
+		input.sendKeys("Automation");
+		WebElement CustTable = driver.findElement(By.xpath(prop.getProperty("customerTable")));
 		List<WebElement> allCustRows = CustTable.findElements(By.tagName("tr"));
 		for (WebElement row : allCustRows) {
 			List<WebElement> allCustCells = row.findElements(By.tagName("td"));
