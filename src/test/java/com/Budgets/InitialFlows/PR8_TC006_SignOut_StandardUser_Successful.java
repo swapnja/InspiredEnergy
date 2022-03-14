@@ -43,11 +43,11 @@ public class PR8_TC006_SignOut_StandardUser_Successful {
 		driver.findElement(By.xpath(prop.getProperty("SignOut"))).click();
 		String act_SignOuttitle = driver.getTitle();
 		String exp_SignOuttitle = "Login - Unify";
-		if (act_SignOuttitle.equalsIgnoreCase(exp_SignOuttitle)) {
-			System.out.println("Sign Out functionality is working fine for Standard User");
-		} else {
-			System.out.println("Oops, There is some Issue");
-		}
+		/*
+		 * if (act_SignOuttitle.equalsIgnoreCase(exp_SignOuttitle)) {
+		 * System.out.println("Sign Out functionality is working fine for Standard User"
+		 * ); } else { System.out.println("Oops, There is some Issue"); }
+		 */
 		//driver.quit();
 	}
 
