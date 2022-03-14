@@ -31,8 +31,8 @@ public class PR147_15_NewsandEventsCategories extends AbstractTestNg {
         driver.findElement(By.xpath("//*[@id='btnSaveEventCategory']")).click();
         driver.findElement(By.xpath("//div[@class='swal2-actions']//button[@class='swal2-confirm swal2-styled']")).click();
         webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
-        webDriverHandler.byXpath("//*[@id='btnDelete']").waitClickable().click();
-        driver.findElement(By.xpath("//div[@class='swal2-actions']//button[@class='swal2-confirm swal2-styled']")).click();
+//        webDriverHandler.byXpath("//*[@id='btnDelete']").waitClickable().click();
+  //      driver.findElement(By.xpath("//div[@class='swal2-actions']//button[@class='swal2-confirm swal2-styled']")).click();
 
     }
 }
