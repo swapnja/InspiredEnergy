@@ -1,7 +1,7 @@
 
 // home= pinnedApps
 //All Application -AppTrayList changed from pinedApp to AppTrayList
-package com.ClientPortal;
+package com.CompaniesAndContacts;
 
 import com.ClientPortal.PageObjects.AbstractTestNg;
 import org.openqa.selenium.By;

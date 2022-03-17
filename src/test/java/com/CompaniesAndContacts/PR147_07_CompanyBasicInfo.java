@@ -1,4 +1,4 @@
-package com.ClientPortal;
+package com.CompaniesAndContacts;
 
 import com.ClientPortal.PageObjects.AbstractTestNg;
 import org.openqa.selenium.By;

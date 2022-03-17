@@ -1,4 +1,4 @@
-package com.ClientPortal;
+package com.CompaniesAndContacts;
 
 import com.Base.SeleniumHandlers.ElementHandler;
 import com.ClientPortal.PageObjects.AbstractTestNg;

@@ -1,4 +1,4 @@
-package com.ClientPortal;
+package com.CompaniesAndContacts;
 
 import com.Base.ReadPropertyFile;
 import org.openqa.selenium.By;
