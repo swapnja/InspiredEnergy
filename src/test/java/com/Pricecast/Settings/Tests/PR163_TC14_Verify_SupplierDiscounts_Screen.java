@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class PR163_TC014_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
-    public PR163_TC014_Verify_SupplierDiscounts_Screen() throws IOException {
+public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
+    public PR163_TC14_Verify_SupplierDiscounts_Screen() throws IOException {
     }
 
     @Test

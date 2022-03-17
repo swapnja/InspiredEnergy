@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class PR163_TC013_Verify_PowerSuppliers_Screen extends AbstractTestNg {
+public class PR163_TC13_Verify_PowerSuppliers_Screen extends AbstractTestNg {
 
-    public PR163_TC013_Verify_PowerSuppliers_Screen() throws IOException {
+    public PR163_TC13_Verify_PowerSuppliers_Screen() throws IOException {
     }
 
     @Test
