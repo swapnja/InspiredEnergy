@@ -1,15 +1,17 @@
 //this is commit from eclipse
-package com.AutoII;
+package com.InstantInsight;
 
 import org.testng.annotations.Test;
 
+import com.AutoII.AbstractTestNg;
+import com.AutoII.AutoInstantInsights;
 import com.Base.ChromeDriverOptions;
 
 import java.io.IOException;
 
-public class PR184_TC01_AutoInstantInsights extends AbstractTestNg{
+public class PR184_TC01_InstantInsights extends AbstractTestNg{
 	
-    public PR184_TC01_AutoInstantInsights() throws IOException {
+    public PR184_TC01_InstantInsights() throws IOException {
      //	ChromeDriverOptions.getHeadlessBrowser();
     }
 
