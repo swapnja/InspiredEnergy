@@ -10,7 +10,7 @@ import java.io.IOException;
 public class PR163_TC04_Verify_UpliftIncrements_Screen extends AbstractTestNg {
 	public PR163_TC04_Verify_UpliftIncrements_Screen() throws IOException {
 	}	
-
+//passed
 	@Test
 	public void UpliftIncrements_Gas() throws InterruptedException {
 		UpliftsIncrements upliftIncrements = new UpliftsIncrements(webDriverHandler);
@@ -20,7 +20,7 @@ public class PR163_TC04_Verify_UpliftIncrements_Screen extends AbstractTestNg {
 		upliftIncrements.addNewRow(12,1,"0.0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1.0","95");
 		upliftIncrements.btnOk.waitClickable().click();
 	} 
-			
+		//	passed
 	@Test
 	public void UpliftIncrements_Power() throws InterruptedException {
 		UpliftsIncrements upliftIncrements = new UpliftsIncrements(webDriverHandler);
@@ -30,7 +30,7 @@ public class PR163_TC04_Verify_UpliftIncrements_Screen extends AbstractTestNg {
 		upliftIncrements.addNewRow(12,1,"0.0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1.0","All");
 		upliftIncrements.btnOk.waitClickable().click();
 	}	
-	 
+	 //passed
 	 @Test
 	public void columnVerification_Gas() throws InterruptedException{
 		UpliftsIncrements uplifts = new UpliftsIncrements(webDriverHandler);
@@ -39,7 +39,7 @@ public class PR163_TC04_Verify_UpliftIncrements_Screen extends AbstractTestNg {
 		sas.selectGasSupplier();
 		uplifts.upliftIncrementsColumnVerification();
 	}	
-	
+	//passed
 	 @Test
 	public void columnVerification_Power() throws InterruptedException{
 		UpliftsIncrements uplifts = new UpliftsIncrements(webDriverHandler);
@@ -48,7 +48,7 @@ public class PR163_TC04_Verify_UpliftIncrements_Screen extends AbstractTestNg {
 		sas.selectPowerSupplier();
 		uplifts.upliftIncrementsColumnVerification();
 	}
-	
+	//passed
 	@Test
 	public void SupplierUplift_NumericValidation_Gas() throws InterruptedException {
 		UpliftsIncrements uplifts = new UpliftsIncrements(webDriverHandler);

@@ -36,7 +36,7 @@ public class PR163_TC12_Verify_GasSuppliers_Screen extends AbstractTestNg {
     public void Mapping() {
         GasSuppliers gasSuppliers = new GasSuppliers(webDriverHandler);
         gasSuppliers.selectSettings();
-        gasSuppliers.mapSupplier("Corona", "xlsx", true);
+        gasSuppliers.mapSupplier("Axis", "xlsx", true);
     }
 
     @Test

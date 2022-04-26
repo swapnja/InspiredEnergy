@@ -10,7 +10,7 @@ import java.io.IOException;
 public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
     public PR163_TC14_Verify_SupplierDiscounts_Screen() throws IOException {
     }
-
+//Passed
     @Test
     public void SupplierDiscountsSuccess_Gas() throws InterruptedException {
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -19,7 +19,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         sas.selectGasSupplier();
         supplierDiscount.addNewRow("12", "101", "11");
     }
-
+//Passed
     @Test
     public void SupplierDiscountsSuccess_Power() throws InterruptedException {
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -28,7 +28,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         sas.selectPowerSupplier();
         supplierDiscount.addNewRow("10", "50", "25");
     }
-
+//Passed
     @Test
     public void columnVerification_Gas() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -37,7 +37,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         sas.selectGasSupplier();
         supplierDiscount.columnVerification();
     }
-
+//Passed
     @Test
     public void rangeValidation_Gas() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -47,7 +47,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         supplierDiscount.addNewRowValidations("1.2", "-6", "-0.356");
         supplierDiscount.rangeValidations();
     }
-
+//Passed
     @Test
     public void mandatoryValidation_Gas() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -57,7 +57,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         supplierDiscount.addNewRowValidations("", "", "");
         supplierDiscount.mandatoryValidations();
     }
-
+//Passed
     @Test
     public void greaterValidation_Gas() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -76,7 +76,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         sas.selectPowerSupplier();
         supplierDiscount.columnVerification();
     }
-
+//Passed
     @Test
     public void rangeValidation_Power() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -86,7 +86,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         supplierDiscount.addNewRowValidations("1.2", "-6", "-0.356");
         supplierDiscount.rangeValidations();
     }
-
+//Passed
     @Test
     public void mandatoryValidation_Power() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
@@ -96,7 +96,7 @@ public class PR163_TC14_Verify_SupplierDiscounts_Screen extends AbstractTestNg {
         supplierDiscount.addNewRowValidations("", "", "");
         supplierDiscount.mandatoryValidations();
     }
-
+//Passed
     @Test
     public void greaterValidation_Power() throws InterruptedException{
         SupplierDiscount supplierDiscount = new SupplierDiscount(webDriverHandler);
