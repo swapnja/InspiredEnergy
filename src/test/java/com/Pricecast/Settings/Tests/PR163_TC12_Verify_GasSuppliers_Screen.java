@@ -31,14 +31,12 @@ public class PR163_TC12_Verify_GasSuppliers_Screen extends AbstractTestNg {
         gasSuppliers.selectSettings();
         gasSuppliers.editSupplier("Axis", "AXIS", "0", "1", "0.1", true, true);
     }
-
     @Test
     public void Mapping() {
         GasSuppliers gasSuppliers = new GasSuppliers(webDriverHandler);
         gasSuppliers.selectSettings();
         gasSuppliers.mapSupplier("Axis", "xlsx", true);
     }
-
     @Test
     public void rangeValidations () {
         GasSuppliers gasSuppliers = new GasSuppliers(webDriverHandler);
