@@ -19,7 +19,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.accessHelpText();
         helpText.verifyHelpText();
     }
-
+//Done
     @Test
     public void addNewRow() {
         HelpText helpText = new HelpText(webDriverHandler);
@@ -27,7 +27,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.accessHelpText();
         helpText.addNewRow("Test Key", "Test Text");
     }
-
+//Done
     @Test
     public void deleteRow() {
         HelpText helpText = new HelpText(webDriverHandler);
@@ -35,7 +35,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.accessHelpText();
         helpText.deleteRow("Test Key");
     }
-
+//Done
     @Test
     public void editRow() {
         HelpText helpText = new HelpText(webDriverHandler);
@@ -45,7 +45,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.editRow("Test Key", "Test Key Edit","Test Edit");
         helpText.deleteRow("Test Key Edit");
     }
-
+//Done
     @Test
     public void duplicateValidation() {
         HelpText helpText = new HelpText(webDriverHandler);
@@ -53,7 +53,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.accessHelpText();
         helpText.addDuplicate("Test Key", "Test Text");
     }
-
+//Done
     @Test
     public void errorValidations() {
         HelpText helpText = new HelpText(webDriverHandler);
@@ -61,7 +61,7 @@ public class PR163_TC07_Verify_HelpText extends AbstractTestNg {
         helpText.accessHelpText();
         helpText.errorValidations();
     }
-
+//Done
     @Test
     public void mandatoryValidations() {
         HelpText helpText = new HelpText(webDriverHandler);
