@@ -18,6 +18,7 @@ public class PR163_TC01_GasFlow extends AbstractTestNg {
         gasQuote.quoteSelection();
         gasQuote.excelFileDownload();
         gasQuote.pdfFileDownload();
+       
     }
 //done
     @Test
