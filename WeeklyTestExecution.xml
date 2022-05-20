@@ -16,10 +16,13 @@
 			<package name = "com.Budgets.Utility.Electricity.Electricity4"/>   
 			<package name = "com.Budgets.Utility.Gas"/>	
 	<package name = "com.ClientPortal"/>   
-	 -->	
-	<package name ="com.Pricecast.Settings.Tests"/>
+	
+		<package name ="com.Pricecast.Settings.Tests"/>
 	<package name ="com.Pricecast.AdminSettings"/>
 	<package name ="com.Pricecast.Tariff"/>
+	
+	 -->	
+
 	<package name ="com.Pricecast.Quotes.Power"/>
 	<package name ="com.Pricecast.Quotes.Gas"/>
 		</packages>
