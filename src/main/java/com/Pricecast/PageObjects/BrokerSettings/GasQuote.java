@@ -105,7 +105,7 @@ public class GasQuote {
         txtPostCode.clear().sendKeys(postcode + "");
         txtAQ.clear().sendKeys(AQ + "");
         ddSupplier.selectByText(supplier);
-        calendarStartDate.clear().sendKeys("01/01/2022", Keys.ESCAPE);
+        calendarStartDate.clear().sendKeys("01/05/2023", Keys.ESCAPE);
         btnGetQuote.click();
         waitLoadLong();
     }
@@ -117,7 +117,7 @@ public class GasQuote {
         txtPostCode.clear().sendKeys(postcode);
         txtAQ.clear().sendKeys(AQ + "");
         ddSupplier.selectByText(supplier);
-        calendarStartDate.clear().sendKeys("S/Z/2022", Keys.ESCAPE);
+        calendarStartDate.clear().sendKeys("01/05/2023", Keys.ESCAPE);
         btnGetQuote.click();
     }
 
@@ -173,30 +173,39 @@ public class GasQuote {
     }
 
     public void quoteSelectionUserDefinedQuotes() {
-        _webDriverHandler.byXpath("//*[@id='id_3']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_4']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_35']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_34']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_166']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_219']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_176']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_209']/td/div/input").waitClickable().click();
     }
 
     public void quoteSelection() {
-        _webDriverHandler.byXpath("//*[@id='id_3']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_4']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_35']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_34']/td/div/input").waitClickable().click();
+    	_webDriverHandler.byXpath("//*[@id='id_166']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_219']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_176']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_209']/td/div/input").waitClickable().click();
         _webDriverHandler.byXpath("//button[contains(text(),'Quote Selected')]").waitClickable(10, 100).click();
     }
 
-    public void compareQuoteSelection() {
-        _webDriverHandler.byXpath("//*[@id='id_3']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_4']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_35']/td/div/input").waitClickable().click();
-        _webDriverHandler.byXpath("//*[@id='id_34']/td/div/input").waitClickable().click();
+ //   public void compareQuoteSelection() {
+//        _webDriverHandler.byXpath("//*[@id='id_3']/td/div/input").waitClickable().click();
+//        _webDriverHandler.byXpath("//*[@id='id_4']/td/div/input").waitClickable().click();
+//        _webDriverHandler.byXpath("//*[@id='id_35']/td/div/input").waitClickable().click();
+//        _webDriverHandler.byXpath("//*[@id='id_34']/td/div/input").waitClickable().click();
         // Add user defined quotes xpath here and then compare quote
-        btnCompareSelected.click();
-        waitLoadLong();
+ //       btnCompareSelected.click();
+ //       waitLoadLong();
         //	waitLoad();
         //txtQuoteRef.clear().sendKeys("Automation Test : gas Quote" + appendDate);
+   // }
+    
+    public void compareQuoteSelection() {
+    	_webDriverHandler.byXpath("//*[@id='id_166']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_219']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_176']/td/div/input").waitClickable().click();
+        _webDriverHandler.byXpath("//*[@id='id_209']/td/div/input").waitClickable().click();
+       // _webDriverHandler.byXpath("//button[contains(text(),'Quote Selected')]").waitClickable(10, 100).click();
+        btnCompareSelected.click();
     }
 
     public void excelFileDownload() {
