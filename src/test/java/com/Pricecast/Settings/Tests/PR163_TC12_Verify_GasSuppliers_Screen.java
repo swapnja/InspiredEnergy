@@ -32,7 +32,7 @@ public class PR163_TC12_Verify_GasSuppliers_Screen extends AbstractTestNg {
         gasSuppliers.editSupplier("Axis", "AXIS", "0", "1", "0.1", true, true);
     }
     @Test
-    public void Mapping() {
+    public void Mapping() throws InterruptedException {
         GasSuppliers gasSuppliers = new GasSuppliers(webDriverHandler);
         gasSuppliers.selectSettings();
         gasSuppliers.mapSupplier("Axis", "xlsx", true);
