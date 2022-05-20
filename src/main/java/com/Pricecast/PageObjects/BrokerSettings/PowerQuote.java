@@ -116,7 +116,7 @@ public class PowerQuote {
     //Range validation messages
     String strRangeMPAN = "MPAN should be a 13 digit numeric value";
     String strRangeMTC = "Please enter a non decimal number between 1 and 99999";
-    String strRangeLLF = "Please enter a non decimal number between 1 and 99999";
+    String strRangeLLF = "LLF should be a 3 digit value from the genetic letters and numbers";
     String strRangeEAC = "Please enter a non decimal number between 1 and 9999999";
     String strRangeEACND = "Please enter a number between 1 and 9999999";
     String strRangeStartDate = "Start Date Field is invalid.";
@@ -163,7 +163,7 @@ public class PowerQuote {
         txtLLF.clear().sendKeys(llf + "");
         txtEAC.clear().sendKeys(eac + "");
         ddSupplier.selectByText(supplier);
-        calendarStartDate.clear().sendKeys("01/01/2022", Keys.ESCAPE);
+        calendarStartDate.clear().sendKeys("01/08/2022", Keys.ESCAPE);
         btnGetQuote.click();
 waitLoad();
 btnCloseSplits.click();
@@ -180,8 +180,8 @@ btnCloseSplits.click();
         txtMTC.clear().sendKeys("-2");
         txtLLF.clear().sendKeys("4.56");
         txtEAC.clear().sendKeys("15000000.0");
-        ddSupplier.selectByText("British Gas");
-        calendarStartDate.clear().sendKeys("01/01/201", Keys.ESCAPE);
+        ddSupplier.selectByText("Axis");
+        calendarStartDate.clear().sendKeys("01/08/2022", Keys.ESCAPE);
         btnGetQuote.click();
         powerQuote_Validation();
         txtMPAN.clear().sendKeys("161670402");
@@ -210,17 +210,17 @@ btnCloseSplits.click();
     }
 
     public void quoteSelectionUserDefinedQuotes() {
-        _webDriverHandler.byXpath("//*[@id='id_10']/td/div/input").waitClickable(15,100).click();
-        _webDriverHandler.byXpath("//*[@id='id_12']/td/div/input").waitClickable(15,100).click();
-        _webDriverHandler.byXpath("//*[@id='id_16']/td/div/input").waitClickable(15,100).click();
-        _webDriverHandler.byXpath("//*[@id='id_14']/td/div/input").waitClickable(15,100).click();
+        _webDriverHandler.byXpath("//*[@id='id_6']/td/div/input").waitClickable(15,100).click();
+        _webDriverHandler.byXpath("//*[@id='id_7']/td/div/input").waitClickable(15,100).click();
+        _webDriverHandler.byXpath("//*[@id='id_22']/td/div/input").waitClickable(15,100).click();
+        _webDriverHandler.byXpath("//*[@id='id_23']/td/div/input").waitClickable(15,100).click();
     }
 
     public void quoteSelection() {
-        _webDriverHandler.byXpath("//*[@id='id_10']/td/div/input").click();
-        _webDriverHandler.byXpath("//*[@id='id_12']/td/div/input").click();
-        _webDriverHandler.byXpath("//*[@id='id_16']/td/div/input").click();
+        _webDriverHandler.byXpath("//*[@id='id_6']/td/div/input").click();
+        _webDriverHandler.byXpath("//*[@id='id_7']/td/div/input").click();
         _webDriverHandler.byXpath("//*[@id='id_14']/td/div/input").click();
+        _webDriverHandler.byXpath("//*[@id='id_15']/td/div/input").click();
         _webDriverHandler.byXpath("//button[contains(text(),'Quote Selected')]").waitClickable(10, 100).click();
     }
 
