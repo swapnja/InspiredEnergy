@@ -23,7 +23,7 @@ public class DeleteSheets {
 
     public DeleteSheets(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkDeleteSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Delete']");
         searchBox = _webDriverHandler.byXpath("//input[@type='search']");
         rbutilityGas = _webDriverHandler.byXpath("//input[@value='0']");
@@ -103,10 +103,10 @@ public class DeleteSheets {
         tariff.TariffAccess();
         tariff.waitLoad();
         _webDriverHandler.byXpath("//*[@id='btnUploadTariff']").waitClickable(15,100).click();
-        String path = Paths.get("PricecastTestData\\Tariff\\Power\\To_Be_Deleted.xlsx").toAbsolutePath().toString();
+        String path = Paths.get("PricecastTestData\\Tariff\\Gas\\Axis-G-Axis 2018 Format.xlsx").toAbsolutePath().toString();
         _webDriverHandler.byXpath("//*[@id='txtTariffSheet']").sendKeys(path);
         waitLoad();
-        try{_webDriverHandler.byXpath("//*[@id='ddlEnergyType1']").selectByText("Power");}
+        try{_webDriverHandler.byXpath("//*[@id='ddlEnergyType1']").selectByText("Gas");}
         catch(Exception e){}
         _webDriverHandler.byXpath("(//*[contains(text(),'Cancel')])[2]").waitClickable(15,100).click();
         _webDriverHandler.byXpath("//a[contains(text(),'Tariff')]").waitClickable(15,100).click();
@@ -121,7 +121,7 @@ public class DeleteSheets {
             tariff.UploadSheetsExcel("To_Be_Deleted.xlsx", "Gas", "BES", "Acquisition and Renewal","BESGas", "01/01/2020","","" );
         }
         else{
-            tariff.UploadSheetsExcel("To_Be_Deleted.xlsx", "Power", "BES", "Acquisition and Renewal","BESPower", "01/01/2020","","" );
+            tariff.UploadSheetsExcel("Axis-G-Axis 2018 Format.xlsx", "Gas", "Axis", "Acquisition and Renewal","Axis", "01/01/2020","","" );
         }
     }
 
