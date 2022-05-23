@@ -8,8 +8,14 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class PR163_TC02_Tariff_BulkUpload extends AbstractTestNg{
+public class PR163_TC02_Tariff_BulkUpload extends AbstractTestNg
+{
 
+	public PR163_TC02_Tariff_BulkUpload() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+/*
   public PR163_TC02_Tariff_BulkUpload() throws IOException {
   }
 
@@ -56,4 +62,5 @@ public class PR163_TC02_Tariff_BulkUpload extends AbstractTestNg{
     Object [][] arrayObject = ex.statusUpdate(path);
     return arrayObject;
   }
+  */
 }
