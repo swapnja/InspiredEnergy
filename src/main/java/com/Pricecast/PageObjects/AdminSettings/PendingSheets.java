@@ -19,7 +19,7 @@ public class PendingSheets {
 
     public PendingSheets(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkPendingSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Pending']");
         searchBox = _webDriverHandler.byXpath("//input[@type='search']");
         rbutilityGas = _webDriverHandler.byXpath("//input[@value='0']");
