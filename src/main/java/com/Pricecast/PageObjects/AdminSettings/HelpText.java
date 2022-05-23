@@ -25,7 +25,7 @@ public class HelpText {
 
     public HelpText(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkHelpText = _webDriverHandler.byXpath("//a[@data-action='HelpText']");
         searchBox = _webDriverHandler.byXpath("//input[@type='search']");
         btnAddNew = _webDriverHandler.byXpath("//button[text()=' Add New Row']");
