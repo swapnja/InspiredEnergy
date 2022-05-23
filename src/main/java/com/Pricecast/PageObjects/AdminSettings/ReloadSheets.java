@@ -19,7 +19,7 @@ public class ReloadSheets {
     public ReloadSheets(WebDriverHandler webDriverHandler) {
 
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkReloadSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Reload']");
         searchBox = _webDriverHandler.byXpath("//input[@type='search']");
         rbutilityGas = _webDriverHandler.byXpath("//input[@value='0']");
