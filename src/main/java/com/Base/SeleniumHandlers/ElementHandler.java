@@ -46,11 +46,11 @@ public class ElementHandler {
 		waitPresence();
 		WebDriverWait webDriverWait = new WebDriverWait(_driver, timeOutInSeconds, sleepInMillis);
 		JavascriptExecutor js =(JavascriptExecutor)_driver;
- js.executeScript("arguments[0].click()", _webElement);
+		js.executeScript("arguments[0].click()", _webElement);
 		webDriverWait.until(ExpectedConditions.visibilityOf(_webElement));
 		return this;
-	}
-
+	}  
+ 
 	public ElementHandler waitInvisible() {
 		waitPresence();
 		_webDriverWait.until(ExpectedConditions.invisibilityOf(_webElement));
@@ -178,7 +178,8 @@ public class ElementHandler {
 	}
 
 	public String getText() {
-		waitPresence();
+		//waitPresence();
+		waitPresence(15,100);
 		String strVal = _webElement.getText();
 		return strVal;
 	}

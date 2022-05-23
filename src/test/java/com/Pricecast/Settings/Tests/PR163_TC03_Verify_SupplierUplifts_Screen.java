@@ -21,7 +21,7 @@ public class PR163_TC03_Verify_SupplierUplifts_Screen extends AbstractTestNg {
         supplierUplifts.addNewRow(12, 1, 11, 1111, 1, 11, "(%AQ%/1000)*%GU%");
 
     }
-//fail
+//Pass
     @Test
     public void SupplierUpliftSuccess_Power() throws InterruptedException {
         SupplierUplifts supplierUplifts = new SupplierUplifts(webDriverHandler);
@@ -96,7 +96,7 @@ public class PR163_TC03_Verify_SupplierUplifts_Screen extends AbstractTestNg {
         System.out.println("Broker Account functionality is working fine: BrokerAccount_RangeValidation");
     }
 
-//fail
+//Pass
     @Test
     public void SupplierUplift_MandatoryValidations_Power() throws InterruptedException {
         SupplierUplifts supplierUplifts = new SupplierUplifts(webDriverHandler);
@@ -106,7 +106,7 @@ public class PR163_TC03_Verify_SupplierUplifts_Screen extends AbstractTestNg {
         supplierUplifts.blankAddNewRow();
         supplierUplifts.SupplierUplift_MandatoryValidation();
     }
-//fail
+//Pass
     @Test
     public void supplierUplift_NumericValidations_Power() throws Exception {
         SupplierUplifts supplierUplifts = new SupplierUplifts(webDriverHandler);
