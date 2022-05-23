@@ -34,7 +34,7 @@ public class TariffMappingSQL {
 
     public TariffMappingSQL(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkTariffMapping = _webDriverHandler.byXpath("//a[@data-action='TariffMappingSQL']");
         searchBox = _webDriverHandler.byXpath("//input[@type='search']");
         rbutilityGas = _webDriverHandler.byXpath("//*[@id='energyType_0']");
