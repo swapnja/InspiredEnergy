@@ -102,7 +102,7 @@ public Tariff (WebDriverHandler webDriverHandler) {
 			statusGas.waitClickable().staleElementHandler().click();
 		}
 		else {
-			statusPower.waitClickable().staleElementHandler().click();
+			statusPower.waitClickable(15,100).staleElementHandler().click();
 		}
 	}
 
