@@ -18,7 +18,7 @@ public class ShowConfig {
 
     public ShowConfig(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkShowConfig = _webDriverHandler.byXpath("//a[@data-action='ShowConfig']");
         btnExportExcel = _webDriverHandler.byXpath("//*[@id='btnExportBrokerconfig']");
         btnChooseFile = _webDriverHandler.byXpath("//*[@id='brokerConfigFileId']");
