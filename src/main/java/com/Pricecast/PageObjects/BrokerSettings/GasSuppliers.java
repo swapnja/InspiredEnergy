@@ -150,7 +150,7 @@ public class GasSuppliers {
 		}
 	}
 
-	public void toggleMapping(boolean Status){
+	public void toggleMapping(boolean Status) throws InterruptedException{
 		if(Status){
 			if(!mappingtglCheck.isSelected()){
 				mappingtgl.click();
@@ -162,6 +162,7 @@ public class GasSuppliers {
 		}
 		else {
 			if(mappingtglCheck.isSelected()){
+				wait(5000);
 				mappingtgl.click();
 				System.out.println("\nThis mapping is now disabled.");
 			}
@@ -204,15 +205,15 @@ public class GasSuppliers {
 		btnSave.waitClickable().click();
 	}
 
-	public void mapSupplier (String Supplier, String Mapping, boolean MapStatus) {
+	public void mapSupplier (String Supplier, String Mapping, boolean MapStatus) throws InterruptedException {
 		searchSupplier(Supplier);
 		buttonMap.waitClickable().click();
-		searchMapping(Mapping);
-		buttonEditMap.waitClickable().click();
-		toggleMapping(MapStatus);
-		btnSave.waitClickable().click();
+	//	searchMapping(Mapping);
+		//buttonEditMap.waitClickable().click();
+	//	toggleMapping(MapStatus);
+	//	btnSave.waitClickable().click();
 		waitLoad();
-		btnOk.waitClickable().click();
+	//	btnOk.waitClickable().click();
 		btnCancel.waitClickable().click();
 	}
 
