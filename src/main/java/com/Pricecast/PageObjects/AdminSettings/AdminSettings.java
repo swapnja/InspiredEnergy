@@ -19,7 +19,7 @@ public class AdminSettings {
     public AdminSettings(WebDriverHandler webDriverHandler)
     {
         _webDriverHandler = webDriverHandler;
-        adminSettings = _webDriverHandler.byXpath("//button[text() = 'Admin Settings']");
+        adminSettings = _webDriverHandler.byXpath("//button[contains(text(),'Admin')]");
         linkReloadSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Reload']");
         linkDeleteSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Delete']");
         linkPendingSheets = _webDriverHandler.byXpath("//a[@data-action='Sheets/Pending']");
