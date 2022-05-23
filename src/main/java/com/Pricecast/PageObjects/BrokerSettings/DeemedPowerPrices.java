@@ -94,7 +94,7 @@ public class DeemedPowerPrices {
 
     public void DeemedPowerPrices_blankaddNewRow() {
         waitLoad();
-        ddSupplier.selectByText("British Gas");
+        ddSupplier.selectByText("Engie");
         waitLoad();
         buttonAddNewRow.waitClickable(10, 100).click();
         txtBoxDeemedPowerPC.clear();
