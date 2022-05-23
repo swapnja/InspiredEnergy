@@ -35,7 +35,7 @@ public class supplyAndSuppliersSelection {
         Thread.sleep(2000);
         radioPowerSupplyType.click();
         Thread.sleep(2000);
-        ddCommonSupplier.selectByText("BG Lite");
+        ddCommonSupplier.selectByText("CNG");
     }
 
     public void selectAllSupplier() {
