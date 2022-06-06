@@ -11,6 +11,12 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class PR8_TC016_Utility_Electricity_Notes extends AbstractTestNg {
+
+	public PR8_TC016_Utility_Electricity_Notes() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	/*
     String appendDate = TimeStampPageHandler.AppendTimeStamp();
     public PR8_TC016_Utility_Electricity_Notes() throws IOException {
     }
@@ -58,6 +64,7 @@ public class PR8_TC016_Utility_Electricity_Notes extends AbstractTestNg {
 		 * strErrortext);
 		 * webDriverHandler.byXpath("//button[contains(text(),'OK')]").waitClickable().
 		 * click();
-		 */
+		 
     }
+*/
 }
