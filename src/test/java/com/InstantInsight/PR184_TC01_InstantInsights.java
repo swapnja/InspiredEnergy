@@ -3,9 +3,9 @@ package com.InstantInsight;
 
 import org.testng.annotations.Test;
 
-import com.AutoII.AbstractTestNg;
-import com.AutoII.AutoInstantInsights;
 import com.Base.ChromeDriverOptions;
+import com.InstantInsight.AbstractTestNg;
+import com.InstantInsight.AutoInstantInsights;
 
 import java.io.IOException;
 
