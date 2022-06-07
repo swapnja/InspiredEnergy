@@ -1,5 +1,5 @@
 //AutoII Abstract
-package com.AutoII;
+package com.InstantInsight;
 
 import java.io.IOException;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package com.AutoII;
+package com.InstantInsight;
 
 import com.Base.ReadPropertyFile;
 import com.Base.SeleniumHandlers.ElementHandler;
