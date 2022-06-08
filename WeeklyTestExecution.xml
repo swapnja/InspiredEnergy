@@ -9,16 +9,9 @@
 		<packages>			
 	
 		
-		 	
-		
 		 	<package name="com.CarbonIntensity" />
 		 	<package name="com.InstantInsight" />
 		 	<package name = "com.CompaniesAndContacts"/>   
-			
-			
-			
-			
-			
 			
 			
 <!-- 	<package name ="com.Pricecast.Tariff"/> 

@@ -12,7 +12,6 @@ import java.nio.file.Paths;
 public class PR008_Budget_V3_TC073_Calculate_Budget_VAT_Toggle_Gas extends AbstractTestNg {
     public PR008_Budget_V3_TC073_Calculate_Budget_VAT_Toggle_Gas() throws IOException {
     }
-
     @Test
     public void VATBudgetCalculate() throws InterruptedException, IOException {
         String xlPathMeter = Paths.get("BudgetTestData/Gas/Information/InformationTab_Green/Meter_Green.xlsx").toAbsolutePath().toString();

@@ -13,6 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class PR8_TC006_SignOut_StandardUser_Successful {
+	/*
 	Properties prop = ReadPropertyFile.getProperties();
 	WebDriver driver;
 	WebDriverHandler webDriverHandler;
@@ -47,8 +48,8 @@ public class PR8_TC006_SignOut_StandardUser_Successful {
 		 * if (act_SignOuttitle.equalsIgnoreCase(exp_SignOuttitle)) {
 		 * System.out.println("Sign Out functionality is working fine for Standard User"
 		 * ); } else { System.out.println("Oops, There is some Issue"); }
-		 */
+		 
 		//driver.quit();
 	}
-
+*/
 }
