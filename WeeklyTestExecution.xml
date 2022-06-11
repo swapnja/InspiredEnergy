@@ -3,7 +3,7 @@
 <suite name="Regression Testing Suite" thread-count="1"
 	verbose="1" configfailurepolicy="continue" parallel="tests">
 <listeners>
-    <listener class-name="com.Base.SeleniumHandlers.RetryListenerClass"/>
+    <listener class-name="Listner.ExtentReporterNG"/>
    </listeners>
 	<test name="Weekly Test Execution">
 		<packages>			
