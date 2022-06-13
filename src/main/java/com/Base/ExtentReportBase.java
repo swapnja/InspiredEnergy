@@ -25,7 +25,7 @@ public class ExtentReportBase {
 
   @BeforeTest
   public void beforeMethod() {
-	  test= extent.createTest("Weekly Automation suite");
+	  test= extent.createTest("Extent Report");
   }
 
   @AfterMethod

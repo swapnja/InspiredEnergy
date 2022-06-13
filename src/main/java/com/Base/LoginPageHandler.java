@@ -14,8 +14,7 @@ public class LoginPageHandler {
         _prop = prop;
     }
 
-    public void Login() throws InterruptedException {
-    
+    public void Login() throws InterruptedException {    
         _webDriverHandler.byXpath(_prop.getProperty("HomeLogin")).waitClickable(15,100).click();
         _webDriverHandler.byId(_prop.getProperty("userName")).sendKeys(_prop.getProperty("AdminUser"));
         _webDriverHandler.byXpath(_prop.getProperty("HomeSignIn")).waitClickable(5,100).click();
@@ -24,6 +23,7 @@ public class LoginPageHandler {
        //_webDriverHandler.byXpath(_prop.getProperty("HomeStaySignedIn")).waitVisible(15,100).waitClickable(15,100).click();
         _webDriverHandler.byXpath(_prop.getProperty("HomeStaySignedIn")).waitClickable(15,100).click();
     }
+    
     public void LoginWrongPwdAdmin() throws InterruptedException {
         _webDriverHandler.byXpath(_prop.getProperty("HomeLogin")).waitClickable(15,100).click();
         _webDriverHandler.byId(_prop.getProperty("userName")).sendKeys(_prop.getProperty("AdminUser"));
