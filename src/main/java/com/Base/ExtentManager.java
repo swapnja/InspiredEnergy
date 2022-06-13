@@ -1,4 +1,4 @@
-package com.Base;
+ package com.Base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -19,7 +19,7 @@ public class ExtentManager {
 	 * 
 	 * }
 	 */
-	/*
+	
 	public static ExtentReports createInstance() {
 		//ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
 		ExtentSparkReporter reporter = new ExtentSparkReporter("D:/Jenkins/home/workspace/Unify/extent-reports/extent-report.html");
@@ -30,7 +30,7 @@ public class ExtentManager {
 		extentReports.setSystemInfo("Tester", "Swapnja Gudle");
 		return extentReports;
 	}
-*/
+// below part was uncommented
 	public static ExtentReports createExtentReports() {
 		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
 		reporter.config().setReportName("Automation Weekly execution Report");

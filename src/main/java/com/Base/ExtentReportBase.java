@@ -1,4 +1,4 @@
-package com.Base;
+ package com.Base;
 
 import org.testng.ITestContext;
 //D:\Jenkins\home\workspace\Unify\src\main\java\
@@ -26,6 +26,7 @@ public class ExtentReportBase {
   @BeforeTest
   public void beforeMethod() {
 	  test= extent.createTest("Extent Report");
+	  
   }
 
   @AfterMethod
