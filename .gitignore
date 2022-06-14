@@ -7,3 +7,4 @@ FailureOutput/Screenshots/PriceCast
 .classpath
 .settings/org.eclipse.jdt.core.prefs
 .png
+/target/
