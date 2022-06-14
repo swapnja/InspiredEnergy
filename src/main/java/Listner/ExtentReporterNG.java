@@ -14,39 +14,39 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.*;
+
+
 
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) {
-		extent = new ExtentReports(outputDirectory + File.separator
-				+ "Unify_Report.html", true);
-		 extent.addSystemInfo("OS", "Windows");
-	      extent.addSystemInfo("Host Name", "Test");
-	      extent.addSystemInfo("Environment", "QA-Staging Envionment");
-	      extent.addSystemInfo("User Name", "Swapnja Gudle");
+		extent = new ExtentReports();
+		 extent.setSystemInfo("OS", "Windows");
+	      extent.setSystemInfo("Host Name", "Test");
+	      extent.setSystemInfo("Environment", "QA-Staging Envionment");
+	      extent.setSystemInfo("User Name", "Swapnja Gudle");
 
 
-		for (ISuite suite : suites) {
-			Map<String, ISuiteResult> result = suite.getResults();
-
-			for (ISuiteResult r : result.values()) {
-				ITestContext context = r.getTestContext();
-
-				buildTestNodes(context.getPassedTests(), LogStatus.PASS);
-				buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-				buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-			}
-		}
+			/*
+			 * for (ISuite suite : suites) { Map<String, ISuiteResult> result =
+			 * suite.getResults();
+			 * 
+			 * for (ISuiteResult r : result.values()) { ITestContext context =
+			 * r.getTestContext();
+			 * 
+			 * buildTestNodes(context.getPassedTests(), LogStatus.PASS);
+			 * buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
+			 * buildTestNodes(context.getSkippedTests(), LogStatus.SKIP); } }
+			 */
 
 		extent.flush();
-		extent.close();
+		//extent.clone();
 	}
-
+/*
 	private void buildTestNodes(IResultMap tests, LogStatus status) {
 		ExtentTest test;
 
@@ -76,6 +76,6 @@ public class ExtentReporterNG implements IReporter {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(millis);
 		return calendar.getTime();
-	}
+	}*/
 }
 
