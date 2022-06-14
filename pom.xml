@@ -106,8 +106,14 @@
          <configuration>
          <suiteXmlFiles>
          <suiteXmlFile>
-        WeeklyTestExecution.xml
-          </suiteXmlFile>
+       InstantInsight.xml
+        </suiteXmlFile>
+       <suiteXmlFile>
+       CarbonIntensity.xml
+        </suiteXmlFile>   
+        <suiteXmlFile>
+       CompaniesAndContacts.xml
+        </suiteXmlFile>         
          </suiteXmlFiles> 
         </configuration>
       </plugin>
