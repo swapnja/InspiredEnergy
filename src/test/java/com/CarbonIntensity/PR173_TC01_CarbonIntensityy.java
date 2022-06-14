@@ -29,7 +29,7 @@ public class PR173_TC01_CarbonIntensityy extends AbstractTestNg{
     @Test
     public void VerifyRegionalData() throws InterruptedException {
         CarbonIntensity carbonIntensity = new CarbonIntensity(webDriverHandler);
-        carbonIntensity.accessRegionalChart("Regional Data", "London");
+   //     carbonIntensity.accessRegionalChart("Regional Data", "London");
     }
 
     @Test
