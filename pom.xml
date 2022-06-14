@@ -108,12 +108,12 @@
          <suiteXmlFile>
        InstantInsight.xml
         </suiteXmlFile>
-       <suiteXmlFile>
+   <!--    <suiteXmlFile>
        CarbonIntensity.xml
         </suiteXmlFile>   
         <suiteXmlFile>
        CompaniesAndContacts.xml
-        </suiteXmlFile>         
+        </suiteXmlFile> -->         
          </suiteXmlFiles> 
         </configuration>
       </plugin>
