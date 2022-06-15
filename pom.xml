@@ -130,10 +130,10 @@
          PricecastSettings.xml
          </suiteXmlFile>        
         <suiteXmlFile>
-         Pricecast-PowerQuotes.xml
+         PricecastPowerQuotes.xml
          </suiteXmlFile>        
         <suiteXmlFile>
-         Pricecast-GasQuotes
+         PricecastGasQuotes.xml
          </suiteXmlFile>        
               
         </suiteXmlFiles> 
