@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="com.Budgets.Utility.Electricity" thread-count="4" verbose="1" configfailurepolicy="continue" parallel="tests">
-	<test name="com.Budgets.Utility.Electricity">
+<suite name="Budgets Electricity test matrix" thread-count="4" verbose="1" configfailurepolicy="continue" parallel="tests">
+	<test name="Budgets Electricity">
 		<packages>
 			<package name="com.Budgets.Utility.Electricity" />
 		</packages>
