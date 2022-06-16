@@ -108,33 +108,7 @@
          <suiteXmlFile>
        InstantInsight.xml
         </suiteXmlFile>
-    <suiteXmlFile>
-       CarbonIntensity.xml
-        </suiteXmlFile>   
-        <suiteXmlFile>
-       CompaniesAndContacts.xml
-        </suiteXmlFile> 
-        <suiteXmlFile>
-       BudgetElectricity.xml
-        </suiteXmlFile> 
-        <suiteXmlFile>
-       BudgetGas.xml
-        </suiteXmlFile>
-        <suiteXmlFile>
-       BudgetsInitialFlows.xml
-        </suiteXmlFile>
-         <suiteXmlFile>
-         PricecastAdminSettings.xml
-         </suiteXmlFile>
-        <suiteXmlFile>
-         PricecastSettings.xml
-         </suiteXmlFile>        
-        <suiteXmlFile>
-         PricecastPowerQuotes.xml
-         </suiteXmlFile>        
-        <suiteXmlFile>
-         PricecastGasQuotes.xml
-         </suiteXmlFile>        
+         
               
         </suiteXmlFiles> 
         </configuration>
