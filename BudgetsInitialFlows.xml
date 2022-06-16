@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Budgets Initial Flows" thread-count="2" verbose="1" configfailurepolicy="continue" parallel="tests">
+<suite name="Budgets Initial Flows test matrix" thread-count="2" verbose="1" configfailurepolicy="continue" parallel="tests">
   <test name="Budgets-InitialFlows">
     <packages>
       <package name="com.Budgets.InitialFlows"/>
