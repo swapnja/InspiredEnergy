@@ -37,13 +37,15 @@ public class AbstractTestNg {
         driver.manage().window().maximize();
         driver.get(prop.getProperty("url"));
         logQM = new LoginPageHandler(webDriverHandler, prop);
-        logQM.Login();
+        //call the  logQM.Login() and uncommnet the below
+        logQM.LoginTest();
     }
 
     @BeforeMethod
     public void accessQMP() {
-        driver.get(prop.getProperty("url"));
-        logQM.accessQueryManagement();
+    	//uncommnet the code on staging env as its running on the test now
+        //driver.get(prop.getProperty("url"));
+        //logQM.accessQueryManagement();
     }
     
     @AfterMethod
