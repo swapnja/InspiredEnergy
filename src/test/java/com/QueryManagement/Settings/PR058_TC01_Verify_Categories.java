@@ -28,7 +28,7 @@ public class PR058_TC01_Verify_Categories extends AbstractTestNg {
         categories.accessCategories();
         categories.editCategories("Automation Category", "Automation Category New",  true, true, true);
     }
-
+//Pass
     @Test
     public void Validations() {
         Categories categories = new Categories(webDriverHandler);
