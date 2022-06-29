@@ -10,21 +10,34 @@ public class PR058_TC02_Verify_Sub_Categories extends AbstractTestNg {
 
     public PR058_TC02_Verify_Sub_Categories() throws IOException{
     }
-
+//Done
     @Test
-    public void AccessSubCategories() {
+    public void AccessSubCategories() throws InterruptedException {
         SubCategories subCategories = new SubCategories(webDriverHandler);
-        subCategories.accessSettings();
+       // subCategories.accessSettings();
         subCategories.accessSubCategories();
         subCategories.columnVerification();
 
-        Hashtable<String, Boolean> tglData = new Hashtable<>();
-        tglData.put("SR", true); tglData.put("UR", true); tglData.put("CA", true); tglData.put("SA", true); tglData.put("LA", true);
-        tglData.put("GBL", true); tglData.put("DWD", true); tglData.put("AWD", true); tglData.put("Sts", true);
-
+        Hashtable<String, Boolean> tglData = new Hashtable<>();     
+        tglData.put("SR", true);
+        tglData.put("UR", true);
+        tglData.put("CA", true);        
+        tglData.put("LA", true);
+        tglData.put("DWD", true);
+        tglData.put("AWD", true);
+        tglData.put("Sts", true);
+        	
         Hashtable<String, String> formData = new Hashtable<>();
-        formData.put("name", "Automation SubCategory"); formData.put("category", "Automation Category"); formData.put("defaultAssign", "Test Lead"); formData.put("nextStep", "Customer");
-        formData.put("actionSLA", "Days before Due Date"); formData.put("dueDate", "45"); formData.put("actionDate", "65");
+        //need to change the Sun category every time to avoid the duplication
+        formData.put("subCategoryName", "Automation SubCategory 5"); 
+        formData.put("category", "Automation Category");   
+        formData.put("defaultSummary","Automation test");
+        formData.put("defaultAssign", "Test Manager"); 
+        formData.put("nextStep", "Licensee");
+        formData.put("defaultDueDate","45");
+        formData.put("actionSLA", "Days before Due Date"); 
+        formData.put("actionDate", "65");
+        
 
         subCategories.createSubCategories(tglData, formData,"Customer");
     }
@@ -32,41 +45,36 @@ public class PR058_TC02_Verify_Sub_Categories extends AbstractTestNg {
     @Test
     public void EditSubCategories() {
         SubCategories subCategories = new SubCategories(webDriverHandler);
-        subCategories.accessSettings();
+      //  subCategories.accessSettings();
         subCategories.accessSubCategories();
 
         Hashtable<String, Boolean> tglData = new Hashtable<>();
-        tglData.put("SR", false); tglData.put("UR", false); tglData.put("CA", false); tglData.put("SA", false); tglData.put("LA", false);
-        tglData.put("GBL", false); tglData.put("DWD", false); tglData.put("AWD", false); tglData.put("Sts", false);
+        tglData.put("SR", true);
+        tglData.put("UR", true);
+        tglData.put("CA", true);        
+        tglData.put("LA", true);
+        tglData.put("DWD", true);
+        tglData.put("AWD", true);
+        tglData.put("Sts", true);
 
         Hashtable<String, String> formData = new Hashtable<>();
-        formData.put("name", "Automation SubCategory"); formData.put("category", "Automation Category"); formData.put("defaultAssign", "Test Manager"); formData.put("nextStep", "Licensee");
-        formData.put("actionSLA", "Days before Due Date"); formData.put("dueDate", "58"); formData.put("actionDate", "24");
+        //need to change the Sun category every time to avoid the duplication
+        formData.put("subCategoryName", "Automation SubCategory Edited"); 
+        formData.put("category", "Automation Category");   
+        formData.put("defaultSummary","Automation test");
+        formData.put("defaultAssign", "Test Manager"); 
+        formData.put("nextStep", "Licensee");
+        formData.put("defaultDueDate","45");
+        formData.put("actionSLA", "Days before Due Date"); 
+        formData.put("actionDate", "65");
 
-        subCategories.editSubCategories("Automation SubCategory", tglData, formData,"Supplier", "Customer");
-    }
-
-    @Test
-    public void CopySubCategories() {
-        SubCategories subCategories = new SubCategories(webDriverHandler);
-        subCategories.accessSettings();
-        subCategories.accessSubCategories();
-
-        Hashtable<String, Boolean> tglData = new Hashtable<>();
-        tglData.put("SR", false); tglData.put("UR", false); tglData.put("CA", false); tglData.put("SA", false); tglData.put("LA", false);
-        tglData.put("GBL", false); tglData.put("DWD", false); tglData.put("AWD", false); tglData.put("Sts", false);
-
-        Hashtable<String, String> formData = new Hashtable<>();
-        formData.put("name", "Copied SubCategory"); formData.put("category", "Automation Category"); formData.put("defaultAssign", "Test Manager"); formData.put("nextStep", "Licensee");
-        formData.put("actionSLA", "Days before Due Date"); formData.put("dueDate", "58"); formData.put("actionDate", "24");
-
-        subCategories.copySubCategories("ToCopy SubCategory", tglData, formData,"Supplier", "Customer");
+        subCategories.editSubCategories("Automation SubCategory 55", tglData, formData);
     }
 
     @Test
     public void Validations() {
         SubCategories subCategories = new SubCategories(webDriverHandler);
-        subCategories.accessSettings();
+      //  subCategories.accessSettings();
         subCategories.accessSubCategories();
         subCategories.errorValidation();
     }
