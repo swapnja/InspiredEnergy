@@ -4,7 +4,7 @@ import com.Base.SeleniumHandlers.ElementHandler;
 import com.Base.SeleniumHandlers.WebDriverHandler;
 import org.testng.Assert;
 
-public class ActionConfig {
+public class ActionFields {
     WebDriverHandler _webDriverHandler;
     ElementHandler btnSettings;
     ElementHandler tabActionConfig;
@@ -25,7 +25,7 @@ public class ActionConfig {
     ElementHandler msgFieldOrder;
     ElementHandler btnOk;
 
-    public ActionConfig(WebDriverHandler webDriverHandler) {
+    public ActionFields(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
         btnSettings = _webDriverHandler.byXpath("//*[@id='btnSetting']");
         tabActionConfig = _webDriverHandler.byXpath("//a[contains(text(), 'Action Config')]");
