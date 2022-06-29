@@ -49,9 +49,12 @@ public class Fields {
         btnOk = _webDriverHandler.byXpath("//button[contains(text(),'OK')]");
     }
 
-    public String[] tblSubCategories = new String[]{"Status", "Field Name", "Field Type", "Field Description", "List Values", "Global", "Actions"};
-    public String[] arrSubCategories = new String[7];
+  //  public String[] tblSubCategories = new String[]{"Status", "Field Name", "Field Type", "Field Description", "List Values", "Global", "Actions"};
+   // public String[] arrSubCategories = new String[7];
 
+    public String[] tblFields = new String[]{"Status", "Field Name", "Field Type", "Field Description", "List Values","Actions"};
+    public String[] arrFields = new String[6];
+    
     String strErrorFieldName = "The Field Name: field is required.";
     String strErrorFieldType = "The Field Type: field is required.";
     String strErrorListValue = "List Values field is required.";
@@ -76,51 +79,47 @@ public class Fields {
         waitLoad();
     }
 
-    public void createFields(String name, String dataType, String description, boolean Gbl, boolean Sts, String... listValues) {
+    public void createFields(String name, String dataType, String description, String toolTip, boolean Sts, String... listValues) {
         btnNewField.waitClickable().click();
         tbFieldName.waitClickable().clear().sendKeys(name);
         ddFieldType.selectByText(dataType);
-        if (listValues.length == 0)
-        { }
-        else {
-            for (String t : listValues){
-                tbListValue.waitClickable().sendKeys(t + "\n");
-            }
-        }
+		/*
+		 * if (listValues.length == 0) { } else { for (String t : listValues){
+		 * tbListValue.waitClickable().sendKeys(t + "\n"); } }
+		 */
         tbFieldDescription.waitClickable().clear().sendKeys(description);
-        if (Gbl) {
-            tglGlobal.waitClickable().click();
-        }
+		/*
+		 * if (Gbl) { tglGlobal.waitClickable().click(); }
+		 */
         if (!Sts) {
             tglStatus.waitClickable().click();
         }
-        //btnCreate.waitClickable().click();
-        //btnOk.waitClickable().click();
+        btnCreate.waitClickable().click();
+        btnOk.waitClickable().click();
     }
 
-    public void editFields(String name, String newName, String description, boolean Gbl, boolean Sts, String... listValues)  {
+    public void editFields(String name, String newName, String description, String toolTip,  boolean Sts, String... listValues)  {
         _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click();
         _webDriverHandler.byXpath("//tr[td[contains(text(), '" + name + "')]]//button[@title = 'Action']//i").waitClickable().click();
         tbFieldName.waitClickable().clear().sendKeys(newName);
         tbFieldDescription.waitClickable().clear().sendKeys(description);
-        if (listValues.length == 0)
-        { }
-        else {
-            do{_webDriverHandler.byXpath("(//*[contains(@class, 'fas')])[1]").waitClickable().click();}
-            while(!_webDriverHandler.byXpath("(//*[contains(@class, 'fas')])[1]").notPresent());
-            for (String t : listValues){
-                tbListValue.waitClickable().sendKeys(t + "\n");
-            }
-        }
-        if (Gbl) {
-            if (!tglGlobalCheck.isSelected()) {
-                tglGlobal.waitClickable().click();
-            }
+		
+		  if (listValues.length == 0) { } else {
+		  do{_webDriverHandler.byXpath("(//*[contains(@class, 'fas')])[1]").
+		  waitClickable().click();}
+		  while(!_webDriverHandler.byXpath("(//*[contains(@class, 'fas')])[1]").
+		  notPresent()); for (String t : listValues){
+		  tbListValue.waitClickable().sendKeys(t + "\n"); } }
+		 
+		/*
+		 * if (Gbl) { if (!tglGlobalCheck.isSelected()) {
+		 * tglGlobal.waitClickable().click(); }
+		 
         } else {
             if (tglGlobalCheck.isSelected()) {
                 tglGlobal.waitClickable().click();
             }
-        }
+        }*/
         if (Sts) {
             if (!tglStatusCheck.isSelected()) {
                 tglStatus.waitClickable().click();
@@ -133,23 +132,25 @@ public class Fields {
         btnSave.waitClickable().click();
         btnOk.waitClickable().click();
         waitLoad();
-        _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click();
-        if (Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName + "')]]//td[6]").getText().equals("Yes"))) {
-        } else if (!Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName + "')]]//td[6]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine4");
-        }
-        if (Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName + "')]]//td[1]").getText().equals("Active"))) {
-        } else if (!Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName + "')]]//td[1]").getText().equals("Inactive"))) {
-        } else {
-            Assert.fail("Not Working Fine5");
-        }
+		/*
+		 * _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click
+		 * (); if (Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newName + "')]]//td[6]").getText().equals("Yes"))) { } else if (!Gbl &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName +
+		 * "')]]//td[6]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine4"); } if (Sts &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName +
+		 * "')]]//td[1]").getText().equals("Active"))) { } else if (!Sts &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newName +
+		 * "')]]//td[1]").getText().equals("Inactive"))) { } else {
+		 * Assert.fail("Not Working Fine5"); }
+		 */
     }
 
     public void columnVerification() {
-        for (int i = 0; i < arrSubCategories.length; i++) {
-            arrSubCategories[i] = _webDriverHandler.byXpath("//table[@id='tblFields']/thead/tr/th[" + (i + 1) + "]").getText();
-            if (!(tblSubCategories[i].equals(arrSubCategories[i]))) {
+        for (int i = 0; i < arrFields.length; i++) {
+            arrFields[i] = _webDriverHandler.byXpath("//table[@id='tblFields']/thead/tr/th[" + (i + 1) + "]").getText();
+            if (!(tblFields[i].equals(arrFields[i]))) {
                 Assert.fail("\nColumn names do not match.");
             }
         }
@@ -159,7 +160,8 @@ public class Fields {
     public void errorValidation() {
         btnNewField.waitClickable().click();
         btnCreate.waitClickable().click();
-        if (msgFieldName.getText().equalsIgnoreCase(strErrorFieldName) && msgDataType.getText().equals(strErrorFieldType)) {
+        if (msgFieldName.getText().equalsIgnoreCase(strErrorFieldName)
+        		&& msgDataType.getText().equals(strErrorFieldType)) {
             System.out.println("Proper error messages are shown.");
         }
         else{
