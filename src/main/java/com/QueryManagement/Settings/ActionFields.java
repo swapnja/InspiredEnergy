@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class ActionFields {
     WebDriverHandler _webDriverHandler;
     ElementHandler btnSettings;
-    ElementHandler tabActionConfig;
+    ElementHandler tabActionField;
     ElementHandler btnNewActionField;
     ElementHandler ddAction;
     ElementHandler ddField;
@@ -28,7 +28,7 @@ public class ActionFields {
     public ActionFields(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
         btnSettings = _webDriverHandler.byXpath("//*[@id='btnSetting']");
-        tabActionConfig = _webDriverHandler.byXpath("//a[contains(text(), 'Action Config')]");
+        tabActionField = _webDriverHandler.byXpath("//a[contains(text(), 'Action Fields')]");
         btnNewActionField = _webDriverHandler.byXpath("//button[text() = ' Action Field']");
         ddAction = _webDriverHandler.byXpath("//*[@id='QueryActionTypeId']");
         ddField = _webDriverHandler.byXpath("//*[@id='FieldIdOnAction']");
@@ -47,8 +47,8 @@ public class ActionFields {
         btnOk = _webDriverHandler.byXpath("//button[contains(text(),'OK')]");
     }
 
-    public String[] tblSubCategories = new String[]{"Status", "Action Name", "Field Name", "Field Description", "Field Order", "Mandatory", "Actions"};
-    public String[] arrSubCategories = new String[7];
+    public String[] tblActionFields = new String[]{"Status", "Action Name", "Field Name", "Field Description", "Field Order", "Mandatory", "Actions"};
+    public String[] arrActionFields = new String[7];
 
     String strErrorActionName = "The Action: field is required.";
     String strErrorNextStep = "The Field: field is required.";
@@ -61,11 +61,11 @@ public class ActionFields {
             try{waitLoad();}
             catch (Exception e){}
         }
-        while(tabActionConfig.notPresent());
+        while(tabActionField.notPresent());
     }
 
-    public void accessActionConfig() {
-        tabActionConfig.waitClickable().click();
+    public void accessActionField() {
+    	tabActionField.waitClickable().click();
         waitLoad();
     }
 
@@ -87,10 +87,13 @@ public class ActionFields {
         //btnOk.waitClickable().click();
     }
 
-    public void editActionField(String action, String newAction, String field, String fieldOrder, boolean Mnd, boolean Sts)  {
-        _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click();
-        _webDriverHandler.byXpath("//tr[td[contains(text(), '" + action + "')]]//button[@title = 'Action']//i").waitClickable().click();
-        ddAction.waitClickable().selectByText(newAction);
+    public void editActionField(String action, String field, String fieldOrder, boolean Mnd, boolean Sts)  {
+    // _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click();
+    	
+    	_webDriverHandler.byXpath("//*[@id='tblActionConfig_filter']//input[@type='search']").sendKeys(action);
+    	_webDriverHandler.byXpath("//*[@id='1']/td[7]//button[@type='button']").click();
+    	//_webDriverHandler.byXpath("//tr[td[contains(text(), '" + action + "')]]//button[@title = 'Action']//i").waitClickable().click();
+        ddAction.waitClickable().selectByText(action);
         ddField.waitClickable().selectByText(field);
         if (!tbFieldDescription.getAttribute("disabled").equals("true")){
             Assert.fail("Description does not match");
@@ -117,23 +120,25 @@ public class ActionFields {
         btnSave.waitClickable().click();
         btnOk.waitClickable().click();
         waitLoad();
-        _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click();
-        if (Mnd && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction + "')]]//td[6]").getText().equals("Yes"))) {
-        } else if (!Mnd && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction + "')]]//td[6]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine4");
-        }
-        if (Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction + "')]]//td[1]").getText().equals("Active"))) {
-        } else if (!Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction + "')]]//td[1]").getText().equals("Inactive"))) {
-        } else {
-            Assert.fail("Not Working Fine5");
-        }
+		/*
+		 * _webDriverHandler.byXpath("//a[contains(text(), '2')]").waitClickable().click
+		 * (); if (Mnd && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newAction + "')]]//td[6]").getText().equals("Yes"))) { } else if (!Mnd &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction +
+		 * "')]]//td[6]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine4"); } if (Sts &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction +
+		 * "')]]//td[1]").getText().equals("Active"))) { } else if (!Sts &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newAction +
+		 * "')]]//td[1]").getText().equals("Inactive"))) { } else {
+		 * Assert.fail("Not Working Fine5"); }
+		 */
     }
 
     public void columnVerification() {
-        for (int i = 0; i < arrSubCategories.length; i++) {
-            arrSubCategories[i] = _webDriverHandler.byXpath("//table[@id='tblActionConfig']/thead/tr/th[" + (i + 1) + "]").getText();
-            if (!(tblSubCategories[i].equals(arrSubCategories[i]))) {
+        for (int i = 0; i < arrActionFields.length; i++) {
+            arrActionFields[i] = _webDriverHandler.byXpath("//table[@id='tblActionConfig']/thead/tr/th[" + (i + 1) + "]").getText();
+            if (!(tblActionFields[i].equals(arrActionFields[i]))) {
                 Assert.fail("\nColumn names do not match.");
             }
         }
