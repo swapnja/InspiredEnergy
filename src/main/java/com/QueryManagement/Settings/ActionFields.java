@@ -83,8 +83,8 @@ public class ActionFields {
         if (!Sts) {
             tglStatus.waitClickable().click();
         }
-        //btnCreate.waitClickable().click();
-        //btnOk.waitClickable().click();
+        btnCreate.waitClickable().click();
+        btnOk.waitClickable().click();
     }
 
     public void editActionField(String action, String field, String fieldOrder, boolean Mnd, boolean Sts)  {
