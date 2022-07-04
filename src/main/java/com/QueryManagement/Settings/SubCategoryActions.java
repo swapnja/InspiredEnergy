@@ -11,6 +11,8 @@ public class SubCategoryActions {
     ElementHandler btnNewSubCategoryAction;
     ElementHandler ddSubCategoryName;
     ElementHandler ddActionName;
+    ElementHandler ddNextActionSlaType;
+    ElementHandler txtNAD;
     ElementHandler tglBulkUpdate;
     ElementHandler tglBulkUpdateCheck;
     ElementHandler tglLicenseeAccess;
@@ -29,14 +31,18 @@ public class SubCategoryActions {
     ElementHandler msgSubCategoryName;
     ElementHandler msgActionName;
     ElementHandler btnOk;
-
+    ElementHandler tbSearch;
+    
     public SubCategoryActions(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
+        tbSearch = _webDriverHandler.byXpath("//input[@type='search']");
         btnSettings = _webDriverHandler.byXpath("//*[@id='btnSetting']");
         tabSubCategoryActions = _webDriverHandler.byXpath("//a[contains(text(), 'Sub-Category Actions')]");
         btnNewSubCategoryAction = _webDriverHandler.byXpath("//button[text() = ' Sub-Category Action']");
         ddSubCategoryName = _webDriverHandler.byXpath("//*[@id='SubCategoryId']");
         ddActionName = _webDriverHandler.byXpath("//*[@id='QueryActionTypeId']");
+        ddNextActionSlaType=_webDriverHandler.byXpath("//*[@id='NextActionSlaType']");
+        txtNAD=_webDriverHandler.byXpath("//*[@id='NextActionInterval']");
         tglBulkUpdate = _webDriverHandler.byXpath("//label[input[@name='BulkUpdate']]");
         tglBulkUpdateCheck = _webDriverHandler.byXpath("//label[input[@name='BulkUpdate']]//input");
         tglLicenseeAccess = _webDriverHandler.byXpath("//label[input[@name='LicenseeAccess']]");
@@ -57,7 +63,8 @@ public class SubCategoryActions {
         btnOk = _webDriverHandler.byXpath("//button[contains(text(),'OK')]");
     }
 
-    public String[] tblSubCategories = new String[]{"Status", "Sub-Category Name", "Action Name", "Bulk Update", "Licensee Access", "Customer Access", "Supplier Access", "Global", "Actions"};
+    //public String[] tblSubCategories = new String[]{"Status", "Sub-Category Name", "Action Name", "Bulk Update", "Licensee Access", "Customer Access", "Supplier Access", "Global", "Actions"};
+    public String[] tblSubCategories = new String[]{"Status", "Sub-Category Name", "Action Name", "Next Action Days","Working Days","Bulk Update", "Licensee Access", "Customer Access", "Actions"};
     public String[] arrSubCategories = new String[9];
 
     String strErrorSubCategoryName = "The Sub-Category Name: field is required.";
@@ -78,125 +85,89 @@ public class SubCategoryActions {
         waitLoad();
     }
 
-    public void createSubCategoryAction(String subCategory, String action, boolean Blk, boolean LA, boolean CA, boolean SA, boolean Gbl, boolean Sts) {
+    public void createSubCategoryAction(String subCategory, String actionName, boolean Blk, String SLA ,String NAD, boolean WD, boolean LA, boolean CA, boolean Sts) {
         btnNewSubCategoryAction.waitClickable().click();
         ddSubCategoryName.waitClickable().selectByText(subCategory);
-        ddActionName.selectByText(action);
+        ddActionName.selectByText(actionName);
+        ddNextActionSlaType.selectByText(SLA);
+        txtNAD.sendKeys(NAD);
+        
         if (Blk) {
             tglBulkUpdate.waitClickable().click();
         }
-        if (LA) {
+        if (WD) {
             tglLicenseeAccess.waitClickable().click();
         }
         if (CA) {
             tglCustomerAccess.waitClickable().click();
         }
-        if (SA) {
-            tglSupplierAccess.waitClickable().click();
+        if (Sts) {
+            tglCustomerAccess.waitClickable().click();
         }
-        if (Gbl) {
-            tglGlobal.waitClickable().click();
-        }
+        
         if (!Sts) {
             tglStatus.waitClickable().click();
         }
         btnCreate.waitClickable().click();
         btnOk.waitClickable().click();
     }
+    public void search(String name) {
+        tbSearch.waitClickable().clear().sendKeys(name);
+        waitLoad();
+    }
 
-    public void editSubCategoryAction(String subCategory, String newSubCategory, String action, boolean Blk, boolean LA, boolean CA, boolean SA, boolean Gbl, boolean Sts)  {
-        _webDriverHandler.byXpath("//a[contains(text(), '5')]").waitClickable().click();
-        _webDriverHandler.byXpath("//tr[td[contains(text(), '" + subCategory + "')]]//button[@title = 'Action']//i").waitClickable().click();
+
+    public void editSubCategoryAction(String subCategory, String newSubCategory, String action, boolean Blk, String SLA, String NAD, boolean WD,  boolean LA, boolean CA, boolean Sts)  {
+    	search(subCategory);
+    	_webDriverHandler.byXpath("//table[@id='tblSubCategoriesActionConfig']//tbody//tr[1]//td[9]//button[@type='button']").click();
+    	//_webDriverHandler.byXpath("//a[contains(text(), '5')]").waitClickable().click();
+      // _webDriverHandler.byXpath("//tr[td[contains(text(), '" + subCategory + "')]]//button[@title = 'Action']//i").waitClickable().click();
         ddSubCategoryName.waitClickable().selectByText(newSubCategory);
         ddActionName.waitClickable().selectByText(action);
-        if (Blk) {
-            if (!tglBulkUpdateCheck.isSelected()) {
-                tglBulkUpdate.waitClickable().click();
-            }
-        } else {
-            if (tglBulkUpdateCheck.isSelected()) {
-                tglBulkUpdate.waitClickable().click();
-            }
-        }
-        if (LA) {
-            if (!tglLicenseeAccessCheck.isSelected()) {
-                tglLicenseeAccess.waitClickable().click();
-            }
-        } else {
-            if (tglLicenseeAccessCheck.isSelected()) {
-                tglLicenseeAccess.waitClickable().click();
-            }
-        }
-        if (CA) {
-            if (!tglCustomerAccessCheck.isSelected()) {
-                tglCustomerAccess.waitClickable().click();
-            }
-        } else {
-            if (tglCustomerAccessCheck.isSelected()) {
-                tglCustomerAccess.waitClickable().click();
-            }
-        }
-        if (SA) {
-            if (!tglSupplierAccessCheck.isSelected()) {
-                tglSupplierAccess.waitClickable().click();
-            }
-        } else {
-            if (tglSupplierAccessCheck.isSelected()) {
-                tglSupplierAccess.waitClickable().click();
-            }
-        }
-        if (Gbl) {
-            if (!tglGlobalCheck.isSelected()) {
-                tglGlobal.waitClickable().click();
-            }
-        } else {
-            if (tglGlobalCheck.isSelected()) {
-                tglGlobal.waitClickable().click();
-            }
-        }
-        if (Sts) {
-            if (!tglStatusCheck.isSelected()) {
-                tglStatus.waitClickable().click();
-            }
-        } else {
-            if (tglStatusCheck.isSelected()) {
-                tglStatus.waitClickable().click();
-            }
-        }
+		/*
+		 * if (Blk) { if (!tglBulkUpdateCheck.isSelected()) {
+		 * tglBulkUpdate.waitClickable().click(); } } else { if
+		 * (tglBulkUpdateCheck.isSelected()) { tglBulkUpdate.waitClickable().click(); }
+		 * } if (LA) { if (!tglLicenseeAccessCheck.isSelected()) {
+		 * tglLicenseeAccess.waitClickable().click(); } } else { if
+		 * (tglLicenseeAccessCheck.isSelected()) {
+		 * tglLicenseeAccess.waitClickable().click(); } } if (CA) { if
+		 * (!tglCustomerAccessCheck.isSelected()) {
+		 * tglCustomerAccess.waitClickable().click(); } } else { if
+		 * (tglCustomerAccessCheck.isSelected()) {
+		 * tglCustomerAccess.waitClickable().click(); } }
+		 * 
+		 * if (Sts) { if (!tglStatusCheck.isSelected()) {
+		 * tglStatus.waitClickable().click(); } } else { if
+		 * (tglStatusCheck.isSelected()) { tglStatus.waitClickable().click(); } }
+		 */
         btnSave.waitClickable().click();
         btnOk.waitClickable().click();
         waitLoad();
-        _webDriverHandler.byXpath("//a[contains(text(), '5')]").waitClickable().click();
-        if (Blk && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[4]").getText().equals("Yes"))) {
-        } else if (!Blk && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[4]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
-        if (LA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[5]").getText().equals("Yes"))) {
-        } else if (!LA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[5]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
-        if (CA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[6]").getText().equals("Yes"))) {
-        } else if (!CA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[6]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
-        if (SA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[7]").getText().equals("Yes"))) {
-        } else if (!SA && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[7]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
-        if (Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[8]").getText().equals("Yes"))) {
-        } else if (!Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[8]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
-        if (Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[1]").getText().equals("Active"))) {
-        } else if (!Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[1]").getText().equals("Inactive"))) {
-        } else {
-            Assert.fail("Not Working Fine.");
-        }
+		/*
+		 * _webDriverHandler.byXpath("//a[contains(text(), '5')]").waitClickable().click
+		 * (); if (Blk && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newSubCategory + "')]]//td[4]").getText().equals("Yes"))) { } else if (!Blk
+		 * && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[4]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine."); } if (LA &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[5]").getText().equals("Yes"))) { } else if (!LA &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[5]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine."); } if (CA &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[6]").getText().equals("Yes"))) { } else if (!CA &&
+		 * (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[6]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine."); }
+		 * 
+		 * if (Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newSubCategory + "')]]//td[1]").getText().equals("Active"))) { } else if
+		 * (!Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newSubCategory + "')]]//td[1]").getText().equals("Inactive"))) { } else {
+		 * Assert.fail("Not Working Fine."); }
+		 */
     }
 
     public void columnVerification() {
