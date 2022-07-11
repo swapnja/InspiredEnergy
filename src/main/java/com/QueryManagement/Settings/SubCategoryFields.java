@@ -73,15 +73,15 @@ public class SubCategoryFields {
         btnOk = _webDriverHandler.byXpath("//button[contains(text(),'OK')]");
     }
 
-    public String[] tblSubCategories = new String[]{"Status", "Sub-Category Name", "Field Name", "Field Description", "Field Order", "Licensee Access", "Customer Access", "Supplier Access", "Mandatory", "Global", "Actions"};
-    public String[] arrSubCategories = new String[11];
+    public String[] tblSubCategories = new String[]{"Status", "Sub-Category Name", "Field Name", "Field Description", "Field Order","Mandatory", "Licensee Access", "Global", "Actions"};
+    public String[] arrSubCategories = new String[9];
 
     String strErrorSubCategory = "The Sub-Category: field is required.";
     String strErrorField = "The Field: field is required.";
     String strErrorFieldOrder = "The Field Order: field is required.";
     String strErrorLicenseeAccess = "The Licensee Access: field is required.";
     String strErrorCustomerAccess = "The Customer Access: field is required.";
-    String strErrorSupplierAccess = "The Supplier Access: field is required.";
+//    String strErrorSupplierAccess = "The Supplier Access: field is required.";
 
     public void accessSettings() {
         waitLoad();
@@ -128,7 +128,7 @@ public class SubCategoryFields {
         btnOk.waitClickable().click();
     }
 
-    public void createSubCategoryField(String subCategory, String field, String fieldOrder, String licenseeAccess, String customerAccess, String supplierAccess, boolean Mnd, boolean Gbl, boolean Sts, boolean SDT, boolean APD) {
+    public void createSubCategoryField(String subCategory, String field, String fieldOrder,  boolean Mnd,String licenseeAccess,String customerAccess, boolean Sts) {
         btnNewSubCategoryField.waitClickable().click();
         ddSubCategory.waitClickable().selectByText(subCategory);
         ddField.waitClickable().selectByText(field);
@@ -138,20 +138,18 @@ public class SubCategoryFields {
         }
         tbFiledOrder.waitClickable().sendKeys(fieldOrder);
         ddLicenseeAccess.waitClickable().selectByText(licenseeAccess);
-        ddSupplierAccess.waitClickable().selectByText(supplierAccess);
+     
         ddCustomerAccess.waitClickable().selectByText(customerAccess);
-        if (SDT) {
-            tglSetDateToday.waitClickable().click();
-        }
-        if (APD) {
-            tglAllowPastDate.waitClickable().click();
-        }
+		/*
+		 * if (SDT) { tglSetDateToday.waitClickable().click(); } if (APD) {
+		 * tglAllowPastDate.waitClickable().click(); }
+		 */
         if (Mnd) {
             tglMandatory.waitClickable().click();
         }
-        if (Gbl) {
-            tglGlobal.waitClickable().click();
-        }
+		/*
+		 * if (Gbl) { tglGlobal.waitClickable().click(); }
+		 */
         if (!Sts) {
             tglStatus.waitClickable().click();
         }
@@ -159,17 +157,18 @@ public class SubCategoryFields {
         btnOk.waitClickable().click();
     }
 
-    public void editSubCategoryField(String subCategory, String fieldName, String newSubCategory, String field, String fieldOrder, String licenseeAccess, String customerAccess, String supplierAccess, boolean Mnd, boolean Gbl, boolean Sts)  {
+    public void editSubCategoryField(String subCategory, String newSubCategory,String fieldName,String fieldOrder, boolean Mnd, String licenseeAccess, String customerAccess, boolean Sts)  {
         search(subCategory);
-        _webDriverHandler.byXpath("//tr[td[contains(text(), '" + fieldName + "')]]//button[@title = 'Action']//i").waitClickable().click();
+        _webDriverHandler.byXpath("//table[@id='tblSubcategoryField']//tbody//tr[1]//td[9]//button[@type='button']").click();
+        //_webDriverHandler.byXpath("//tr[td[contains(text(), '" + fieldName + "')]]//button[@title = 'Action']//i").waitClickable().click();
         ddSubCategory.waitClickable().selectByText(newSubCategory);
-        ddField.waitClickable().selectByText(field);
+        ddField.waitClickable().selectByText(fieldName);
         if (!tbFieldDescription.getAttribute("disabled").equals("true")){
             Assert.fail("Description does not match");
         }
         tbFiledOrder.waitClickable().sendKeys(fieldOrder);
         ddLicenseeAccess.waitClickable().selectByText(licenseeAccess);
-        ddSupplierAccess.waitClickable().selectByText(supplierAccess);
+       // ddSupplierAccess.waitClickable().selectByText(supplierAccess);
         ddCustomerAccess.waitClickable().selectByText(customerAccess);
         if (Mnd) {
             if (!tglMandatoryCheck.isSelected()) {
@@ -181,15 +180,11 @@ public class SubCategoryFields {
             }
         }
 
-        if (Gbl) {
-            if (!tglGlobalCheck.isSelected()) {
-                tglGlobal.waitClickable().click();
-            }
-        } else {
-            if (tglGlobalCheck.isSelected()) {
-                tglGlobal.waitClickable().click();
-            }
-        }
+		/*
+		 * if (Gbl) { if (!tglGlobalCheck.isSelected()) {
+		 * tglGlobal.waitClickable().click(); } } else { if
+		 * (tglGlobalCheck.isSelected()) { tglGlobal.waitClickable().click(); } }
+		 */
 
         if (Sts) {
             if (!tglStatusCheck.isSelected()) {
@@ -203,17 +198,14 @@ public class SubCategoryFields {
         btnSave.waitClickable().click();
         btnOk.waitClickable().click();
         waitLoad();
-        search(newSubCategory);
-        if (Mnd && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[9]").getText().equals("Yes"))) {
-        } else if (!Mnd && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[9]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine");
-        }
-        if (Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[10]").getText().equals("Yes"))) {
-        } else if (!Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[10]").getText().equals("No"))) {
-        } else {
-            Assert.fail("Not Working Fine");
-        }
+       
+		/*
+		 * if (Gbl && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" +
+		 * newSubCategory + "')]]//td[10]").getText().equals("Yes"))) { } else if (!Gbl
+		 * && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory +
+		 * "')]]//td[10]").getText().equals("No"))) { } else {
+		 * Assert.fail("Not Working Fine"); }
+		 */
         if (Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[1]").getText().equals("Active"))) {
         } else if (!Sts && (_webDriverHandler.byXpath("//tr[td[contains(text(), '" + newSubCategory + "')]]//td[1]").getText().equals("Inactive"))) {
         } else {
@@ -315,7 +307,7 @@ public class SubCategoryFields {
         btnNewSubCategoryField.waitClickable().click();
         btnCreate.waitClickable().click();
         if (msgSubCat.getText().equalsIgnoreCase(strErrorSubCategory) && msgField.getText().equals(strErrorField) && msgLA.getText().equals(strErrorLicenseeAccess) &&
-                msgCA.getText().equals(strErrorCustomerAccess) && msgSA.getText().equals(strErrorSupplierAccess) && msgFieldOrder.getText().equals(strErrorFieldOrder)) {
+                msgCA.getText().equals(strErrorCustomerAccess)  && msgFieldOrder.getText().equals(strErrorFieldOrder)) {
             System.out.println("Proper error messages are shown.");
         }
         else{

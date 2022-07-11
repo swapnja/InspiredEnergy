@@ -8,29 +8,42 @@ public class Accounting {
 
     WebDriverHandler _webDriverHandler;
     ElementHandler tabAccounting;
-    ElementHandler subTabADR;
-    ElementHandler subTabAQ;
-    ElementHandler subTabDO;
-    ElementHandler subTabPR;
+    ElementHandler subTabAccount2;
+    ElementHandler subTabAccount3;
+    ElementHandler subTabAccountDetailsRequired;
 
-    ElementHandler cardTotalSavings;
-    ElementHandler cardForecastSavings;
-    ElementHandler cardTasksOpen;
-    ElementHandler cardTasksClosed;
 
+	/*
+	 * ElementHandler cardTotalSavings; ElementHandler cardForecastSavings;
+	 * ElementHandler cardTasksOpen; ElementHandler cardTasksClosed;
+	 */
+    ElementHandler cardActualSaving;
+    ElementHandler cardEstimatedFutureSavings;
+    ElementHandler cardOpenTaskCount;
+    ElementHandler cardClosedTaskCount;
+    
     public Accounting(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
         tabAccounting = _webDriverHandler.byXpath("//a//span[contains(text(), 'Accounting')]");
-        subTabADR = _webDriverHandler.byXpath("//a[contains(text(), 'Account Details Required')]");
-        subTabAQ = _webDriverHandler.byXpath("//a[contains(text(), 'Account Query')]");
-        subTabDO = _webDriverHandler.byXpath("//a[contains(text(), 'Debt Outstanding')]");
-        subTabPR = _webDriverHandler.byXpath("//a[contains(text(), 'Payment Required')]");
-
-        cardTotalSavings = _webDriverHandler.byXpath("//div[@id = 'totalEstimation_closed']//..");
-        cardForecastSavings = _webDriverHandler.byXpath("//div[@id = 'totalEstimation_open']//..");
-        cardTasksOpen = _webDriverHandler.byXpath("//div[@id = 'openTaskCount']//..");
-        cardTasksClosed = _webDriverHandler.byXpath("//div[@id = 'closedTasksCount']//..");
-    }
+		/*
+		 * subTabADR =
+		 * _webDriverHandler.byXpath("//a[contains(text(), 'Account Details Required')]"
+		 * ); subTabAQ =
+		 * _webDriverHandler.byXpath("//a[contains(text(), 'Account Query')]"); subTabDO
+		 * = _webDriverHandler.byXpath("//a[contains(text(), 'Debt Outstanding')]");
+		 * subTabPR =
+		 * _webDriverHandler.byXpath("//a[contains(text(), 'Payment Required')]");
+		 */
+        subTabAccount2= _webDriverHandler.byXpath("//*[@id='82']");
+        subTabAccount3=_webDriverHandler.byXpath("//*[@id='84']");
+        subTabAccountDetailsRequired=_webDriverHandler.byXpath("//*[@id='1']");
+      
+        cardActualSaving= _webDriverHandler.byXpath("//*[@id='actualSavingDivId']");
+        cardEstimatedFutureSavings = _webDriverHandler.byXpath("//*[@id='forecastSavingDivId']");
+        cardOpenTaskCount=_webDriverHandler.byXpath("//*[@id='openTaskCount')]");
+      
+        cardClosedTaskCount = _webDriverHandler.byXpath("//*[@id='closedTasksCount']");
+       }
 
     //Account Details Required
     public String[] tblSubADR = new String[]{"", "Actions", "ID", "Sub Category Name", "Customer Name", "Supplier Name", "Utility", "Next Action", "Due Date", "Currently Waiting On", "Status", "Owner", "Created Date", "Created By", "Date Closed",
@@ -57,11 +70,19 @@ public class Accounting {
         tabAccounting.waitClickable().click();
     }
 
-    public void verifyCategory() {
+    public void verifyCategory() throws InterruptedException {
         waitExec();
-        if (cardTotalSavings.isDisplayed() && cardForecastSavings.isDisplayed() && cardTasksOpen.isDisplayed() && cardTasksClosed.isDisplayed() &&
-                subTabADR.isDisplayed() && subTabAQ.isDisplayed() && subTabDO.isDisplayed() && subTabPR.isDisplayed()) {
-            System.out.println("The category is loaded properly.");
+        if(cardActualSaving.isDisplayed() && cardEstimatedFutureSavings.isDisplayed() && cardClosedTaskCount.isDisplayed()
+        		&& subTabAccount2.isDisplayed()&& subTabAccount3.isDisplayed() && subTabAccountDetailsRequired.isDisplayed())
+        	
+        {
+			/*
+			 * if (cardTotalSavings.isDisplayed() && cardForecastSavings.isDisplayed() &&
+			 * cardTasksOpen.isDisplayed() && cardTasksClosed.isDisplayed() &&
+			 * subTabADR.isDisplayed() && subTabAQ.isDisplayed() && subTabDO.isDisplayed()
+			 * && subTabPR.isDisplayed()) {
+			 */ 
+        	System.out.println("The category is loaded properly.");
         } else {
             Assert.fail("Category not loaded properly.");
         }
@@ -109,33 +130,36 @@ public class Accounting {
 
     public void verifySubCategory(String subCat) {
         switch (subCat) {
-            case "ADR":
-                subTabADR.waitClickable().click();
+            case "Account2":
+            	subTabAccount2.waitClickable().click();
+                //subTabADR.waitClickable().click();
                 waitLoad();
-                columnVerificationADR();
+                //columnVerificationADR();
                 break;
-            case "AQ":
-                subTabAQ.waitClickable().click();
+            case "Account3":
+            	subTabAccount3.waitClickable().click();
+            	//subTabAQ.waitClickable().click();
                 waitLoad();
-                columnVerificationAQ();
+                //columnVerificationAQ();
                 break;
-            case "DO":
-                subTabDO.waitClickable().click();
+            case "Account Details":
+            	subTabAccountDetailsRequired.waitClickable().click();
+            	//subTabDO.waitClickable().click();
                 waitLoad();
-                columnVerificationDO();
+                //columnVerificationDO();
                 break;
-            case "PR":
-                subTabPR.waitClickable().click();
-                waitLoad();
-                columnVerificationPR();
-                break;
+           
             default:
                 Assert.fail("Select proper sub-category.");
         }
     }
 
-    public void waitExec() {
-        cardTotalSavings.isDisplayed(); cardForecastSavings.isDisplayed(); cardTasksOpen.isDisplayed(); cardTasksClosed.isDisplayed();
+    public void waitExec() throws InterruptedException {
+        cardActualSaving.isDisplayed();
+        cardClosedTaskCount.isDisplayed();
+        cardEstimatedFutureSavings.isDisplayed();
+        Thread.sleep(1000);
+       // cardOpenTaskCount.isDisplayed();
     }
 
     public void waitLoad() {
