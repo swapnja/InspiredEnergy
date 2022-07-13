@@ -2,6 +2,8 @@ package com.QueryManagement.Home;
 
 import com.Base.SeleniumHandlers.ElementHandler;
 import com.Base.SeleniumHandlers.WebDriverHandler;
+
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 public class CreateNewTask {
@@ -30,6 +32,7 @@ public class CreateNewTask {
     ElementHandler btnSave;
     ElementHandler btnOk;
     ElementHandler btnYes;
+    ElementHandler tbAutomationField;
 
     public CreateNewTask(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
@@ -56,6 +59,8 @@ public class CreateNewTask {
         //btnSave = _webDriverHandler.byXpath("//*[@id = 'newTaskForm']//*[text() = 'Save']");
         btnOk = _webDriverHandler.byXpath("//button[contains(text(),'OK')]");
         btnYes = _webDriverHandler.byXpath("//button[contains(text(),'Yes')]");
+        //tbAutomationField= _webDriverHandler.byXpath("//*[@id='AutomationFieldb556622d-3af6-46c7-8f8f-5be832fdd254']");
+        tbAutomationField = _webDriverHandler.byXpath("//form[@id='taskForm']//input[@id='AutomationFieldfc31bede-0d97-4caa-a55b-8fc79b17b681']");
     }
 
     String strErrorCustomer = "The Customer: field is required.";
@@ -76,11 +81,17 @@ public class CreateNewTask {
     }
 
     public void verifyCreateNewModal() {
-        if (ddCustomer.isDisplayed() && ddCategory.isDisplayed() && ddSubCategory.isDisplayed() && ddSupplier.isDisplayed() && ddUtilityType.isDisplayed() &&
-            tbSummary.isDisplayed() && tglCustomerView.isDisplayed() && tglSupplierView.isDisplayed() && ddCurrentlyWaitingOn.isDisplayed() &&
-            ddCurrentlyWaitingOn.getAttribute("disabled").equals("true") && tbNextActionDate.isDisplayed() && tbNextActionDate.getAttribute("disabled")
-            .equals("true") && tbDueDate.isDisplayed() && tbDueDate.getAttribute("disabled").equals("true")) {
-            System.out.println("Create New modal is loaded properly.");
+        if (ddCustomer.isDisplayed() && ddCategory.isDisplayed() && ddSubCategory.isDisplayed()
+        		&& ddSupplier.isDisplayed()	&& ddUtilityType.isDisplayed() &&
+            tbSummary.isDisplayed() && tglCustomerView.isDisplayed() && tglSupplierView.isDisplayed() 
+            && ddCurrentlyWaitingOn.isDisplayed() &&
+            //ddCurrentlyWaitingOn.getAttribute("disabled").equals("true") &&
+            tbNextActionDate.isDisplayed() &&
+         //   && tbNextActionDate.getAttribute("disabled").equals("true") && 
+            tbDueDate.isDisplayed())
+        	//&& tbDueDate.getAttribute("disabled").equals("true")) {
+        {
+        	System.out.println("Create New modal is loaded properly.");
         }
     }
 
@@ -92,24 +103,18 @@ public class CreateNewTask {
         Assert.assertEquals(msgSummary.getText(), strErrorSummary, "Supplier validation is wrong.");
     }
 
-    public void createNewTask(String customer, String category, String subCategory, String supplier, String summary, boolean SV, boolean CV, String utility) {
-        ddCustomer.waitClickable().selectByText(customer);
+    public void createNewTask(String customer, String category, 
+    		String subCategory, String supplier,String utility, String summary, boolean CV, boolean SV,
+    		String CWOn, String NAD, String DueDate, String AutomationField) {
+        ddCustomer.click().waitClickable().selectByText(customer).click();
         ddCategory.waitClickable().selectByText(category);
         waitLoad();
         ddSubCategory.waitClickable().selectByText(subCategory);
         waitLoad();
-        ddSupplier.waitClickable().selectByText(supplier);
+        ddSupplier.waitClickable().selectByText(supplier).click();
         ddUtilityType.waitClickable().selectByText(utility);
         tbSummary.waitClickable().clear().sendKeys(summary);
-        if (SV) {
-            if (!tglSupplierViewCheck.isSelected()) {
-                tglSupplierView.waitClickable().click();
-            }
-        } else {
-            if (tglSupplierViewCheck.isSelected()) {
-                tglSupplierView.waitClickable().click();
-            }
-        }
+        
         if (CV) {
             if (!tglCustomerViewCheck.isSelected()) {
                 tglCustomerView.waitClickable().click();
@@ -119,9 +124,22 @@ public class CreateNewTask {
                 tglCustomerView.waitClickable().click();
             }
         }
+        if (SV) {
+            if (!tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        } else {
+            if (tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        }
+        ddCurrentlyWaitingOn.waitClickable().selectByText(CWOn);
+       tbNextActionDate.clear().sendKeys(NAD).sendKeys(Keys.ESCAPE);
+       tbDueDate.clear().sendKeys(DueDate).sendKeys(Keys.ESCAPE);
         btnCreate.waitClickable().click();
         waitLoad();
-        btnCreate.waitClickable().click();
+      //  tbAutomationField.clear().sendKeys(AutomationField);
+        btnCreate.waitClickable(15,100).click();
         btnOk.waitClickable().click();
     }
 
