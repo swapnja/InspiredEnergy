@@ -27,13 +27,20 @@ public class CreateNewTask {
     ElementHandler msgCategory;
     ElementHandler msgSubCategory;
     ElementHandler msgSummary;
+    ElementHandler msgNAD;
+    ElementHandler msgDD;
     ElementHandler btnCreate;
     ElementHandler btnCancel;
     ElementHandler btnSave;
     ElementHandler btnOk;
     ElementHandler btnYes;
     ElementHandler tbAutomationField;
-
+    ElementHandler tbCurrentlyWaitingOn;
+    ElementHandler tbNextActinoDate;
+    ElementHandler DueDate;
+    ElementHandler msgCWO;
+    
+    
     public CreateNewTask(WebDriverHandler webDriverHandler) {
         _webDriverHandler = webDriverHandler;
         btnCreateNew = _webDriverHandler.byXpath("//button[text()= ' Create New']");
@@ -54,6 +61,10 @@ public class CreateNewTask {
         msgCategory = _webDriverHandler.byXpath("//*[@id = 'CategoryIdTaskInitial-error']");
         msgSubCategory = _webDriverHandler.byXpath("//*[@id = 'SubCategoryIdTaskInitial-error']");
         msgSummary = _webDriverHandler.byXpath("//*[@id = 'SummaryTaskInitial-error']");
+        msgCWO = _webDriverHandler.byXpath("//*[@id='AwaitingTaskInitial-error']");
+        msgNAD= _webDriverHandler.byXpath("//*[@id='NextActionDateTaskInitial-error']");
+        msgDD =_webDriverHandler.byXpath("//*[@id='DueDateTaskInitial-error']");
+        
         btnCreate = _webDriverHandler.byXpath("//*[text() = '  Create']");
         btnCancel = _webDriverHandler.byXpath("//*[@id = 'newTaskForm']//*[text() = 'Cancel']");
         //btnSave = _webDriverHandler.byXpath("//*[@id = 'newTaskForm']//*[text() = 'Save']");
@@ -61,13 +72,19 @@ public class CreateNewTask {
         btnYes = _webDriverHandler.byXpath("//button[contains(text(),'Yes')]");
         //tbAutomationField= _webDriverHandler.byXpath("//*[@id='AutomationFieldb556622d-3af6-46c7-8f8f-5be832fdd254']");
         tbAutomationField = _webDriverHandler.byXpath("//form[@id='taskForm']//input[@id='AutomationFieldfc31bede-0d97-4caa-a55b-8fc79b17b681']");
+        tbCurrentlyWaitingOn = _webDriverHandler.byXpath("//*[@id='AwaitingTaskInitial']");
+        tbNextActinoDate = _webDriverHandler.byXpath("//*[@id='NextActionDateTaskInitial']");
+        tbDueDate =_webDriverHandler.byXpath("//*[@id='DueDateTaskInitial']");
     }
 
     String strErrorCustomer = "The Customer: field is required.";
     String strErrorCategory = "The Category: field is required.";
     String strErrorSubCategory = "The Sub-Category: field is required.";
     String strErrorSummary = "The Summary: field is required.";
-
+    String strCurrentlyWaitingOn = "The Currently Waiting On: field is required.";
+    String strNextActinoDate = "The Next Action Date: field is required.";
+    String strDueDate = "The Due Date: field is required.";
+ 
     public void accessCreateNew() {
         waitLoad();
         do {
@@ -101,9 +118,12 @@ public class CreateNewTask {
         Assert.assertEquals(msgCategory.getText(), strErrorCategory, "Category validation is wrong.");
         Assert.assertEquals(msgSubCategory.getText(), strErrorSubCategory, "Sub Category validation is wrong.");
         Assert.assertEquals(msgSummary.getText(), strErrorSummary, "Supplier validation is wrong.");
+        Assert.assertEquals(msgNAD.getText(), strNextActinoDate, "NAD validation is wrong" );
+        Assert.assertEquals(msgCWO.getText(), strCurrentlyWaitingOn, "CWO validation is wrong" );
+        Assert.assertEquals(msgDD.getText(),strDueDate, "DD validation is wrong" );
     }
 
-    public void createNewTask(String customer, String category, 
+    public void createNewTaskElectricity(String customer, String category, 
     		String subCategory, String supplier,String utility, String summary, boolean CV, boolean SV,
     		String CWOn, String NAD, String DueDate, String AutomationField) {
         ddCustomer.click().waitClickable().selectByText(customer).click();
@@ -142,6 +162,88 @@ public class CreateNewTask {
         btnCreate.waitClickable(15,100).click();
         btnOk.waitClickable().click();
     }
+    
+    
+    public void createNewTaskGas(String customer, String category, 
+    		String subCategory, String supplier,String utility, String summary, boolean CV, boolean SV,
+    		String CWOn, String NAD, String DueDate, String AutomationField) {
+        ddCustomer.click().waitClickable().selectByText(customer).click();
+        ddCategory.waitClickable().selectByText(category);
+        waitLoad();
+        ddSubCategory.waitClickable().selectByText(subCategory);
+        waitLoad();
+        ddSupplier.waitClickable().selectByText(supplier).click();
+        ddUtilityType.waitClickable().selectByText(utility);
+        tbSummary.waitClickable().clear().sendKeys(summary);
+        
+        if (CV) {
+            if (!tglCustomerViewCheck.isSelected()) {
+                tglCustomerView.waitClickable().click();
+            }
+        } else {
+            if (tglCustomerViewCheck.isSelected()) {
+                tglCustomerView.waitClickable().click();
+            }
+        }
+        if (SV) {
+            if (!tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        } else {
+            if (tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        }
+        ddCurrentlyWaitingOn.waitClickable().selectByText(CWOn);
+       tbNextActionDate.clear().sendKeys(NAD).sendKeys(Keys.ESCAPE);
+       tbDueDate.clear().sendKeys(DueDate).sendKeys(Keys.ESCAPE);
+        btnCreate.waitClickable().click();
+        waitLoad();
+      //  tbAutomationField.clear().sendKeys(AutomationField);
+        btnCreate.waitClickable(15,100).click();
+        btnOk.waitClickable().click();
+    }
+    
+    public void createNewTaskWater(String customer, String category, 
+    		String subCategory, String supplier,String utility, String summary, boolean CV, boolean SV,
+    		String CWOn, String NAD, String DueDate, String AutomationField) {
+        ddCustomer.click().waitClickable().selectByText(customer).click();
+        ddCategory.waitClickable().selectByText(category);
+        waitLoad();
+        ddSubCategory.waitClickable().selectByText(subCategory);
+        waitLoad();
+        ddSupplier.waitClickable().selectByText(supplier).click();
+        ddUtilityType.waitClickable().selectByText(utility);
+        tbSummary.waitClickable().clear().sendKeys(summary);
+        
+        if (CV) {
+            if (!tglCustomerViewCheck.isSelected()) {
+                tglCustomerView.waitClickable().click();
+            }
+        } else {
+            if (tglCustomerViewCheck.isSelected()) {
+                tglCustomerView.waitClickable().click();
+            }
+        }
+        if (SV) {
+            if (!tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        } else {
+            if (tglSupplierViewCheck.isSelected()) {
+                tglSupplierView.waitClickable().click();
+            }
+        }
+        ddCurrentlyWaitingOn.waitClickable().selectByText(CWOn);
+       tbNextActionDate.clear().sendKeys(NAD).sendKeys(Keys.ESCAPE);
+       tbDueDate.clear().sendKeys(DueDate).sendKeys(Keys.ESCAPE);
+        btnCreate.waitClickable().click();
+        waitLoad();
+      //  tbAutomationField.clear().sendKeys(AutomationField);
+        btnCreate.waitClickable(15,100).click();
+        btnOk.waitClickable().click();
+    }
+
 
     public void waitLoad() {
         _webDriverHandler.byXpath("//*[@id='overlay']").waitVisible().waitInvisible();
