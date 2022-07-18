@@ -16,16 +16,36 @@ public class PR058_TC01_Verify_Create_New extends AbstractTestNg {
         createNewTask.accessCreateNew();
         createNewTask.verifyCreateNewModal();
     }
-//pass :) // there is "Automation Field:" field coming with the Automation Category and Automation SubCategory1  
+//pass 
+// there is "Automation Field:" field coming with the Automation Category and Automation SubCategory1  
+   
     @Test
-    public void CreateNewTask() {     
+    public void CreateNewTaskElectricity() {     
         CreateNewTask createNewTask = new CreateNewTask(webDriverHandler);
         createNewTask.accessCreateNew();
-        createNewTask.createNewTask("Chirayu Cust", "Automation Category", "Automation SubCategory 6",
-        		"CNG","Electricity", "Automation test Summary", true,
-                true,"Inspired Plc","28/07/2022","28/07/2022","22");
+        createNewTask.createNewTaskElectricity("Chirayu Cust", "Automation Category", "Automation SubCategory 6",
+        		"CNG","Electricity", "Automation test Summary for Electricity Query", true,
+                true,"Inspired Plc","28/12/2022","28/12/2022","22");
     }
-  //form[@id='myForm']/input[@name='version']/@value
+    //Pass
+    @Test
+    public void CreateNewTaskGas() {     
+        CreateNewTask createNewTask = new CreateNewTask(webDriverHandler);
+        createNewTask.accessCreateNew();
+        createNewTask.createNewTaskGas("Chirayu Cust", "Automation Category", "Automation SubCategory 5",
+        		"Crown Gas","Gas", "Automation test Summary forGas query ", true,
+                true,"Inspired Plc","28/07/2023","28/07/2023","12");
+    }
+    
+    @Test
+    public void CreateNewTaskWater() {     
+        CreateNewTask createNewTask = new CreateNewTask(webDriverHandler);
+        createNewTask.accessCreateNew();
+        createNewTask.createNewTaskWater("Chirayu Cust", "Automation Category", "Automation SubCategory 5",
+        		"Crown water","Water", "Automation test Summary forGas query ", true,
+                true,"Inspired Plc","28/07/2023","28/07/2023","12");
+    }
+    
 //    @Test
 //    public void EditValidations() {
 //        CreateNewTask createNewTask = new CreateNewTask(webDriverHandler);
@@ -33,6 +53,7 @@ public class PR058_TC01_Verify_Create_New extends AbstractTestNg {
 //                true, "Water", "Gas");
 //    }
 
+    //Pass
     @Test
     public void ErrorValidations() {
         CreateNewTask createNewTask = new CreateNewTask(webDriverHandler);
